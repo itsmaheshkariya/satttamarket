@@ -12,6 +12,9 @@ html
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js")
         script(src='/js/main.js')
+        script(src="https://cloud.tinymce.com/stable/tinymce.min.js")
+        script.
+            tinymce.init({ selector:'textarea' });
 		
 
 
@@ -24,8 +27,8 @@ html
                 ul.right.hide-on-med-and-down
                     li
                         a(href="/Results") Results
-                    li
-                        a(href="/Astrology") Astrology 
+                    //- li
+                    //-     a(href="/Astrology") Astrology 
                     li
                         a(href="/Charts") Charts
                     li
@@ -36,8 +39,8 @@ html
             ul#mobile-demo.sidenav
                 li
                     a(href="/Results") Results
-                li
-                    a(href="/Astrology") Astrology 
+                //- li
+                //-     a(href="/Astrology") Astrology 
                 li
                     a(href="/Charts") Charts
                 li
@@ -56,7 +59,7 @@ html
 
 
   
-        .container
+        .container-fluid(style="margin:50px")
             block content
            
             

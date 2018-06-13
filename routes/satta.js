@@ -2,135 +2,102 @@ const express = require('express');
 const router = express.Router();
 
 //Bring article model
-let Article = require('../models/satta');
-
-
-
-router.get('/:id', function(req, res) {
-    Article.findById(req.params.id, function(err, article) {
-        res.render('article', {
-            article: article
-        });
-    });
-});
-
-
-router.get('/edit/:id', function(req, res) {
-    Article.findById(req.params.id, function(err, article) {
-        res.render('edit_article', {
-            title: 'Edit Article',
-            article: article
-        });
-    });
-});
-
-
+let Satta = require('../models/satta');
+let Settings = require('../models/settings');
 
 
 
 router.get('/', function(req, res) {
-    res.render('add_articles', {
-        title: 'Add New article'
-    });
-});
 
-
-//add submit
-
-
-router.post('/', function(req, res) {
-    req.checkBody('firstname', 'First Name is Required').notEmpty();
-    req.checkBody('lastname', 'Last Name is Required').notEmpty();
-    req.checkBody('email', 'Email is Required').notEmpty();
-    req.checkBody('contact', 'Contact is Required').notEmpty();
-    req.checkBody('city', 'City is Required').notEmpty();
-    req.checkBody('state', 'State is Required').notEmpty();
-    req.checkBody('country', 'Country Name is Required').notEmpty();
-    req.checkBody('gender', 'Gender is Required').notEmpty();
-
-
-
-    let errors = req.validationErrors();
-
-
-
-    if (errors) {
-        res.render('add_articles', {
-            title: 'Add New Record',
-            errors: errors
-        });
-    } else {
-
-        let article = new Article();
-        article.firstname = req.body.firstname;
-        article.lastname = req.body.lastname;
-        article.email = req.body.email;
-        article.contact = req.body.contact;
-        article.city = req.body.city;
-        article.state = req.body.state;
-        article.country = req.body.country;
-        article.gender = req.body.gender;
-        article.about = req.body.about;
-
-        article.save(function(err) {
-            if (err) {
-                console.log(err);
-            } else {
-                {
-                    req.flash('dark', 'Data Submited Successfully To Database.');
-                    res.redirect('/');
-                }
-            }
-        });
-    }
-
-
-
-
-});
-
-
-
-
-
-router.delete('/:id', function(req, res) {
-    let query = { _id: req.params.id }
-
-    Article.remove(query, function(err) {
+    Satta.find({}, function(err, sattas) {
         if (err) {
             console.log(err);
+        } else {
+
+
+            Settings.find({}, function(err, settings) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.render('pages/index', {
+                        title: 'SAT MAT RAT',
+                        satta: sattas,
+                        settings: settings
+                    });
+                }
+            });
+
+
+
+            // res.render('pages/index', {
+            //     title: 'SAT MAT RAT',
+            //     satta: sattas
+            // });
         }
-        res.send('Success');
     });
-});
 
-router.post('/edit/:id', function(req, res) {
-    let article = {};
-    article.firstname = req.body.firstname;
-    article.lastname = req.body.lastname;
-    article.email = req.body.email;
-    article.contact = req.body.contact;
-    article.city = req.body.city;
-    article.state = req.body.state;
-    article.country = req.body.country;
-    article.gender = req.body.gender;
-    article.about = req.body.about;
 
-    let query = { _id: req.params.id }
-    Article.update(query, article, function(err) {
+})
+router.post('/satta', function(req, res) {
+    let satta = new Satta();
+    satta.name = req.body.name;
+    satta.number = req.body.number;
+    satta.time = req.body.time;
+    satta.date = req.body.date;
+
+
+    satta.save(function(err) {
         if (err) {
             console.log(err);
         } else {
             {
-                req.flash('dark', 'Data Updated Successfully To Database.');
+
                 res.redirect('/');
             }
         }
     });
+})
 
-});
+router.get('/satta/edit/:id', function(req, res) {
+    Satta.findById(req.params.id, function(err, sattas) {
+        res.render('pages/edit', {
+            title: 'SATMATRAT',
+            sattan: sattas
+        });
+    });
+})
 
 
 
+router.delete('/:id', function(req, res) {
+        let query = { _id: req.params.id }
 
+        Satta.remove(query, function(err) {
+            if (err) {
+                console.log(err);
+            }
+            res.redirect('/');
+        })
+    })
+    .post('/satta/edit/:id', function(req, res) {
+        let satta = {};
+        satta.name = req.body.name;
+        satta.number = req.body.number;
+        satta.date = req.body.date;
+        satta.time = req.body.time;
+
+
+        let query = { _id: req.params.id }
+        Satta.update(query, satta, function(err) {
+            if (err) {
+                console.log(err);
+            } else {
+                {
+
+                    res.redirect('/');
+                }
+            }
+        })
+
+    })
 module.exports = router;

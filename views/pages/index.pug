@@ -3,7 +3,8 @@ block content
     
     form(method='POST',action='/satta')
         .row
-            h3 Satta Updater 
+            h4 Update  
+            
         .col.s6
             .row
                 .input-field.col.s12
@@ -13,7 +14,7 @@ block content
             .row
                 .input-field.col.s12
                     label Number:
-                    input.form-control(name='number',type='text')
+                    input.form-control(name='text',type='text')
             .row
                 .input-field.col.s12
                     label(style="margin-left:120px") Time
@@ -31,6 +32,7 @@ block content
         
             table.table.table-hover.table-dark(id="example")
                 thead
+                    td Name
                     td Number
                     td Time
                     td Date
@@ -45,11 +47,12 @@ block content
                         td= sattan.time
                         td= sattan.date
                         td
-                            a.btn.btn-dark(title="Edit",data-toggle="tooltip", data-placement="bottom",href='/satta/edit/'+sattan._id)
+                            a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/satta/edit/'+sattan._id)
                                 i.fa.fa-pencil 
                         td
-                            a.btn.btn-dark.delete-article(title="Remove",data-toggle="tooltip", data-placement="right",data-id=sattan._id)
+                            a.btn.btn-dark.delete-article(title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right",data-id=sattan._id)
                                 i.fa.fa-trash
+                
           
         br
         br
