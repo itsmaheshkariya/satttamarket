@@ -18,16 +18,17 @@ router.get('/Settings/edit/:id', function(req, res) {
 })
 router.get('/Settings', function(req, res) {
 
-    Settings.find({}, function(err, settings) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render('pages/settings', {
-                title: 'SAT MAT RAT- Settings',
-                settings: settings
-            });
-        }
-    });
+    // Settings.find({}, function(err, settings) {
+    //     if (err) {
+    //         console.log(err);
+    //     } else {
+    //         res.render('pages/settings', {
+    //             title: 'SAT MAT RAT- Settings',
+    //             settings: settings
+    //         });
+    //     }
+    // });
+    res.send("ok");
 
 });
 router.post('/Settings', function(req, res) {
