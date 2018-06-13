@@ -16,22 +16,9 @@ express()
     .use(bodyParser.urlencoded({ extended: false }))
     .use(bodyParser.json())
     .use('/', satta)
-    .use('/', settings)
-    .get('/Settings', function(req, res) {
+    .use('/Settings', settings)
 
-        Settings.find({}, function(err, settings) {
-            if (err) {
-                console.log(err);
-            } else {
-                res.render('pages/settings', {
-                    title: 'SAT MAT RAT- Settings',
-                    settings: settings
-                });
-            }
-        });
-
-    })
-    .get('/Results', function(req, res) {
+.get('/Results', function(req, res) {
 
         Satta.find({}, function(err, sattas) {
             if (err) {

@@ -16,8 +16,21 @@ router.get('/Settings/edit/:id', function(req, res) {
         });
     });
 })
+router.get('/', function(req, res) {
 
-router.post('/Settings', function(req, res) {
+    Settings.find({}, function(err, settings) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('pages/settings', {
+                title: 'SAT MAT RAT- Settings',
+                settings: settings
+            });
+        }
+    });
+
+});
+router.post('/', function(req, res) {
     let settings = new Settings();
     settings.message = req.body.message;
     settings.title = req.body.title;
@@ -35,7 +48,7 @@ router.post('/Settings', function(req, res) {
         }
     });
 });
-router.delete('/Settings/:id', function(req, res) {
+router.delete('/:id', function(req, res) {
     let query = { _id: req.params.id }
 
     setting.remove(query, function(err) {
