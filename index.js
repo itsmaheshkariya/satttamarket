@@ -16,7 +16,7 @@ express()
     .use(bodyParser.urlencoded({ extended: false }))
     .use(bodyParser.json())
     .use('/', satta)
-    .use('/Settings', settings)
+    .use('/', settings)
 
 .get('/Results', function(req, res) {
 

@@ -16,7 +16,7 @@ router.get('/Settings/edit/:id', function(req, res) {
         });
     });
 })
-router.get('/', function(req, res) {
+router.get('/Settings', function(req, res) {
 
     Settings.find({}, function(err, settings) {
         if (err) {
@@ -30,7 +30,7 @@ router.get('/', function(req, res) {
     });
 
 });
-router.post('/', function(req, res) {
+router.post('/Settings', function(req, res) {
     let settings = new Settings();
     settings.message = req.body.message;
     settings.title = req.body.title;
@@ -48,7 +48,7 @@ router.post('/', function(req, res) {
         }
     });
 });
-router.delete('/:id', function(req, res) {
+router.delete('/Settings/:id', function(req, res) {
     let query = { _id: req.params.id }
 
     setting.remove(query, function(err) {
