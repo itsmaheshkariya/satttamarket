@@ -17,7 +17,7 @@ express()
     .use(bodyParser.json())
     .use('/', satta)
     .use('/', settings)
-get('/Settings', function(req, res) {
+    .get('/Settings', function(req, res) {
 
         Settings.find({}, function(err, settings) {
             if (err) {
