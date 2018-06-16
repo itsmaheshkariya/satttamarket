@@ -7,7 +7,16 @@ let Settings = require('../models/settings');
 
 
 
-router.get('/', function(req, res) {
+function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    } else {
+        req.flash('danger', 'please login');
+        res.redirect('/login');
+    }
+}
+
+router.get('/', ensureAuthenticated, function(req, res) {
 
     Satta.find({}, function(err, sattas) {
         if (err) {
@@ -38,7 +47,7 @@ router.get('/', function(req, res) {
 
 
 })
-router.post('/satta', function(req, res) {
+router.post('/satta', ensureAuthenticated, function(req, res) {
     let satta = new Satta();
     satta.name = req.body.name;
     satta.number = req.body.number;
@@ -58,7 +67,7 @@ router.post('/satta', function(req, res) {
     });
 })
 
-router.get('/satta/edit/:id', function(req, res) {
+router.get('/satta/edit/:id', ensureAuthenticated, function(req, res) {
     Satta.findById(req.params.id, function(err, sattas) {
         res.render('pages/edit', {
             title: 'SATMATRAT',
@@ -69,7 +78,7 @@ router.get('/satta/edit/:id', function(req, res) {
 
 
 
-router.delete('/:id', function(req, res) {
+router.delete('/:id', ensureAuthenticated, function(req, res) {
         let query = { _id: req.params.id }
 
         Satta.remove(query, function(err) {
@@ -79,7 +88,7 @@ router.delete('/:id', function(req, res) {
             res.redirect('/');
         })
     })
-    .post('/satta/edit/:id', function(req, res) {
+    .post('/satta/edit/:id', ensureAuthenticated, function(req, res) {
         let satta = {};
         satta.name = req.body.name;
         satta.number = req.body.number;
