@@ -78,14 +78,14 @@ router.get('/satta/edit/:id', ensureAuthenticated, function(req, res) {
 
 
 
-router.delete('/:id', ensureAuthenticated, function(req, res) {
+router.delete('/satta/delete/:id', ensureAuthenticated, function(req, res) {
         let query = { _id: req.params.id }
 
         Satta.remove(query, function(err) {
             if (err) {
                 console.log(err);
             }
-            res.redirect('/');
+            res.redirect('/admin');
         })
     })
     .post('/satta/edit/:id', ensureAuthenticated, function(req, res) {

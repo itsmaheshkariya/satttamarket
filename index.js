@@ -315,43 +315,34 @@ express()
 
 
 .get('/Upimg/files', (req, res) => {
-        gfs.files.find().toArray((err, files) => {
-            //Check files
+    gfs.files.find().toArray((err, files) => {
+        //Check files
 
-            if (!files || files.length === 0) {
-                return res.status(404).json({
-                    err: 'No files exit'
-                });
-            }
+        if (!files || files.length === 0) {
+            return res.status(404).json({
+                err: 'No files exit'
+            });
+        }
 
-            // readstream = gfs.createReadStream(files);
+        // readstream = gfs.createReadStream(files);
 
-            // readstream.pipe(res);
-            return res.json(files);
-        })
+        // readstream.pipe(res);
+        return res.json(files);
     })
-    .delete('/Upimg/images/:filename', (req, res) => {
-        gfs.remove({ filename: req.params.filename, root: 'uploads' }, function(err, gridStore) {
-            if (err) {
-                return res.status(404).json({ err: err })
-            } else {
-                req.flash('success', 'File Deleted Successfully');
-                res.redirect('/Upimg');
-            }
+})
 
-        });
+
+.get('/Upimg/files/:filename', (req, res) => {
+    gfs.files.find({ filename: req.params.filename }).toArray((err, files) => {
+        //Check files
+        if (!files || files.length === 0) {
+            return res.status(404).json({
+                err: 'No files exit'
+            });
+        }
+        return res.json(files);
     })
-    .get('/Upimg/files/:filename', (req, res) => {
-        gfs.files.find({ filename: req.params.filename }).toArray((err, files) => {
-            //Check files
-            if (!files || files.length === 0) {
-                return res.status(404).json({
-                    err: 'No files exit'
-                });
-            }
-            return res.json(files);
-        })
-    })
+})
 
 //Display image
 .get('/Upimg/images/:filename', (req, res) => {

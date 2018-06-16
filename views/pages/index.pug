@@ -50,8 +50,13 @@ block content
                             a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/satta/edit/'+sattan._id)
                                 i.fa.fa-pencil 
                         td
-                            a.btn.btn-dark.delete-article(title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right",data-id=sattan._id)
-                                i.fa.fa-trash
+                            form(action='/satta/delete/'+sattan._id+'?_method=DELETE',method='POST')
+                            
+                                button.btn.btn-dark(type='submit' title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right")
+                                    i.fa.fa-trash
+                                
+                            //- a.btn.btn-dark.delete-article(title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right",data-id=sattan._id)
+                            //-     i.fa.fa-trash
                 
           
         br
