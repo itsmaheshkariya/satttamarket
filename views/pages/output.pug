@@ -1,3 +1,44 @@
+style.
+  .a {
+  width: 100%;
+  font-size: 30px;
+ 
+  text-align: center;
+  color: #000;
+  text-shadow: 0px 1px 1px #ddd,
+  0px 2px 1px #d6d6d6,
+  0px 3px 1px #ccc,
+  0px 4px 1px #c5c5c5,
+  0px 5px 1px #c1c1c1,
+  0px 6px 1px #bbb,
+  0px 7px 1px #777,
+  0px 8px 3px rgba(100, 100, 100, 0.4),
+  0px 9px 5px rgba(100, 100, 100, 0.1),
+  0px 10px 7px rgba(100, 100, 100, 0.15),
+  0px 11px 9px rgba(100, 100, 100, 0.2),
+  0px 12px 11px rgba(100, 100, 100, 0.25),
+  0px 13px 15px rgba(100, 100, 100, 0.3);
+  transition:all .8s ease-in-out;
+  -o-transition:all .8s ease-in-out;
+  -moz-transition:all .8s ease-in-out;
+  -webkit-transition:all .8s ease-in-out;
+  }
+  @media screen and (max-width:768px) {
+  body {
+  background:red;
+  }
+  .a{
+  font-size:90px;
+  }
+  }
+  @media screen and (max-width:480px) {
+  body {
+  background:yellow;
+  }
+  .a{
+  font-size:50px;
+  }
+  }
 doctype html
 html(xmlns='http://www.w3.org/1999/xhtml')
   head
@@ -61,16 +102,16 @@ html(xmlns='http://www.w3.org/1999/xhtml')
     h5
    
       div(align='center', style='boder-width:3px;border-style:solid;border-color:navy;background-color:#FFF;border-radius:8px;padding-top:5px;padding-bottom:5px;padding-left:5px;padding-right:5px;font-weight:bold;font-style:italic;text-align:center;font-size:large;text-shadow:1px 1px mintcream;margin-top: 9px; margin-bottom: 9px;font-family:Georgia;')
-        .w3-panel.w3-round-xxlarge.w3-teal
-          h4 LIVE RESULTS
-        div(align='center')
-          .w3-card-4(style='width:80%;')
-            header.w3-container.w3-pink
-              h3 TIME BAZAR
-            .w3-container
-              h2 149-4
-            footer.w3-container.w3-pink
-              input.btn.btn-primary(onclick='window.location.reload()', value='Refresh Result', type='button')
+        //- .w3-panel.w3-round-xxlarge.w3-teal
+        //-   h4 LIVE RESULTS
+      //-   div(align='center')
+      //-     .w3-card-4(style='width:80%;')
+      //-       header.w3-container.w3-pink
+      //-         h3 TIME BAZAR
+      //-       .w3-container
+      //-         h2 149-4
+      //-       footer.w3-container.w3-pink
+      //-         input.btn.btn-primary(onclick='window.location.reload()', value='Refresh Result', type='button')
        
         hr
        
@@ -91,7 +132,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                         header.w3-container.w3-pink
                           h3= sattan.name
                         .w3-container
-                          h2= sattan.number
+                          h6.a= sattan.number
                         footer.w3-container.w3-pink
                           h5= sattan.time
                     
