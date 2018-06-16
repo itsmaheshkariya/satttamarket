@@ -4,14 +4,7 @@ block content
     br
     .collection
         .row
-            .col.s12
-
-                .row
-                    each setting, j in settings
-                        .card.blue-grey.darken-1
-                            .card-content.white-text
-                                span.card-title!= '<b>'+setting.message+'</b>'
-                                    p!= '<p>'+setting.title+'</p>'
+            
           
       
 
@@ -21,7 +14,15 @@ block content
                 a.collection-item.active.center(href="") UPDATE RESULTS
                 each sattan, i in satta
                     a.collection-item(href='/satta/edit/'+sattan._id)= sattan.name
-                        span(style="float:right")= sattan.number
+                        span(style="float:right;background:#26a69a;padding:5px 10px;color:white;border-radius:10px")= sattan.number
+            .col.s12
+
+                //- .row
+                //-     each setting, j in settings
+                //-         .card.blue-grey.darken-1
+                //-             .card-content.white-text
+                //-                 span.card-title!= '<b>'+setting.message+'</b>'
+                //-                     p!= '<p>'+setting.title+'</p>'
 
 
 

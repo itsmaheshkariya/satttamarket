@@ -1,19 +1,23 @@
 extends layout
 block content
     
-    form(method='POST',action='/satta/edit/'+sattan._id)
+    form(method='POST',action='/chart/edit/'+sattan._id)
         .row
-            h3 Satta Updater 
+            h3 Add To Chart 
         .col.s12
             .row
                 .input-field.col.s12
-                    label Name:
+                    label(style="margin-left:120px") Name:
                     input.form-control(name='name',type='text',value=sattan.name)
 
             .row
                 .input-field.col.s12
-                    label Number:
-                    input.form-control(name='number',type='text',value=sattan.number)
+                    label(style="margin-left:120px") Jodi:
+                    input.form-control(name='jodi',type='text',value=sattan.number)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Patti:
+                    input.form-control(name='patti',type='text',value=sattan.number)
             .row
                 .input-field.col.s12
                     label(style="margin-left:120px") Time
@@ -25,10 +29,7 @@ block content
             .row
                 .input-field.col.s12
                     
-                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Edit
-               
-                    
-                    a.btn.right(type="submit" href="/chart/edit/"+sattan._id) Done
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Submit
             
             
           

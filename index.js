@@ -76,6 +76,10 @@ const upload = multer({ storage });
 
 let Satta = require('./models/satta');
 let satta = require('./routes/satta');
+
+let Chart = require('./models/chart');
+let chart = require('./routes/chart');
+
 let Settings = require('./models/settings');
 let settings = require('./routes/settings');
 let Users = require('./models/user');
@@ -147,6 +151,7 @@ express()
 .use(bodyParser.urlencoded({ extended: false }))
     .use(bodyParser.json())
     .use('/', satta)
+    .use('/', chart)
     .use('/', settings)
     .use('/', users)
     .get('/Upimg', function(req, res) {
@@ -269,6 +274,70 @@ express()
 })
 
 
-.get('/Charts', (req, res) => res.render('pages/Charts'))
+// .get('/Charts', (req, res) => res.render('pages/Charts'))
+
+.get('/Charts', function(req, res) {
+
+    Satta.find({}, function(err, sattas) {
+        if (err) {
+            console.log(err);
+        } else {
+
+
+            Settings.find({}, function(err, settings) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.render('pages/Charts', {
+                        title: 'SAT MAT RAT',
+                        satta: sattas,
+                        settings: settings
+                    });
+                }
+            });
+
+
+
+            // res.render('pages/index', {
+            //     title: 'SAT MAT RAT',
+            //     satta: sattas
+            // });
+        }
+    });
+
+
+})
+
+.get('/Show', function(req, res) {
+
+        Satta.find({}, function(err, sattas) {
+            if (err) {
+                console.log(err);
+            } else {
+
+
+                Settings.find({}, function(err, settings) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        res.render('pages/Show', {
+                            title: 'SAT MAT RAT',
+                            satta: sattas,
+                            settings: settings
+                        });
+                    }
+                });
+
+
+
+                // res.render('pages/index', {
+                //     title: 'SAT MAT RAT',
+                //     satta: sattas
+                // });
+            }
+        });
+
+
+    })
     .get('/cool', (req, res) => res.send(cool()))
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))

@@ -103,7 +103,7 @@ router.delete('/:id', ensureAuthenticated, function(req, res) {
             } else {
                 {
 
-                    res.redirect('/');
+                    res.redirect('/Results');
                 }
             }
         })
