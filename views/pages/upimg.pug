@@ -7,7 +7,7 @@ block content
             
         .col.s6
             form(action="/Upimg/upload",method="POST",enctype="multipart/form-data")
-                .file-field.input-field
+                .file-field.input-field(id='messages')
                     .btn
                         span File
                         input(type="file",name="file",id="file")
@@ -30,7 +30,7 @@ block content
                     //- td Edit
                     td Delete
                    
-     
+                
                 each file, i in files
                     tbody
                         td
