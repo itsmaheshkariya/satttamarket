@@ -24,7 +24,6 @@ require('./config/passport')(passport);
 
 
 
-
 // function ensureAuthenticated(req, res, next) {
 //     if (req.isAuthenticated()) {
 //         return next();
@@ -221,7 +220,101 @@ express()
 
 
     })
-    .get('/Upimg/files', (req, res) => {
+    .get('/', (req, res) => {
+
+
+
+        gfs.files.find().toArray((err, files) => {
+
+
+            if (!files || files.length === 0) {
+                res.render('pages/upimg', { files: false });
+
+            } else {
+                files.map(file => {
+                    if (file) {
+                        if (file.contentType === 'image/jpeg' || file.contentType === 'image/jpg' || file.contentType === 'image/png') {
+                            file.isImage = true;
+                        } else {
+                            file.isImage = false;
+                        }
+                    }
+                })
+            }
+            Satta.find({}, function(err, sattas) {
+                if (err) {
+                    console.log(err);
+                } else {
+
+
+                    Settings.find({}, function(err, settings) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+
+
+
+
+                            Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
+                                res.render('pages/output', {
+                                    title: 'SAT MAT RAT',
+                                    satta: sattas,
+                                    chartn: charts,
+                                    settings: settings,
+                                    files: files
+                                });
+                            });
+
+
+
+
+
+
+
+                        }
+                    });
+
+
+
+
+                }
+            });
+            // res.render('pages/upimg', { files: files });
+
+
+
+
+
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    })
+
+
+.get('/Upimg/files', (req, res) => {
         gfs.files.find().toArray((err, files) => {
             //Check files
 
@@ -310,34 +403,38 @@ express()
 
 .get('/Show', function(req, res) {
 
-        Satta.find({}, function(err, sattas) {
-            if (err) {
-                console.log(err);
-            } else {
+    Satta.find({}, function(err, sattas) {
+        if (err) {
+            console.log(err);
+        } else {
 
 
-                Settings.find({}, function(err, settings) {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        res.render('pages/Show', {
-                            title: 'SAT MAT RAT',
-                            satta: sattas,
-                            settings: settings
-                        });
-                    }
-                });
+            Settings.find({}, function(err, settings) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.render('pages/Show', {
+                        title: 'SAT MAT RAT',
+                        satta: sattas,
+                        settings: settings
+                    });
+                }
+            });
 
 
 
-                // res.render('pages/index', {
-                //     title: 'SAT MAT RAT',
-                //     satta: sattas
-                // });
-            }
-        });
+            // res.render('pages/index', {
+            //     title: 'SAT MAT RAT',
+            //     satta: sattas
+            // });
+        }
+    });
 
 
-    })
-    .get('/cool', (req, res) => res.send(cool()))
+})
+
+
+
+
+.get('/cool', (req, res) => res.send(cool()))
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))

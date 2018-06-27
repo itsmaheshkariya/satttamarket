@@ -16,6 +16,29 @@ router.get('/Show/:id', function(req, res) {
         });
     });
 })
+
+
+router.get('/Show/client/:id', function(req, res) {
+    // Chart.find({unikey:''+req.params.id});
+    Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
+        res.render('pages/show-client', {
+            title: 'SATMATRAT',
+            chartn: charts
+        });
+    });
+})
+
+
+
+router.get('/Show/Numbers/client/:id', function(req, res) {
+    // Chart.find({unikey:''+req.params.id});
+    Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
+        res.render('pages/show-client-numbers', {
+            title: 'SATMATRAT',
+            chartn: charts
+        });
+    });
+})
 router.get('/Show/Numbers/:id', function(req, res) {
     // Chart.find({unikey:''+req.params.id});
     Chart.find({ unikey: '' + req.params.id }, function(err, charts) {

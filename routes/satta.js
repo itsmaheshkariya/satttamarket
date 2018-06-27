@@ -16,7 +16,7 @@ function ensureAuthenticated(req, res, next) {
     }
 }
 
-router.get('/', ensureAuthenticated, function(req, res) {
+router.get('/admin', ensureAuthenticated, function(req, res) {
 
     Satta.find({}, function(err, sattas) {
         if (err) {
