@@ -21,7 +21,7 @@ router.get('/Show/:id', function(req, res) {
 router.get('/Show/Patti/:id', function(req, res) {
     // Chart.find({unikey:''+req.params.id});
     Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
-        res.render('pages/show-client', {
+        res.render('pages/show-client-numbers', {
             title: 'SATMATRAT',
             chartn: charts
         });
