@@ -1,6 +1,6 @@
 style.
   .a {
-  width: 100%;
+ 
   font-size: 20px;
  
   text-align: center;
@@ -23,21 +23,8 @@ style.
   -moz-transition:all .8s ease-in-out;
   -webkit-transition:all .8s ease-in-out;
   }
-  @media screen and (max-width:768px) {
-  body {
-  background:red;
-  }
-  .a{
-  font-size:90px;
-  }
-  }
-  @media screen and (max-width:480px) {
-  body {
-  background:yellow;
-  }
-  .a{
-  font-size:50px;
-  }
+  
+  
   }
 doctype html
 html(xmlns='http://www.w3.org/1999/xhtml')
@@ -57,8 +44,8 @@ html(xmlns='http://www.w3.org/1999/xhtml')
     
   style.
     .my-img{
-        height:50%;
-        width:30%;
+        height:700px;
+        width:400px;
     }
     .logo {
     color: #FF1493;
@@ -602,8 +589,8 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                 h5
                   | Game By:- SATMATRAT 
                   br
-                big
-                  | Call 07939593234
+                //- big
+                //-   | Call 07939593234
                 hr
           font(color='#FF1493')
             div(align='center')
@@ -699,29 +686,8 @@ html(xmlns='http://www.w3.org/1999/xhtml')
               ul.list-group
                 each sattan, i in satta
                     li.list-group-item.list-group-item-success
-                        a(href='/Show/client/'+sattan.id, style='color:blue')= sattan.name+' CHART'
-                //- li.list-group-item.list-group-item-info
-                //-   a(href='chart.html', style='color: blue') Kalyan Chart
-                //- li.list-group-item.list-group-item-warning
-                //-   a(href='chart.html', style='color: blue') Mumbai Chart
-                //- li.list-group-item.list-group-item-danger
-                //-   a(href='chart.html', style='color: blue') Milan Day Chart
-                //- li.list-group-item.list-group-item-success
-                //-   a(href='chart.html', style='color:blue') Milan Night Chart
-                //- li.list-group-item.list-group-item-info
-                //-   a(href='chart.html', style='color: blue') Super Ratan Chart
-                //- li.list-group-item.list-group-item-warning
-                //-   a(href='chart.html', style='color: blue') Rajdhani Day Chart
-                //- li.list-group-item.list-group-item-danger
-                //-   a(href='chart.html', style='color: blue') Rajdhani Night Chart
-                //- li.list-group-item.list-group-item-success
-                //-   a(href='chart.html', style='color:blue') Tara Mumbai Day Chart
-                //- li.list-group-item.list-group-item-info
-                //-   a(href='chart.html', style='color: blue') Tara Mumbai Night Chart
-                //- li.list-group-item.list-group-item-warning
-                //-   a(href='chart.html', style='color: blue') Mumbai Chart
-                //- li.list-group-item.list-group-item-danger
-                //-   a(href='chart.html', style='color: blue') Milan Day Chart
+                        a(href='/Show/Patti/'+sattan.id, style='color:blue')= sattan.name+' CHART'
+              
             .pannel(align='center')
               h3  Matka 
                 | Jodi Chart
@@ -729,45 +695,8 @@ html(xmlns='http://www.w3.org/1999/xhtml')
             ul.list-group
                 each sattan, i in satta
                     li.list-group-item.list-group-item-success
-                        a(href='/Show/Numbers/client/'+sattan.id, style='color:blue')= sattan.name
-            //-   li.list-group-item.list-group-item-info
-            //-     a(href='chart.html', style='color: blue') Kalyan Penal Chart
-            //-   li.list-group-item.list-group-item-warning
-            //-     a(href='chart.html', style='color: blue') Mumbai Penal Chart
-            //-   li.list-group-item.list-group-item-danger
-            //-     a(href='chart.html', style='color: blue') Milan Day Penal Chart
-            //-   li.list-group-item.list-group-item-success
-            //-     a(href='chart.html', style='color:blue') Milan Night Penal Chart
-            //-   li.list-group-item.list-group-item-info
-            //-     a(href='chart.html', style='color: blue') Super Ratan Penal Chart
-            //-   li.list-group-item.list-group-item-warning
-            //-     a(href='chart.html', style='color: blue') Rajdhani Day Panel Chart
-            //-   li.list-group-item.list-group-item-danger
-            //-     a(href='chart.html', style='color: blue') Rajdhani Night Panel Chart
-            //-   li.list-group-item.list-group-item-success
-            //-     a(href='chart.html', style='color:blue') Tara Mumbai Day panel Chart
-            //-   li.list-group-item.list-group-item-info
-            //-     a(href='chart.html', style='color: blue') Tara Mumbai Night panel Chart
-            //- br
-            //- .pannel(align='center') EXTRA MATKA CHARTS
-            //- br
-            //- ul.list-group
-            //-   li.list-group-item.list-group-item-success
-            //-     a(href='chart.html', style='color:blue') One Time Chart
-            //-   li.list-group-item.list-group-item-info
-            //-     a(href='chart.html', style='color: blue') Gowa Day Chart
-            //-   li.list-group-item.list-group-item-warning
-            //-     a(href='chart.html', style='color: blue') Lokmat Day Chart
-            //-   li.list-group-item.list-group-item-danger
-            //-     a(href='chart.html', style='color: blue') Central Bombay Chart
-            //-   li.list-group-item.list-group-item-success
-            //-     a(href='chart.html', style='color:blue') Akola Prabhat Night Chartt
-            //-   li.list-group-item.list-group-item-info
-            //-     a(href='chart.html', style='color: blue') Lokmat Day Penal Chart
-            //-   li.list-group-item.list-group-item-warning
-            //-     a(href='chart.html', style='color: blue') Bombay Rajshree Day panel Chart
-            //-   li.list-group-item.list-group-item-danger
-            //-     a(href='chart.html', style='color: blue') Bombay Rajshree Night panel Chart
+                        a(href='/Show/Jodi/'+sattan.id, style='color:blue')= sattan.name+' CHART'
+           
             br
             .pannel(align='center') WARNING
             br
