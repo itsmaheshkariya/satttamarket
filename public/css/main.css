@@ -36,6 +36,33 @@ a.logo {
     text-align: center;
 }
 
+.flex-container1 {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.flex-item1 {
+    border-radius: 30px;
+    background: tomato;
+    padding: 10px;
+    width: 190px;
+    height: 170px;
+    margin-top: 10px;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
 .a {
     width: 100%;
     font-size: 100px;
