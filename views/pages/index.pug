@@ -17,8 +17,12 @@ block content
                     input.form-control(name='number',type='text')
             .row
                 .input-field.col.s12
-                    label(style="margin-left:120px") Time
+                    label(style="margin-left:120px") Time 1
                     input.form-control(name='time',type='time')
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Time 2
+                    input.form-control(name='time1',type='time1')
             .row
                 .input-field.col.s12
                     label(style="margin-left:120px") Date
@@ -34,7 +38,8 @@ block content
                 thead
                     td Name
                     td Number
-                    td Time
+                    td Time 1
+                    td Time 2
                     td Date
                     td Edit
                     td Delete
@@ -45,6 +50,7 @@ block content
                         td= sattan.name
                         td= sattan.number
                         td= sattan.time
+                        td= sattan.time1
                         td= sattan.date
                         td
                             a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/satta/edit/'+sattan._id)

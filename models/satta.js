@@ -18,6 +18,10 @@ let sattaSchema = mongoose.Schema({
         type: String,
         required: false
     },
+    time1: {
+        type: String,
+        required: false
+    },
     date: {
         type: String,
         required: false

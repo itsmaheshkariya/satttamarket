@@ -71,6 +71,7 @@ router.post('/chart/edit/:id', function(req, res) {
     chart.jodi = req.body.jodi;
     chart.patti = req.body.patti;
     chart.time = req.body.time;
+    chart.time1 = req.body.time1;
     chart.date = req.body.date;
 
 

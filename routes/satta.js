@@ -52,6 +52,7 @@ router.post('/satta', ensureAuthenticated, function(req, res) {
     satta.name = req.body.name;
     satta.number = req.body.number;
     satta.time = req.body.time;
+    satta.time1 = req.body.time1;
     satta.date = req.body.date;
 
 
@@ -94,6 +95,7 @@ router.delete('/satta/delete/:id', ensureAuthenticated, function(req, res) {
         satta.number = req.body.number;
         satta.date = req.body.date;
         satta.time = req.body.time;
+        satta.time1 = req.body.time1;
 
 
         let query = { _id: req.params.id }
