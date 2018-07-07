@@ -61,7 +61,7 @@ router.post('/satta', ensureAuthenticated, function(req, res) {
         } else {
             {
 
-                res.redirect('/');
+                res.redirect('/admin');
             }
         }
     });
