@@ -81,7 +81,7 @@ router.post('/chart/edit/:id', function(req, res) {
         } else {
             {
 
-                res.redirect('/');
+                res.redirect('/admin');
             }
         }
     });
