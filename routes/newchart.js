@@ -9,7 +9,7 @@ let Satta = require('../models/satta');
 
 router.get('/patti/:id', function(req, res) {
     // Chart.find({unikey:''+req.params.id});
-    Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
+    NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
         res.render('pages/patti', {
             title: 'SATMATRAT',
             chartn: charts
