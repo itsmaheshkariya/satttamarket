@@ -1,0 +1,56 @@
+extends layout
+block content
+    
+    form(method='POST',action='/patti/chart/edit/'+sattan._id)
+        .row
+            h3 Add To Chart 
+        .col.s12
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Name:
+                    input.form-control(name='name',type='text',value=sattan.name)
+
+            
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") :
+                    input.form-control(name='l1',type='text')
+                    input.form-control(name='l2',type='text')
+                    input.form-control(name='l3',type='text')
+                    input.form-control(name='m1',type='text')
+                    input.form-control(name='m2',type='text')
+                    input.form-control(name='r1',type='text')
+                    input.form-control(name='r2',type='text')
+                    input.form-control(name='r3',type='text')
+            
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Time 1
+                    input.form-control(name='time',type='time',value=sattan.time)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Time 2
+                    input.form-control(name='time1',type='time1',value=sattan.time1)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Date
+                    input.form-control(name='date',type='date',value=sattan.date)
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Submit
+            
+            
+          
+          
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   
