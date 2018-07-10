@@ -48,7 +48,7 @@ router.get('/Show/Numbers/:id', function(req, res) {
         });
     });
 })
-router.get('/patti/chart/edit', function(req, res) {
+router.get('/chart/edit', function(req, res) {
     res.render('pages/submittochart');
 })
 router.get('/chart/edit/:id', function(req, res) {
