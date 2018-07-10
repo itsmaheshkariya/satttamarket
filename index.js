@@ -154,7 +154,13 @@ express()
     });
 })
 
-
+.get('/number/:id', function(req, res) {
+    NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
+        res.render('pages/number', {
+            chartnn: charts
+        });
+    });
+})
 
 
 
