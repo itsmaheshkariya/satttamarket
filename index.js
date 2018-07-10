@@ -165,7 +165,7 @@ express()
     Satta.findById(req.params.id, function(err, findtitle) {
 
     NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
-        res.render('pages/nummber', {
+        res.render('pages/number', {
             chartnn: charts,
             findtitlen: findtitle
         });
