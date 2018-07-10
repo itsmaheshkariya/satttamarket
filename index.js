@@ -143,6 +143,10 @@ express()
 })
 
 
+.get('/patti', function(req, res) {
+   res.render('pages/patti')
+})
+
 
 
 
