@@ -160,14 +160,28 @@ express()
     });
 
 })
-
 .get('/number/:id', function(req, res) {
+
+    Satta.findById(req.params.id, function(err, findtitle) {
+
     NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
-        res.render('pages/number', {
-            chartnn: charts
+        res.render('pages/nummber', {
+            chartnn: charts,
+            findtitlen: findtitle
         });
     });
+
+    });
+
 })
+
+// .get('/number/:id', function(req, res) {
+//     NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
+//         res.render('pages/number', {
+//             chartnn: charts
+//         });
+//     });
+// })
 
 
 
