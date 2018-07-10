@@ -79,8 +79,8 @@ let satta = require('./routes/satta');
 let Chart = require('./models/chart');
 let chart = require('./routes/chart');
 
-let Chart = require('./models/newchart');
-let chart = require('./routes/newchart');
+let NewChart = require('./models/newchart');
+let newchart = require('./routes/newchart');
 
 let Settings = require('./models/settings');
 let settings = require('./routes/settings');
