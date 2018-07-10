@@ -102,3 +102,10 @@ a.logo {
 p{
     font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
+.myinput{
+height:20px;
+width:20px;
+border:1px solid black ;
+margin-left:5px;
+float:left;
+}
