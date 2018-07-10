@@ -12,7 +12,7 @@ router.get('/patti/:id', function(req, res) {
     NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
         res.render('pages/patti', {
             title: 'SATMATRAT',
-            chartn: charts
+            chartnn: charts
         });
     });
 })

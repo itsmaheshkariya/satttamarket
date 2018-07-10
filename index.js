@@ -147,9 +147,9 @@ express()
 
 
 .get('/patti/:id', function(req, res) {
-    Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
+    NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
         res.render('pages/patti', {
-            chartn: charts
+            chartnn: charts
         });
     });
 })
