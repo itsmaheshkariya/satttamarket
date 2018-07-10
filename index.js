@@ -79,6 +79,9 @@ let satta = require('./routes/satta');
 let Chart = require('./models/chart');
 let chart = require('./routes/chart');
 
+let Chart = require('./models/newchart');
+let chart = require('./routes/newchart');
+
 let Settings = require('./models/settings');
 let settings = require('./routes/settings');
 let Users = require('./models/user');
@@ -159,6 +162,7 @@ express()
     .use(bodyParser.json())
     .use('/', satta)
     .use('/', chart)
+    .use('/', newchart)
     .use('/', settings)
     .use('/', users)
     .get('/Upimg', function(req, res) {
