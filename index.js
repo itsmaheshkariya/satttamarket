@@ -147,11 +147,18 @@ express()
 
 
 .get('/patti/:id', function(req, res) {
+
+    Satta.findById(req.params.id, function(err, findtitle) {
+
     NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
         res.render('pages/patti', {
-            chartnn: charts
+            chartnn: charts,
+            findtitlen: findtitle
         });
     });
+
+    });
+
 })
 
 .get('/number/:id', function(req, res) {
