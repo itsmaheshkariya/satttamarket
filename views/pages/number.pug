@@ -41,8 +41,8 @@ html(xmlns='http://www.w3.org/1999/xhtml')
         br
         table(border='1')
           tbody
-            
-            each o, i/7 in chartnn
+            - var countrows = chartnn.length/7 + 1
+            each val in [countrows]
               tr
                 each val, i in chartnn
                   
