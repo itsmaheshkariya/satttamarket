@@ -46,8 +46,8 @@ html(xmlns='http://www.w3.org/1999/xhtml')
             -for (var k = 0; k < countrows; k++)
               tr
                 each val, i in chartnn
-                  
-                  td=  val.m1+val.m2+i
+                  -if (i<7)
+                    td=  val.m1+val.m2
                   
               
     // Global site tag (gtag.js) - Google Analytics
