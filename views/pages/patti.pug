@@ -177,33 +177,32 @@ i
           td(align="center" style="padding-right:7px;" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
             font(size="4") SUN
       tbody
-        each val in [1, 2, 3, 4, 5]
-          tr
-            td
-              p
-                | 09/07/18
-                br
-                | to
-                br
-                | 15/07/18
-            each val, i in chartnn
-              div
+        tr
+          td
+            p
+              | 09/07/18
+              br
+              | to
+              br
+              | 15/07/18
+          each val, i in chartnn
+            div
 
-                  td
-                      span= val.l1
-                      br
-                      span= val.l2
-                      br
+                td
+                    span= val.l1
+                    br
+                    span= val.l2
+                    br
 
-                      span= val.l3
-                  td
-                      span.normal= val.m1+val.m2
-                  td
-                      span= val.r1
-                      br
-                      span= val.r2
-                      br
-                      span= val.r3
+                    span= val.l3
+                td
+                    span.normal= val.m1+val.m2
+                td
+                    span= val.r1
+                    br
+                    span= val.r2
+                    br
+                    span= val.r3
           
   style.
     /* demo-pricing */
