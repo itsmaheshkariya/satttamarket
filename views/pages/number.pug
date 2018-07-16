@@ -41,14 +41,15 @@ html(xmlns='http://www.w3.org/1999/xhtml')
         br
         table(border='1')
           tbody
-            
+            -val l =7
             - var countrows = chartnn.length/7
-            -for (var k = 0; k < countrows; k++)
+            -for (var k = 1; k <= countrows; k++)
               tr
                 
-                each val, i+5 in chartnn
-                  -if (i<7)
-                    td=  val.m1+val.m2
+                each val, i in chartnn
+                  -if (i<=7)
+                    -if ((i<=l*k)&&(i>l*(k-1)))
+                      td=  val.m1+val.m2
                   
               
     // Global site tag (gtag.js) - Google Analytics
