@@ -41,11 +41,11 @@ html(xmlns='http://www.w3.org/1999/xhtml')
         br
         table(border='1')
           tbody
-            -var countrows = 1
-            each val in [countrows]
+            
+            each o, i/7 in chartnn
               tr
                 each val, i in chartnn
-                  -var countrows = i/7 + 1
+                  
                   td=  val.m1+val.m2
               
     // Global site tag (gtag.js) - Google Analytics
