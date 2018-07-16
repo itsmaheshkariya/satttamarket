@@ -102,11 +102,11 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                     each sattan, i in satta
                       div(style='margin-top:15px')
                       .w3-card-4(style='width:80%;')
-                        header.w3-container.w3-pink
+                        header(style='background:'+sattan.bgcolor+'').w3-container.w3-pink
                           h3= sattan.name
                         .w3-container
                           p.a= sattan.number
-                        footer.w3-container.w3-pink
+                        footer(style='background:'+sattan.bgcolor+'').w3-container.w3-pink
                           h5!= sattan.time +" "+sattan.time1
                     
             b
