@@ -56,6 +56,7 @@ router.post('/patti/chart/edit/:id', function(req, res) {
     newchart.time = req.body.time;
     newchart.time1 = req.body.time1;
     newchart.date = req.body.date;
+    newchart.color = req.body.color;
 
 
     newchart.save(function(err) {

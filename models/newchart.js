@@ -57,7 +57,12 @@ let newchartSchema = mongoose.Schema({
     date: {
         type: String,
         required: false
+    },
+    color: {
+        type: String,
+        required: false
     }
+
 
 
 

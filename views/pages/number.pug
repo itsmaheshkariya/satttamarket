@@ -11,11 +11,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
     script(src='https://pagead2.googlesyndication.com/pagead/js/r20180709/r20180604/osd.js')
     script(src='https://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-5811859434860094.js')
     script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
-    script.
-      (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-5811859434860094",
-      enable_page_level_ads: true
-      });
+    
     meta(forua='true', http-equiv='Cache-Control', content='max-age=0')
     style(type='text/css').
       body { background-color: #FFCC99;
@@ -41,7 +37,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
     link(rel='preload', href='https://adservice.google.co.in/adsid/integrator.js?domain=dpboss.net', as='script')
     script(type='text/javascript', src='https://adservice.google.co.in/adsid/integrator.js?domain=dpboss.net')
     link(rel='preload', href='https://adservice.google.com/adsid/integrator.js?domain=dpboss.net', as='script')
-    script(type='text/javascript', src='https://adservice.google.com/adsid/integrator.js?domain=dpboss.net')
+    
   body
     div(style='background-color:#FFCC99;color:black;font-weight:bold;font-style:italic;text-decoration:none;border-width:3px;border-color:indigo;border-style:solid;margin-top:0;margin-bottom:0;margin-left:5px;margin-right:5px;padding-top:5px;padding-bottom:5px;padding-left:5px;padding-right:5px;border-radius:0;text-shadow:1px 1px #FFCC99;', align='center')
       h1= findtitlen.name
@@ -65,7 +61,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                     - var m= k-1
                     - var y= l*m
                     -if (i>=y)
-                      td.ab=  val.m1+val.m2
+                      td.ab(style='color: #{val.color}')=  val.m1+val.m2
                   
               
     // Global site tag (gtag.js) - Google Analytics
