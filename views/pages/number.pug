@@ -41,16 +41,18 @@ html(xmlns='http://www.w3.org/1999/xhtml')
         br
         table(border='1')
           tbody
-            -val l =7
+            -var l =7
             - var countrows = chartnn.length/7
             -for (var k = 1; k <= countrows; k++)
               tr
                 
                 each val, i in chartnn
-                  -if (i<=7)
-                    -if (i<l*k)
+                  -if (i<7)
+                    -var x =l*k
+                    -if (i<x)
                       - var m= k-1
-                      -if (i>=l*m)
+                      - var y= l*m
+                      -if (i>=y)
                         td=  val.m1+val.m2
                   
               
