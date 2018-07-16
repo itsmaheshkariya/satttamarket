@@ -47,13 +47,13 @@ html(xmlns='http://www.w3.org/1999/xhtml')
               tr
                 
                 each val, i in chartnn
-                  -if (i<7)
-                    -var x =l*k
-                    -if (i<x)
-                      - var m= k-1
-                      - var y= l*m
-                      -if (i>=y)
-                        td=  val.m1+val.m2
+                  
+                  -var x =l*k
+                  -if (i<x)
+                    - var m= k-1
+                    - var y= l*m
+                    -if (i>=y)
+                      td=  val.m1+val.m2
                   
               
     // Global site tag (gtag.js) - Google Analytics
