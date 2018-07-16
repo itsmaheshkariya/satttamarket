@@ -45,8 +45,8 @@ html(xmlns='http://www.w3.org/1999/xhtml')
             - var countrows = chartnn.length/7
             -for (var k = 0; k < countrows; k++)
               tr
-                -var i =5
-                each val, i in chartnn
+                
+                each val, i+5 in chartnn
                   -if (i<7)
                     td=  val.m1+val.m2
                   
