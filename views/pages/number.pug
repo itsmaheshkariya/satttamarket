@@ -42,7 +42,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
         table(border='1')
           tbody
             - var countrows = chartnn.length/7
-            for (var k = 0; k < countrows; k++)
+            -for (var k = 0; k < countrows; k++)
               tr
                 each val, i in chartnn
                   
