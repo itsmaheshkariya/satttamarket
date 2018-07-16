@@ -48,7 +48,9 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                 
                 each val, i in chartnn
                   -if (i<=7)
-                    -if ((i<=l*k)&&(i>l*(k-1)))
+                    -if (i<l*k)
+                      - var m= k-1
+                      -if (i>=l*m)
                       td=  val.m1+val.m2
                   
               
