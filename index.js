@@ -135,7 +135,7 @@ express()
 
 
 
-//Passport middle ware 
+//Passport middle ware
 .use(passport.initialize())
     .use(passport.session())
 
@@ -394,6 +394,30 @@ express()
 
 
     })
+})
+
+
+.delete('/Upimg/images/:filename', (req, res) => {
+    gfs.files.find({ filename: req.params.filename }).toArray((files) => {
+
+      gfs.remove(req.params.filename, function (err, gridStore) {
+          if (err) return handleError(err);
+        console.log('success');
+      })
+
+
+
+
+    })
+
+
+
+
+
+
+
+
+
 })
 
 
