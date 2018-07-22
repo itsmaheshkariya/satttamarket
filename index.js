@@ -398,11 +398,11 @@ express()
 
 
 .delete('/Upimg/images/:filename', (req, res) => {
-    gfs.files.find({ filename: req.params.filename }).toArray((files) => {
+  
 
-      gfs.remove(req.params.filename, function (err, gridStore) {
+      gfs.remove(req.params.filename,  (err) => {
           if (err) return handleError(err);
-        console.log('success');
+           console.log('success');
       })
 
 
@@ -415,10 +415,6 @@ express()
 
 
 
-
-
-
-})
 
 
 // .get('/Charts', (req, res) => res.render('pages/Charts'))
