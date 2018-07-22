@@ -398,11 +398,18 @@ express()
 
 
 .delete('/Upimg/images/:filename', (req, res) => {
-  
 
-      gfs.remove(req.params.filename,  (err) => {
-          if (err) return handleError(err);
-           console.log('success');
+
+      gfs.remove({_id: req.params.id, root:''},  (err, gridStore) => {
+          if (err){
+            res.status(404).json({err:err})
+          }
+          else {
+            {
+              res.redirect('/admin');
+            }
+          }
+
       })
 
 
