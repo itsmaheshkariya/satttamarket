@@ -1,0 +1,54 @@
+extends layout
+block content
+    
+    form(method='POST',action='/livesatta/edit/'+sattan1._id)
+        .row
+            h3 Satta Updater 
+        .col.s12
+            .row
+                .input-field.col.s12
+                    label Name:
+                    input.form-control(name='name',type='text',value=sattan1.name)
+
+            .row
+                .input-field.col.s12
+                    label Number:
+                    input.form-control(name='number',type='text',value=sattan1.number)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Background Color
+                    input.form-control(name='bgcolor',type='text',value=sattan1.bgcolor)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Time 1
+                    input.form-control(name='time',type='time',value=sattan1.time)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Time 2
+                    input.form-control(name='time1',type='time',value=sattan1.time1)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Date
+                    input.form-control(name='date',type='date',value=sattan1.date)
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Edit
+               
+                    
+                  
+            
+            
+          
+          
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   

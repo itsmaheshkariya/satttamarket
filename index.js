@@ -76,6 +76,9 @@ const upload = multer({ storage });
 let Satta = require('./models/satta');
 let satta = require('./routes/satta');
 
+let Live = require('./models/live');
+let live = require('./routes/live');
+
 let Chart = require('./models/chart');
 let chart = require('./routes/chart');
 
@@ -406,7 +409,7 @@ express()
           }
 
               res.redirect('/admin');
-          
+
 
       })
 
