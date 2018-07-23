@@ -60,10 +60,10 @@ router.post('/livesatta', ensureAuthenticated, function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            {
 
-                res.redirect('/live');
-            }
+
+            res.redirect('/live');
+
         }
     });
 })
