@@ -8,7 +8,7 @@ let Settings = require('../models/settings');
 
 
 
-router.get('/live', ensureAuthenticated, function(req, res) {
+router.get('/live', function(req, res) {
 
     Live.find({}, function(err, sattas) {
         if (err) {
@@ -39,7 +39,7 @@ router.get('/live', ensureAuthenticated, function(req, res) {
 
 
 })
-router.post('/livesatta', ensureAuthenticated, function(req, res) {
+router.post('/livesatta', function(req, res) {
     let satta = new Live();
     satta.name = req.body.name;
     satta.number = req.body.number;
@@ -60,7 +60,7 @@ router.post('/livesatta', ensureAuthenticated, function(req, res) {
     });
 })
 
-router.get('/livesatta/edit/:id', ensureAuthenticated, function(req, res) {
+router.get('/livesatta/edit/:id', function(req, res) {
     Live.findById(req.params.id, function(err, sattas) {
         res.render('pages/liveedit', {
             title: 'SATMATRAT',
@@ -71,7 +71,7 @@ router.get('/livesatta/edit/:id', ensureAuthenticated, function(req, res) {
 
 
 
-router.delete('/livesatta/delete/:id', ensureAuthenticated, function(req, res) {
+router.delete('/livesatta/delete/:id', function(req, res) {
         let query = { _id: req.params.id }
 
         Live.remove(query, function(err) {
@@ -81,7 +81,7 @@ router.delete('/livesatta/delete/:id', ensureAuthenticated, function(req, res) {
             res.redirect('/live');
         })
     })
-    .post('/livesatta/edit/:id', ensureAuthenticated, function(req, res) {
+    .post('/livesatta/edit/:id', function(req, res) {
         let satta = {};
         satta.name = req.body.name;
         satta.number = req.body.number;
