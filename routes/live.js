@@ -64,7 +64,7 @@ router.get('/livesatta/edit/:id', function(req, res) {
     Live.findById(req.params.id, function(err, sattas) {
         res.render('pages/liveedit', {
             title: 'SATMATRAT',
-            sattan: sattas
+            sattan1: sattas
         });
     });
 })
