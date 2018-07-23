@@ -30,7 +30,7 @@ router.get('/live', ensureAuthenticated, function(req, res) {
                 } else {
                     res.render('pages/live', {
                         title: 'SAT MAT RAT',
-                        satta: sattas,
+                        satta1: sattas,
                         settings: settings
                     });
                 }
