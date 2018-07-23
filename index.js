@@ -395,27 +395,20 @@ express()
 
     })
 })
-.delete('/files/:id', (req, res) => {
-  gfs.remove({ _id: req.params.id, root: 'uploads' }, (err, gridStore) => {
-    if (err) {
-      return res.status(404).json({ err: err });
-    }
-
-    res.redirect('/');
-  });
-
-.delete('/Upimg/images/:id', (req, res) => {
 
 
-      gfs.remove({_id: req.params.id},  (err, gridStore) => {
+.delete('/Upimg/images/:filename', (req, res) => {
+
+
+      gfs.remove({filename: req.params.id, root:''},  (err, gridStore) => {
           if (err){
             res.status(404).json({err:err})
           }
-          else
+          else {
             {
               res.redirect('/admin');
             }
-          
+          }
 
       })
 
