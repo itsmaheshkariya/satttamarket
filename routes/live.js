@@ -56,7 +56,7 @@ router.post('/livesatta', ensureAuthenticated, function(req, res) {
     live.date = req.body.date;
     live.bgcolor = req.body.bgcolor;
 
-    live.save(function(err) {
+    Live.save(function(err) {
         if (err) {
             console.log(err);
         } else {
