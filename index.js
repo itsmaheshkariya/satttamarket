@@ -402,7 +402,7 @@ express()
     }
 
     res.redirect('/Upimg');
-  });
+  })
 
 // .delete('/Upimg/images/:id', (req, res) => {
 //
