@@ -7,14 +7,6 @@ let Settings = require('../models/settings');
 
 
 
-function ensureAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    } else {
-        req.flash('danger', 'please login');
-        res.redirect('/login');
-    }
-}
 
 router.get('/live', ensureAuthenticated, function(req, res) {
 
@@ -48,31 +40,31 @@ router.get('/live', ensureAuthenticated, function(req, res) {
 
 })
 router.post('/livesatta', ensureAuthenticated, function(req, res) {
-    let live = new Live();
-    live.name = req.body.name;
-    live.number = req.body.number;
-    live.time = req.body.time;
-    live.time1 = req.body.time1;
-    live.date = req.body.date;
-    live.bgcolor = req.body.bgcolor;
+    let satta = new Live();
+    satta.name = req.body.name;
+    satta.number = req.body.number;
+    satta.time = req.body.time;
+    satta.time1 = req.body.time1;
+    satta.date = req.body.date;
+    satta.bgcolor = req.body.bgcolor;
 
-    Live.save(function(err) {
+    satta.save(function(err) {
         if (err) {
             console.log(err);
         } else {
+            {
 
-
-            res.redirect('/live');
-
+                res.redirect('/live');
+            }
         }
     });
 })
 
 router.get('/livesatta/edit/:id', ensureAuthenticated, function(req, res) {
-    Live.findById(req.params.id, function(err, lives) {
+    Live.findById(req.params.id, function(err, sattas) {
         res.render('pages/liveedit', {
             title: 'SATMATRAT',
-            sattan1: lives
+            sattan: sattas
         });
     });
 })
@@ -90,22 +82,22 @@ router.delete('/livesatta/delete/:id', ensureAuthenticated, function(req, res) {
         })
     })
     .post('/livesatta/edit/:id', ensureAuthenticated, function(req, res) {
-        let live = {};
-        live.name = req.body.name;
-        live.number = req.body.number;
-        live.date = req.body.date;
-        live.time = req.body.time;
-        live.time1 = req.body.time1;
-        live.bgcolor = req.body.bgcolor;
+        let satta = {};
+        satta.name = req.body.name;
+        satta.number = req.body.number;
+        satta.date = req.body.date;
+        satta.time = req.body.time;
+        satta.time1 = req.body.time1;
+        satta.bgcolor = req.body.bgcolor;
 
         let query = { _id: req.params.id }
-        Live.update(query, live, function(err) {
+        Live.update(query, satta, function(err) {
             if (err) {
                 console.log(err);
             } else {
                 {
 
-                    res.redirect('/live');
+                    res.redirect('/Results');
                 }
             }
         })
