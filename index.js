@@ -397,7 +397,7 @@ express()
 })
 
 
-.delete('/Upimg/images/:filename', (req, res) => {
+.delete('/Upimg/images/:id', (req, res) => {
 
 
       gfs.remove({_id: req.params.id},  (err, gridStore) => {
