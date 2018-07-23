@@ -151,32 +151,32 @@ express()
 
 .get('/patti/:id', function(req, res) {
 
-    Satta.findById(req.params.id, function(err, findtitle) {
+        Satta.findById(req.params.id, function(err, findtitle) {
 
-    NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
-        res.render('pages/patti', {
-            chartnn: charts,
-            findtitlen: findtitle
+            NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
+                res.render('pages/patti', {
+                    chartnn: charts,
+                    findtitlen: findtitle
+                });
+            });
+
         });
-    });
 
-    });
+    })
+    .get('/number/:id', function(req, res) {
 
-})
-.get('/number/:id', function(req, res) {
+        Satta.findById(req.params.id, function(err, findtitle) {
 
-    Satta.findById(req.params.id, function(err, findtitle) {
+            NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
+                res.render('pages/number', {
+                    chartnn: charts,
+                    findtitlen: findtitle
+                });
+            });
 
-    NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
-        res.render('pages/number', {
-            chartnn: charts,
-            findtitlen: findtitle
         });
-    });
 
-    });
-
-})
+    })
 
 // .get('/number/:id', function(req, res) {
 //     NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
@@ -191,7 +191,7 @@ express()
 .use(bodyParser.urlencoded({ extended: false }))
     .use(bodyParser.json())
     .use('/', satta)
-      .use('/', live)
+    .use('/', live)
     .use('/', chart)
     .use('/', newchart)
     .use('/', settings)
@@ -284,41 +284,51 @@ express()
                     }
                 })
             }
-            Satta.find({}, function(err, sattas) {
+
+
+
+            Live.find({}, function(err, lives) {
                 if (err) {
                     console.log(err);
                 } else {
 
-
-                    Settings.find({}, function(err, settings) {
+                    Satta.find({}, function(err, sattas) {
                         if (err) {
                             console.log(err);
                         } else {
 
 
+                            Settings.find({}, function(err, settings) {
+                                if (err) {
+                                    console.log(err);
+                                } else {
 
 
-                            Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
-                                res.render('pages/output', {
-                                    title: 'SAT MAT RAT',
-                                    satta: sattas,
-                                    chartn: charts,
-                                    settings: settings,
-                                    files: files
-                                });
+
+
+                                    Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
+                                        res.render('pages/output', {
+                                            title: 'SAT MAT RAT',
+                                            satta: sattas,
+                                            live: lives,
+                                            chartn: charts,
+                                            settings: settings,
+                                            files: files
+                                        });
+                                    });
+
+
+
+
+
+
+
+                                }
                             });
-
-
-
-
-
-
-
                         }
-                    });
 
 
-
+                    })
 
                 }
             });
@@ -404,20 +414,20 @@ express()
 .delete('/Upimg/images/:id', (req, res) => {
 
 
-      gfs.remove({_id: req.params.id, root:'uploads'},  (err, gridStore) => {
-          if (err){
-            res.status(404).json({err:err})
-          }
+    gfs.remove({ _id: req.params.id, root: 'uploads' }, (err, gridStore) => {
+        if (err) {
+            res.status(404).json({ err: err })
+        }
 
-              res.redirect('/admin');
-
-
-      })
-
-
+        res.redirect('/admin');
 
 
     })
+
+
+
+
+})
 
 
 

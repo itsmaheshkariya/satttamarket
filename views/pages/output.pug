@@ -92,7 +92,25 @@ html(xmlns='http://www.w3.org/1999/xhtml')
         big
           | WORLD ME SABSE FAST SATTA MATKA RESULT
       big
-        big
+        big Live Results
+          div(align='center')
+            div(style='background:white')
+              b
+                font(size='4')
+                  b
+                    font(size='5')
+                    each liven, j in live
+                      div(style='margin-top:15px')
+                      .w3-card-4(style='width:80%;')
+                        header(class='w3-container w3-'+liven.bgcolor+'')
+                          h3= liven.name
+                        .w3-container
+                          p.a= liven.number
+                        footer(class='w3-container w3-'+liven.bgcolor+'')
+                          h5!= liven.time +" "+liven.time1
+          br
+          br
+          hr
           div(align='center')
             div(style='background:white')
               b

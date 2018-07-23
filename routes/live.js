@@ -97,7 +97,7 @@ router.delete('/livesatta/delete/:id', function(req, res) {
             } else {
                 {
 
-                    res.redirect('/Results');
+                    res.redirect('/live');
                 }
             }
         })
