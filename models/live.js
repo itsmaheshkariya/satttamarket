@@ -5,11 +5,19 @@ let mongoose = require('mongoose');
 
 
 let liveSchema = mongoose.Schema({
+    unikey: {
+        type: String,
+        required: false
+    },
     name: {
         type: String,
         required: false
     },
     number: {
+        type: String,
+        required: false
+    },
+    bgcolor: {
         type: String,
         required: false
     },
@@ -24,12 +32,7 @@ let liveSchema = mongoose.Schema({
     date: {
         type: String,
         required: false
-    },
-    bgcolor: {
-        type: String,
-        required: false
     }
-
 
 
 
