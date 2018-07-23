@@ -42,7 +42,7 @@ block content
                         //-     a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom")
                         //-         i.fa.fa-pencil 
                         td
-                            form(action='/Upimg/images/'+file.filename+'?_method=DELETE',method='POST')
+                            form(action='/Upimg/images/'+file._id+'?_method=DELETE',method='POST')
                                 button.btn.btn-dark(type='submit' title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right")
                                     i.fa.fa-trash
                 
