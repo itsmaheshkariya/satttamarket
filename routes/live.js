@@ -49,7 +49,7 @@ router.get('/live', ensureAuthenticated, function(req, res) {
 })
 router.post('/livesatta', ensureAuthenticated, function(req, res) {
     let live = new Live();
-    live.name = req.body.name;
+    live.sname = req.body.sname;
     live.number = req.body.number;
     live.time = req.body.time;
     live.time1 = req.body.time1;
