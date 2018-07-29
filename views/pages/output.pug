@@ -15,6 +15,7 @@ style.
 doctype html
 html(xmlns='http://www.w3.org/1999/xhtml')
   head
+    
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title SAT MAT RAT(सटमटरट)
@@ -24,11 +25,13 @@ html(xmlns='http://www.w3.org/1999/xhtml')
     meta(http-equiv='pragma', content='no-cache')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='google-site-verification', content='rp6W1xafL6sqKiIvmj0ndeLLFF7OfXPslrWxXCfFycU')
+    link(rel='stylesheet', href='css/maino.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Pacifico|Roboto')
     
   style.
+    	   
     .my-img{
         height:500px;
         width:300px;
@@ -39,7 +42,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
     font-size: 3em;
     }
     body {
-    border: 3px solid #FF1493;
+    border: 3px solid #FFFFFF;
     width: 100%;
     height: 100%;
     background: black;
@@ -105,7 +108,8 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                         header(class='w3-container w3-'+liven.bgcolor+'')
                           h3= liven.name
                         .w3-container
-                          p.a= liven.number
+                          p.a.blink
+                            span.spano= liven.number
                         footer(class='w3-container w3-'+liven.bgcolor+'')
                           h5!= liven.time +" "+liven.time1
          
@@ -148,411 +152,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                     img(class="my-img" src='/Upimg/images/'+file.filename)
                   br
                  
-    div(style='background:#fff; text-align:center;border:solid 3px #ff0000;margin:0px 5px 10px 5px;padding:5px 5px;font-size:17px; color:#000; font-weight:bold;')
-      div(align='center')
-        div(style='background-color:purple;')
-          font(size='5', color='mintcream') CAPITAL BAZAR
-        table.table.table-bordered
-          tbody
-            tr
-              td
-                font(size='3', color='Red')
-                  b TIME
-              td
-                font(size='3', color='Red')
-                  b RESULT
-              td
-                font(size='3', color='Red')
-                  b TIME
-              td
-                font(size='3', color='Red')
-                  b RESULT
-            tr
-              td
-                font(size='3') 10:00
-              td 140-5
-              td 03:00 PM
-              td **
-            tr
-              td
-                font(size='3') 11:00
-              td 360-9
-              td 04:00 PM
-              td **
-            tr
-              td
-                font(size='3') 12:00
-              td 250-7
-              td 05:00 PM
-              td **
-            tr
-              td
-                font(size='3') 01:00
-              td 236-1
-              td 06:00 PM
-              td **
-            tr
-              td
-                font(size='3') 02:00
-              td **
-              td 07:00 PM
-              td **
-    div(style='background:#fff; text-align:center;border:solid 3px #ff0000;margin:0px 5px 10px 5px;padding:5px 5px;font-size:17px; color:#000; font-weight:bold;')
-      div(align='center')
-        div(style='background-color:purple;')
-          font(size='5', color='mintcream') REAL BAZAR LIVE
-        table.table.table-bordered
-          tbody
-            tr
-              td
-                font(size='4', color='Red')
-                  b TIME
-              td
-                font(size='4', color='Red')
-                  b RESULT
-              td
-                font(size='4', color='Red')
-                  b TIME
-              td
-                font(size='4', color='Red')
-                  b RESULT
-            tr
-              td
-                font(size='3') 09:05AM
-              td
-                font(size='4', color='blue') 257-4
-              td
-                font(size='3') 03:05 PM
-              td
-                font(size='4', color='blue') *
-            tr
-              td
-                font(size='3') 10:05AM
-              td
-                font(size='4', color='blue') 116-8
-              td
-                font(size='3') 04:05 PM
-              td
-                font(size='4', color='blue') *
-            tr
-              td
-                font(size='3') 11:05AM
-              td
-                font(size='4', color='blue') 148-3
-              td
-                font(size='3') 05:05 PM
-              td
-                font(size='4', color='blue') *xxx
-            tr
-              td
-                font(size='3') 12:05PM
-              td
-                font(size='4', color='blue') 270-9
-              td
-                font(size='3') 06:05 PM
-              td
-                font(size='4', color='blue') *xxx
-            tr
-              td
-                font(size='3') 01:05PM
-              td
-                font(size='4', color='blue') 458-7
-              td
-                font(size='3') 07:05 PM
-              td
-                font(size='4', color='blue') *xxx
-            tr
-              td
-                font(size='3') 02:05PM
-              td
-                font(size='4', color='blue') *
-              td
-                font(size='3') 08:05 PM
-              td
-                font(size='4', color='blue') *xxx
-    div(style='background:#fff; text-align:center;border:solid 3px #ff0000;margin:0px 5px 10px 5px;padding:5px 5px;font-size:17px; color:#000; font-weight:bold;')
-      div(align='center')
-        div(style='background-color:purple;')
-          font(size='5', color='mintcream') Mumbai Rajshree Star Line Result
-        table.table.table-bordered
-          tbody
-            tr
-              td
-                font(size='4', color='Red')
-                  b TIME
-              td
-                font(size='4', color='Red')
-                  b RESULT
-              td
-                font(size='4', color='Red')
-                  b TIME
-              td
-                font(size='4', color='Red')
-                  b RESULT
-            tr
-              td
-                font(size='3') 09:30AM
-              td
-                font(size='4', color='blue') 169-6
-              td
-                font(size='3') 03:30 PM
-              td
-                font(size='4', color='blue') WAiT
-            tr
-              td
-                font(size='3') 10:30AM
-              td
-                font(size='4', color='blue') 128-1
-              td
-                font(size='3') 04:30 PM
-              td
-                font(size='4', color='blue') WAIT
-            tr
-              td
-                font(size='3') 11:30AM
-              td
-                font(size='4', color='blue') 360-9
-              td
-                font(size='3') 05:30 PM
-              td
-                font(size='4', color='blue') WAIT
-            tr
-              td
-                font(size='3') 12:30PM
-              td
-                font(size='4', color='blue') 778-2
-              td
-                font(size='3') 06:30 PM
-              td
-                font(size='4', color='blue') WAiT
-            tr
-              td
-                font(size='3') 01:30PM
-              td
-                font(size='4', color='blue') 279-8
-              td
-                font(size='3') 07:30 PM
-              td
-                font(size='4', color='blue') ***-*
-            tr
-              td
-                font(size='3') 02:30PM
-              td
-                font(size='4', color='blue') WAIT
-              td
-                font(size='3') 08:30 PM
-              td
-                font(size='4', color='blue') ***-*
-    div(style='background:#fff; text-align:center;border:solid 3px #ff0000;margin:0px 5px 10px 5px;padding:5px 5px;font-size:17px; color:#000; font-weight:bold;')
-      div(align='center')
-        div(style='background-color:purple;')
-          font(size='5', color='mintcream') NEW KRITI LINE MARKET
-        table.table.table-bordered
-          tbody
-            tr
-              td
-                font(size='4', color='Red')
-                  b TIME
-              td
-                font(size='4', color='Red')
-                  b RESULT
-              td
-                font(size='4', color='Red')
-                  b TIME
-              td
-                font(size='4', color='Red')
-                  b RESULT
-            tr
-              td
-                font(size='3') 09:30AM
-              td
-                font(size='4', color='blue') 115-7
-              td
-                font(size='3') 03:30 PM
-              td
-                font(size='4', color='blue') ***
-            tr
-              td
-                font(size='3') 10:30AM
-              td
-                font(size='4', color='blue') 259-6
-              td
-                font(size='3') 04:30 PM
-              td
-                font(size='4', color='blue') ***
-            tr
-              td
-                font(size='3') 11:30AM
-              td
-                font(size='4', color='blue') 360-9
-              td
-                font(size='3') 05:30 PM
-              td
-                font(size='4', color='blue') ???
-            tr
-              td
-                font(size='3') 12:30PM
-              td
-                font(size='4', color='blue') 246-2
-              td
-                font(size='3') 06:30 PM
-              td
-                font(size='4', color='blue') ???
-            tr
-              td
-                font(size='3') 01:30PM
-              td
-                font(size='4', color='blue') 890-7
-              td
-                font(size='3') 07:30 PM
-              td
-                font(size='4', color='blue') ???
-            tr
-              td
-                font(size='3') 02:30PM
-              td
-                font(size='4', color='blue') ***
-              td
-                font(size='3') 08:30 PM
-              td
-                font(size='4', color='blue') ???
-    div(style='background:white; text-align:center;border:solid 3px #ff0000;margin:0px 5px 10px 5px;padding:5px 5px;font-size:17px; color:#000; font-weight:bold;')
-      div(align='center')
-        div(style='background-color:purple;')
-          font(size='5', color='mintcream') Main Star Line Result
-        table.table.table-bordered
-          tbody
-            tr
-              td
-                font(size='4', color='Red')
-                  b TIME
-              td
-                font(size='4', color='Red')
-                  b RESULT
-              td
-                font(size='4', color='Red')
-                  b TIME
-              td
-                font(size='4', color='Red')
-                  b RESULT
-            tr
-              td
-                font(size='3') 09:00AM
-              td
-                font(size='4', color='blue') 169-6
-              td
-                font(size='3') 03:00 PM
-              td
-                font(size='4', color='blue') **
-            tr
-              td
-                font(size='3') 10:00AM
-              td
-                font(size='4', color='blue') 358-6
-              td
-                font(size='3') 04:00 PM
-              td
-                font(size='4', color='blue') **
-            tr
-              td
-                font(size='3') 11:00AM
-              td
-                font(size='4', color='blue') 590-4
-              td
-                font(size='3') 05:00 PM
-              td
-                font(size='4', color='blue') **
-            tr
-              td
-                font(size='3') 12:00PM
-              td
-                font(size='4', color='blue') 167-4
-              td
-                font(size='3') 06:00 PM
-              td
-                font(size='4', color='blue') **
-            tr
-              td
-                font(size='3') 01:00PM
-              td
-                font(size='4', color='blue') 500-5
-              td
-                font(size='3') 07:00 PM
-              td
-                font(size='4', color='blue') **
-            tr
-              td
-                font(size='3') 02:00PM
-              td
-                font(size='4', color='blue') **
-              td
-                font(size='3') 08:00 PM
-              td
-                font(size='4', color='blue') **
-    div(style='background:#fff; text-align:center;border:solid 3px #ff0000;margin:0px 5px 10px 5px;padding:5px 5px;font-size:17px; color:#000; font-weight:bold;')
-      div(align='center')
-        div(style='background-color:purple;')
-          font(size='5', color='mintcream') Maharashtra Star Line Result
-        table.table.table-bordered
-          tbody
-            tr
-              td
-                font(size='4', color='Red')
-                  b TIME
-              td
-                font(size='4', color='Red')
-                  b RESULT
-              td
-                font(size='4', color='Red')
-                  b TIME
-              td
-                font(size='4', color='Red')
-                  b RESULT
-            tr
-              td
-                font(size='3') 09:00AM
-              td
-                font(size='4', color='blue') 124-7
-              td
-                font(size='3') 03:00 PM
-              td
-                font(size='4', color='blue') **
-            tr
-              td
-                font(size='3') 10:00AM
-              td
-                font(size='4', color='blue') 234-9
-              td
-                font(size='3') 04:00 PM
-              td
-                font(size='4', color='blue') **
-            tr
-              td
-                font(size='3') 11:00AM
-              td
-                font(size='4', color='blue') 489-1
-              td
-                font(size='3') 05:00 PM
-              td
-                font(size='4', color='blue') **
-            tr
-              td
-                font(size='3') 12:00PM
-              td
-                font(size='4', color='blue') 260-8
-              td
-                font(size='3') 06:00 PM
-              td
-                font(size='4', color='blue') **
-            tr
-              td
-                font(size='3') 01:00PM
-              td
-                font(size='4', color='blue') 457-6
-              td
-                font(size='3') 07:00 PM
-              td
-                font(size='4', color='blue') **
+    
         .date(align='center')
           div(style='background-color:white;')
             a(href='#', title='satta matka')
@@ -618,70 +218,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                 border-radius: 0;
                 text-shadow: 1px 1px #FFCC99;
                 }
-              div(align='center')
-                .date(align='center')
-                  big
-                    | Astrology Weekly Patti Or Penal Chart From 18-06-2018 To 24-06-2018 For Kalyan Milan Main Rajdhani Time Matka Market
-                    br
-                  font(size='4')
-                    center
-                      b 1 470 489 678 344
-                    center
-                      b 2 237 570 679 138
-                    center
-                      b 3 157 490 670 445
-                    center
-                      b 4 158 239 248 167
-                    center
-                      b 5 889 456 690 113
-                    center
-                      b 6 178 240 457 367
-                    center
-                      b 7 269 359 368 458
-                    center
-                      b 8 189 369 224 990
-                    center
-                      b 9 234 270 469 478
-                    center
-                      b 0 280 569 578 550
-                br
-                .date(align='center')
-                  big
-                    | Astrology Weekly Line Open Or Close From 18-06-2018 To 24-06-2018 For Kalyan Milan Main Rajdhani Time Matka Market
-                    br
-                  font(size='4')
-                    b Mon. 1 6 3 8 
-                    br
-                    b Tue. 2 7 5 0
-                    br
-                    b Wed. 3 8 5 0
-                    br
-                    b Thu. 3 8 4 9
-                    br
-                    b Fri. 2 7 4 9
-                    br
-                    b Sat. 1 6 4 9
-                    br
-                    b Sun. 3 8 4 9
-                br
-                .date(align='center')
-                  big
-                    | Astrology Weekly Jodi Chart From 18-06-2018 To 24-06-2018 For Kalyan Milan Main Rajdhani Time Matka Market
-                  font(size='4')
-                    b 20 27 28 29
-                    br
-                    b 45 47 48 49
-                    br
-                    b 98 94 91 92
-                    br
-                    b 86 83 85 84
-                    br
-                    b 67 64 68 65
-                    br
-                    b 54 57 50 55
-                  br
-            
-              br
+              
               .pannel(align='center')
                 h3  Matka Panel Chart 
               br
