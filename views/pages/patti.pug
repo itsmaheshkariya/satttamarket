@@ -145,14 +145,15 @@ head
     background-color:#FFCC99;
     }
    .abb{
-     font-size:40px;
+     font-size:50px;
+     font-weight:bold;
      background:#FFCC99;
          font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
 
    }
     .ab 
     {
-    
+    font-weight:bold;
     
     font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
 
@@ -193,10 +194,13 @@ i
             font(size="4") THU
           td(align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
             font(size="4") FRI
-          td(align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
-            font(size="4") SAT
-          td(align="center" style="padding-right:7px;" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
-            font(size="4") SUN
+          if(findtitlen.id != '5b5ae650553732000430cbe0')
+            td(align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
+              font(size="4") SAT
+            td(align="center" style="padding-right:7px;" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
+              font(size="4") SUN
+          
+          
       tbody
         -var l =7
         - var countrows = chartnn.length/7+1
