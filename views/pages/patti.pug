@@ -32,7 +32,7 @@ head
     }
     body{
     background-color:#000;
-    color:#fff;
+    color:#FFCC99;
     font-family:Comic Sans MS
     }
     a{
@@ -40,7 +40,7 @@ head
     }
     .HEADLINES{
     background-color:#f4430b;
-    color:#fff;
+    color:#FFCC99;
     font-style:italic;
     text-decoration:blink; padding:16px;
     }
@@ -48,17 +48,17 @@ head
     background:#FF0040
     }
     .a2{
-    color:#fff;
+    color:#FFCC99;
     font-size:30px
     }
     table{
-    background-color:#fff;
+    background-color:#FFCC99;
     color:#000;
     width:60%;
     border-style:double ;
     }
     th{
-    background:#FFF
+    background:#FFCC99
     }
     td,th{
     padding:0px;
@@ -74,7 +74,7 @@ head
     }
     @media screen and (min-width:500px){
     .normal,.redword{
-    background-color:#fff;
+    background-color:#FFCC99;
     font-size:28px
     }
     .tabfirst{
@@ -86,18 +86,19 @@ head
     }
     td{
     font-size:16px;
-    padding:5px 3px
+    padding:5px 3px;
+    background:#FFCC99;
     }
     }
     table tr td:nth-child(11),table tr td:nth-child(12),table tr td:nth-child(14),table tr td:nth-child(15),table tr td:nth-child(17),table tr td:nth-child(18),table tr td:nth-child(2),table
     tr td:nth-child(20),table tr td:nth-child(21),table tr td:nth-child(3),table tr td:nth-child(4),table tr td:nth-child(5),table tr td:nth-child(6),table tr td:nth-child(8),table tr
     td:nth-child(9){
-    background-color:#fff;
+    background-color:#FFCC99;
     font-style:italic
     }
     @media screen and (max-width:500px){
     .normal,.redword{
-    background-color:#fff;
+    background-color:#FFCC99;
     font-size:13px
     }
     table{
@@ -109,10 +110,11 @@ head
     }
     td{
     font-size:10px;
-    padding:1px
+    padding:1px;
+    background:#FFCC99;
     }
     table{
-    background-color:#fff;
+    background-color:#FFCC99;
     color:#000;
     width:100%;
     border-style:double ;
@@ -120,7 +122,7 @@ head
     }
     @media screen and (max-width:320px){
     .normal,.redword{
-    background-color:#fff;
+    background-color:#FFCC99;
     font-size:12px
     }
     table{
@@ -140,10 +142,11 @@ head
     }
     table tr td:nth-child(10),table tr td:nth-child(13),table tr td:nth-child(16),table tr td:nth-child(19),table tr td:nth-child(22),table tr td:nth-child(7){
     font-style:italic;
-    background-color:#fff;
+    background-color:#FFCC99;
     }
    .abb{
      font-size:40px;
+     background:#FFCC99;
          font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
 
    }
@@ -174,10 +177,10 @@ i
   .date(align="center")
     font(size="6")
       span(style="color: #ff0000;")= findtitlen.name
-    table(cellspacing="0")
-      thead
+    table(cellspacing="0" )
+      thead()
         tr
-          td(bordercolor="#6699CC" bordercolorlight="#FFFFFF" bordercolordark="#6699CC")
+          td(bordercolor="#6699CC" bordercolorlight="#FFCC99" bordercolordark="#6699CC")
             //- p(align="center")
             //-   font(size="4") DATE
           td(colspan="3" align="center" valign="middle" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
@@ -210,20 +213,20 @@ i
                   div
 
                       td
-                          span(style='color:'+val.color+'').ab= val.l1
+                          span(style='color:'+val.color+';background:#FFCC99').ab= val.l1
                           br
-                          span(style='color:'+val.color+'').ab= val.l2
+                          span(style='color:'+val.color+';background:#FFCC99').ab= val.l2
                           br
 
-                          span(style='color:'+val.color+'').ab= val.l3
+                          span(style='color:'+val.color+';background:#FFCC99').ab= val.l3
                       td
-                          span(style='color:'+val.color+'').abb.normal= val.m1+val.m2
+                          span(style='color:'+val.color+';background:#FFCC99').abb.normal= val.m1+val.m2
                       td
-                          span(style='color:'+val.color+'').ab= val.r1
+                          span(style='color:'+val.color+';background:#FFCC99').ab= val.r1
                           br
-                          span(style='color:'+val.color+'').ab= val.r2
+                          span(style='color:'+val.color+';background:#FFCC99').ab= val.r2
                           br
-                          span(style='color:'+val.color+'').ab= val.r3
+                          span(style='color:'+val.color+';background:#FFCC99').ab= val.r3
           
   style.
     /* demo-pricing */
@@ -234,7 +237,7 @@ i
     font-size: 14px;
     line-height: 100%;
     text-shadow: 0 1px rgba(0, 0, 0, 0.4);
-    color: #fff;
+    color: #FFCC99;
     display:inline-block;
     vertical-align: middle;
     text-align: center;
@@ -246,7 +249,7 @@ i
     -ms-transition: background 0.1s ease-in-out;
     -o-transition: background 0.1s ease-in-out;
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-    color: #fff;
+    color: #FFCC99;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -259,7 +262,7 @@ i
     .demo-pricing, .demo-pricing:hover, .demo-pricing:active {
     outline: 0 none;
     text-decoration: none;
-    color: #fff;
+    color: #FFCC99;
     }
     .demo-pricing-1 {
     background-color: #3fb8e8;
@@ -297,7 +300,7 @@ i
     font-size: 14px;
     line-height: 100%;
     text-shadow: 0 1px rgba(0, 0, 0, 0.4);
-    color: #fff;
+    color: #FFCC99;
     font-style: italic;
     vertical-align: middle;
     text-align: center;
@@ -309,7 +312,7 @@ i
     -ms-transition: background 0.1s ease-in-out;
     -o-transition: background 0.1s ease-in-out;
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-    color: #fff;
+    color: #FFCC99;
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
     border-radius: 40px;
@@ -321,7 +324,7 @@ i
     .demo-info, .demo-info:hover, .demo-info:active {
     outline: 0 none;
     text-decoration: none;
-    color: #fff;
+    color: #FFCC99;
     }
     .demo-info-1 {
     background-color: #fdc058;
@@ -364,11 +367,11 @@ i
   br
   div(align="center")
     a(href="javascript:void(0);" style="top: 70px;right: 10px;z-index: 99;border: none;outline: none;background-color: \
-    #428bca;color: #fff;cursor: pointer;padding: 10px;border-radius: 3px;text-decoration:none; font-size: large; font-weight: 700; font-family:Calibri;" onclick="topFunction()") Go To Top
+    #428bca;color: #FFCC99;cursor: pointer;padding: 10px;border-radius: 3px;text-decoration:none; font-size: large; font-weight: 700; font-family:Calibri;" onclick="topFunction()") Go To Top
   div(align="center")
   style.
     #top_five {
-    background-color: #ffff00;
+    background-color: #FFCC99f00;
     border-color: #00008d;
     border-left: 3px solid #00008d;
     border-right: 3px solid #00008d;
