@@ -5,7 +5,10 @@ let mongoose = require('mongoose');
 
 
 let settingsSchema = mongoose.Schema({
-
+    color: {
+        type: String,
+        required: false
+    },
     message: {
         type: String,
         required: false

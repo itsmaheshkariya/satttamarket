@@ -170,7 +170,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                 hr
                 ul.list-group
                   each setting, i in settings   
-                    li.list-group-item.list-group-item-!= setting.title
+                    li(style='color:'+setting.color+'').list-group-item.list-group-item-!= setting.title
                 //-   li.list-group-item.list-group-item-info Milan Day Fix Jodi 53 Pass
                 //-   li.list-group-item.list-group-item-warning Rajdhani Day Fix Open 4 Pass
                 //-   li.list-group-item.list-group-item-danger Kalyan Open Patti 234 Pass

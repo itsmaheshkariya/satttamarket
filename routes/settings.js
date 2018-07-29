@@ -35,6 +35,7 @@ router.post('/Settings', function(req, res) {
     let settings = new Settings();
     settings.message = req.body.message;
     settings.title = req.body.title;
+    settings.color = req.body.color;
 
 
 
@@ -65,6 +66,7 @@ router.post('/Settings/edit/:id', function(req, res) {
     let setting = {};
     setting.title = req.body.title;
     setting.message = req.body.message;
+    setting.color = req.body.color;
 
 
 

@@ -13,6 +13,10 @@ block content
                 .input-field.col.s12
                     label Message:
                     textarea.form-control(name='title',type='text')
+            .row
+                .input-field.col.s12
+                    label Color:
+                    input.form-control(name='color',type='text')
 
             
             
@@ -27,6 +31,7 @@ block content
                     td Title
                     td Message
                     td Edit
+                    td Color
                     td Delete
                    
      
@@ -35,6 +40,7 @@ block content
                         
                         td= setting.message
                         td!= setting.title
+                        td!= setting.color
                         
                         td
                             a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/Settings/edit/'+setting._id)
