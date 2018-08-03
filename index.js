@@ -271,7 +271,7 @@ express()
 
 
             if (!files || files.length === 0) {
-                res.render('pages/upimg', { files: true });
+                // res.render('pages/upimg', { files: true });
 
             } else {
                 files.map(file => {
