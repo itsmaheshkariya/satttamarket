@@ -263,87 +263,83 @@ express()
 
 
     })
-    // .get('/', (req, res) => {
+    .get('/', (req, res) => {
 
 
 
-    //     gfs.files.find().toArray((err, files) => {
+        gfs.files.find().toArray((err, files) => {
 
 
-    //         if (!files || files.length === 0) {
-    //             res.render('pages/upimg', { files: false });
+            if (!files || files.length === 0) {
+                res.render('pages/upimg', { files: true });
 
-    //         } else {
-    //             files.map(file => {
-    //                 if (file) {
-    //                     if (file.contentType === 'image/jpeg' || file.contentType === 'image/jpg' || file.contentType === 'image/png') {
-    //                         file.isImage = true;
-    //                     } else {
-    //                         file.isImage = false;
-    //                     }
-    //                 }
-    //             })
-    //         }
-
-
-
-    //         Live.find({}, function(err, lives) {
-    //             if (err) {
-    //                 console.log(err);
-    //             } else {
-
-    //                 Satta.find({}, function(err, sattas) {
-    //                     if (err) {
-    //                         console.log(err);
-    //                     } else {
-
-
-    //                         Settings.find({}, function(err, settings) {
-    //                             if (err) {
-    //                                 console.log(err);
-    //                             } else {
+            } else {
+                files.map(file => {
+                    if (file) {
+                        if (file.contentType === 'image/jpeg' || file.contentType === 'image/jpg' || file.contentType === 'image/png') {
+                            file.isImage = true;
+                        } else {
+                            file.isImage = false;
+                        }
+                    }
+                })
+            }
 
 
 
+            Live.find({}, function(err, lives) {
+                if (err) {
+                    console.log(err);
+                } else {
 
-    //                                 Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
-    //                                     res.render('pages/output', {
-    //                                         title: 'SAT MAT RAT',
-    //                                         satta: sattas,
-    //                                         live: lives,
-    //                                         chartn: charts,
-    //                                         settings: settings,
-    //                                         files: files
-    //                                     });
-    //                                 });
+                    Satta.find({}, function(err, sattas) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+
+
+                            Settings.find({}, function(err, settings) {
+                                if (err) {
+                                    console.log(err);
+                                } else {
 
 
 
 
-
-
-
-    //                             }
-    //                         });
-    //                     }
-
-
-    //                 })
-
-    //             }
-    //         });
-    //         // res.render('pages/upimg', { files: files });
+                                    Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
+                                        res.render('pages/output', {
+                                            title: 'SAT MAT RAT',
+                                            satta: sattas,
+                                            live: lives,
+                                            chartn: charts,
+                                            settings: settings,
+                                            files: files
+                                        });
+                                    });
 
 
 
 
 
 
-    //     })
+
+                                }
+                            });
+                        }
+
+
+                    })
+
+                }
+            });
+            // res.render('pages/upimg', { files: files });
 
 
 
 
+
+
+        })
 
 
 
@@ -364,7 +360,11 @@ express()
 
 
 
-    // })
+
+
+
+
+    })
 
 
 .get('/Upimg/files', (req, res) => {
