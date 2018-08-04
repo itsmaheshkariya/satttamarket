@@ -145,7 +145,7 @@ head
     background-color:#FFCC99;
     }
    .abb{
-     font-size:50px;
+     font-size:30px;
      font-weight:bold;
      background:#FFCC99;
          font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
@@ -162,19 +162,19 @@ head
   
   
   
-  link(rel="preload" href="https://adservice.google.co.in/adsid/integrator.js?domain=sattamatka.mobi" as="script")
-  script(type="text/javascript" src="https://adservice.google.co.in/adsid/integrator.js?domain=sattamatka.mobi")
-  link(rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=sattamatka.mobi" as="script")
-  script(type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=sattamatka.mobi")
+  //- link(rel="preload" href="https://adservice.google.co.in/adsid/integrator.js?domain=sattamatka.mobi" as="script")
+  //- script(type="text/javascript" src="https://adservice.google.co.in/adsid/integrator.js?domain=sattamatka.mobi")
+  //- link(rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=sattamatka.mobi" as="script")
+  //- script(type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=sattamatka.mobi")
 i
   center
   .HEADLINES(align="center")
     big= findtitlen.name
   br
   div(align="center")
-    script(async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
-    script.
-      (adsbygoogle = window.adsbygoogle || []).push({});
+    //- script(async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+    //- script.
+    //-   (adsbygoogle = window.adsbygoogle || []).push({});
   .date(align="center")
     font(size="6")
       span(style="color: #ff0000;")= findtitlen.name
@@ -182,29 +182,37 @@ i
       thead()
         tr
           td(bordercolor="#6699CC" bordercolorlight="#FFCC99" bordercolordark="#6699CC")
-            //- p(align="center")
-            //-   font(size="4") DATE
+            p(align="center")
+              font(size="4") DATE
           td(colspan="3" align="center" valign="middle" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
             font(size="4") MON
-          td(align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
+          td(align="center" colspan="4" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
             font(size="4") TUE
-          td(align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
+          td(align="center" colspan="4" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
             font(size="4") WED
-          td(align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
+          td(align="center" colspan="4" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
             font(size="4") THU
-          td(align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
+          td(align="center" colspan="4" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
             font(size="4") FRI
           if(findtitlen.id != '5b5ae650553732000430cbe0')
-            td(align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
-              font(size="4") SAT
-            td(align="center" style="padding-right:7px;" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
-              font(size="4") SUN
+            if(findtitlen.id != '5b5e0712dde1b80004f71af4')
+              if(findtitlen.id != '5b618f03bfe9cf0004399c13')
+                if(findtitlen.id != '5b61c0a3bfe9cf0004399cc6')
+                  td(align="center" colspan="4" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
+                    font(size="4") SAT
+                  if(findtitlen.id != '5b5e0a2e825a060004cc575b')
+                    if(findtitlen.id != '5b611b54edb7e30004bcdf38')
+                      if(findtitlen.id != '5b618ec7bfe9cf0004399c12')
+                        td(align="center" style="padding-right:7px;" colspan="4" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
+                          font(size="4") SUN
           
           
       tbody
         -var l =7
+        
         - var countrows = chartnn.length/7+1
         -for (var k = 1; k <= countrows; k++)
+          -var mahesh=1
           tr
           
           
@@ -214,7 +222,22 @@ i
                 - var m= k-1
                 - var y= l*m
                 -if (i>=y)
+                  -if (i<x-1)
+                    -if (i==y+3)
+                      -temp = val.date;
+
+                  
+                  
                   div
+                      td
+                        -if(mahesh==1)
+                          -mahesh++;
+                            p
+                            | #{temp}
+                            br
+                            | to
+                            br
+                            | #{val.date}
 
                       td
                           span(style='color:'+val.color+';background:#FFCC99').ab= val.l1
@@ -231,6 +254,8 @@ i
                           span(style='color:'+val.color+';background:#FFCC99').ab= val.r2
                           br
                           span(style='color:'+val.color+';background:#FFCC99').ab= val.r3
+                      
+                    
           
   style.
     /* demo-pricing */
@@ -360,12 +385,12 @@ i
     .demo-info-3:active {
     box-shadow: 0px 1px 0px 0px #239a55;
     }
-  script(async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
-  ins.adsbygoogle(style="display: block; height: 113px;" data-ad-client="ca-pub-5644214016514570" data-ad-slot="9319732348" data-ad-format="auto" data-adsbygoogle-status="done")
+  //- script(async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+  //- ins.adsbygoogle(style="display: block; height: 113px;" data-ad-client="ca-pub-5644214016514570" data-ad-slot="9319732348" data-ad-format="auto" data-adsbygoogle-status="done")
     ins#aswift_1_expand(style="display: inline-table; border: none; height: 113px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 1200px; background-color: transparent;")
       ins#aswift_1_anchor(style="display: block; border: none; height: 113px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 1200px; background-color: transparent; overflow: hidden;")
-        iframe#aswift_1(width="1200" height="113" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&&s.handlers,h=H&&H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&&d&&(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" name="aswift_1" style="left: 0px; position: absolute; top: 0px; width: 1200px; height: 113px;")
-  script.
+        //- iframe#aswift_1(width="1200" height="113" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&&s.handlers,h=H&&H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&&d&&(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" name="aswift_1" style="left: 0px; position: absolute; top: 0px; width: 1200px; height: 113px;")
+  //- script.
     (adsbygoogle = window.adsbygoogle || []).push({});
   br
   br
