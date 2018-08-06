@@ -111,7 +111,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                   .w3-card-4(style='width:80%;')
                     header(class='w3-container w3-green')
                       h3.bbb(style='font-size: 30px;font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; font-weight:bold') LIVE UPDATE
-                      h3.bbb(style='background:red;font-size: 30px;font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; font-weight:bold') * LIVE RESULTS *
+                      
                     each liven, j in live
                       div(style='margin-top:15px')
                       
@@ -126,23 +126,33 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                             span.spano= liven.number
                         footer(class='w3-container w3-'+liven.bgcolor+'')
                           h5!= liven.time +" "+liven.time1
-         
           div(align='center')
             div(style='background:white')
               b
                 font(size='4')
                   b
                     font(size='5')
-                    each sattan, i in satta
-                      div(style='margin-top:15px')
-                      .w3-card-4(style='width:80%;')
-                        header(class='w3-container w3-'+sattan.bgcolor+'')
-                          h3.bbb= sattan.name
-                        .w3-container
-                          p.a= sattan.number
-                        footer(class='w3-container w3-'+sattan.bgcolor+'')
-                          h5!= sattan.time +" "+sattan.time1
-                    
+                  .w3-card-4(style='width:80%;')
+                    header(class='w3-container w3-green')
+                      h3.bbb(style='font-size: 30px;font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; font-weight:bold') LIVE RESULT
+          
+                    div(align='center')
+                      //- h3.bbb(style='background:red;font-size: 30px;font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; font-weight:bold') * LIVE RESULTS *
+                      div(style='background:white')
+                        b
+                          font(size='4')
+                            b
+                              font(size='5')
+                              each sattan, i in satta
+                                div(style='margin-top:15px')
+                                .w3-card-4(style='width:80%;')
+                                  header(class='w3-container w3-'+sattan.bgcolor+'')
+                                    h3.bbb= sattan.name
+                                  .w3-container
+                                    p.a= sattan.number
+                                  footer(class='w3-container w3-'+sattan.bgcolor+'')
+                                    h5!= sattan.time +" "+sattan.time1
+                              
             b
               font(size='4')
                 b

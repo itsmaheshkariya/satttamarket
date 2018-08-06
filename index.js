@@ -156,6 +156,7 @@ express()
             NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
                 res.render('pages/patti', {
                     chartnn: charts,
+                    idid: req.params.id,
                     findtitlen: findtitle
                 });
             });

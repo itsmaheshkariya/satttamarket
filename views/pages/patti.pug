@@ -195,14 +195,15 @@ i
           td(align="center" colspan="4" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
             font(size="4") FRI
           if(findtitlen.id != '5b5ae650553732000430cbe0')
-            if(findtitlen.id != '5b5e0712dde1b80004f71af4')
-              if(findtitlen.id != '5b618f03bfe9cf0004399c13')
-                if(findtitlen.id != '5b61c0a3bfe9cf0004399cc6')
-                  td(align="center" colspan="4" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
-                    font(size="4") SAT
-                  if(findtitlen.id != '5b5e0a2e825a060004cc575b')
-                    if(findtitlen.id != '5b611b54edb7e30004bcdf38')
-                      if(findtitlen.id != '5b618ec7bfe9cf0004399c12')
+            //- if(findtitlen.id != '5b5e0712dde1b80004f71af4')
+            if(findtitlen.id != '5b618f03bfe9cf0004399c13')
+              if(findtitlen.id != '5b61c0a3bfe9cf0004399cc6')
+                td(align="center" colspan="4" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
+                  font(size="4") SAT
+                if(findtitlen.id != '5b5e0a2e825a060004cc575b')
+                  if(findtitlen.id != '5b611b54edb7e30004bcdf38')
+                    if(findtitlen.id != '5b618ec7bfe9cf0004399c12')
+                      if(findtitlen.id != '5b5e0712dde1b80004f71af4')
                         td(align="center" style="padding-right:7px;" colspan="4" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC")
                           font(size="4") SUN
           
@@ -214,7 +215,37 @@ i
         -for (var k = 1; k <= countrows; k++)
           -var mahesh=1
           tr
-          
+            each val, i in chartnn
+                -var x =l*k
+                -if (i<x)
+                  - var m= k-1
+                  - var y= l*m
+                  -if (i>=y)
+                    -if (i<x-1)
+                      -if(idid == '5b5ae650553732000430cbe0')
+                        -j=y+4
+                      -if(idid == '5b5e0712dde1b80004f71af4')
+                        -j=y+5
+                      -if(idid == '5b5e094e825a060004cc5759')
+                        -j=y+5
+                      -if(idid == '5b5e0a2e825a060004cc575b')
+                        -j=y+5
+                      -if(idid == '5b611b54edb7e30004bcdf38')
+                        -j=y+5
+                      -if(idid == '5b618ec7bfe9cf0004399c12')
+                        -j=y+5
+                      -if(idid == '5b618f03bfe9cf0004399c13')
+                        -j=y+4
+                      -if(idid == '5b61c0a3bfe9cf0004399cc6')
+                        -j=y+4
+                      -if (i==j)
+                    
+                        -temp = val.date;
+                        -str1 = val.date;
+                        -res1 = str1.slice(-8,-6);
+                        -res11 = str1.slice(-5,-3);
+                        -res21 = str1.slice(-2);
+                        -store1 = res21+'/'+res11+'/'+res1;
           
             each val, i in chartnn
               -var x =l*k
@@ -223,8 +254,16 @@ i
                 - var y= l*m
                 -if (i>=y)
                   -if (i<x-1)
-                    -if (i==y+3)
-                      -temp = val.date;
+                    -if (i==y+5)
+                      //- -temp = val.date;
+                      //- -str1 = val.date;
+                      //- -res1 = str1.slice(-8,-6);
+                      //- -res11 = str1.slice(-5,-3);
+                      //- -res21 = str1.slice(-2);
+                      //- -store1 = res21+'/'+res11+'/'+res1;
+                      
+                      
+                      
 
                   
                   
@@ -233,11 +272,23 @@ i
                         -if(mahesh==1)
                           -mahesh++;
                             p
-                            | #{temp}
+                            -var str = val.date;
+                            -var res = str.slice(-8,-6);
+                            -var res1 = str.slice(-5,-3);
+                            -var res2 = str.slice(-2);
+                            -var store = res2+'/'+res1+'/'+res;
+                            | #{store}
                             br
                             | to
                             br
-                            | #{val.date}
+                            //- -var changed = val.date.replace("-", "/");
+                            //- -var changedagain = changed.replace("-", "/");
+                            -var str = val.date;
+                            -var res = str.slice(-8,-6);
+                            -var res1 = str.slice(-5,-3);
+                            -var res2 = str.slice(-2);
+                            -var store = res2+'/'+res1+'/'+res;
+                            | #{store1}
 
                       td
                           span(style='color:'+val.color+';background:#FFCC99').ab= val.l1
