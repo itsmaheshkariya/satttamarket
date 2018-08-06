@@ -1,6 +1,17 @@
 .spano{
   
   animation: blink 1s linear infinite;
+  
+}
+.spano1{
+  
+  animation: blink 1s linear infinite;
+  color:white;
+}
+.spano2{
+  
+ 
+  color:white;
 }
 @keyframes blink{
 0%{opacity: 0;}

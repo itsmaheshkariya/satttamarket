@@ -123,7 +123,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                             span.spano= liven.name
                         .w3-container
                           p.a.blink
-                            span.spano= liven.number
+                            span.spano1= liven.number
                         footer(class='w3-container w3-'+liven.bgcolor+'')
                           h5!= liven.time +" "+liven.time1
           div(align='center')
@@ -138,7 +138,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
           
                     div(align='center')
                       //- h3.bbb(style='background:red;font-size: 30px;font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; font-weight:bold') * LIVE RESULTS *
-                      div(style='background:white')
+                      div(style='background:black')
                         b
                           font(size='4')
                             b
@@ -149,7 +149,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                                   header(class='w3-container w3-'+sattan.bgcolor+'')
                                     h3.bbb= sattan.name
                                   .w3-container
-                                    p.a= sattan.number
+                                    p.a.spano2= sattan.number
                                   footer(class='w3-container w3-'+sattan.bgcolor+'')
                                     h5!= sattan.time +" "+sattan.time1
                               
