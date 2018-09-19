@@ -503,8 +503,21 @@ express()
 
 })
 
+//new 
 
+
+.get('/satta_matka_tricks_zone.php',(req,res)=>{
+
+    res.render('pages/satta_matka_tricks_zone.pug');
+  
+      })
 
 
 .get('/cool', (req, res) => res.send(cool()))
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+
+
+
+
+    
