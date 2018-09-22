@@ -34,6 +34,35 @@ block content
                 .input-field.col.s12
                     
                     button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Submit
+        //- .col.s12
+        //-     .row
+        //-         table.table.table-hover.table-dark(id="example")
+        //-         thead
+        //-             td Name
+        //-             td Jodi
+        //-             td Patti    
+        //-             td Time 1
+        //-             td Time 2
+        //-             td Date
+        //-             td Edit
+        //-             td Delete
+                
+    
+        //-         each sattan1, i in charts
+        //-             tbody
+        //-                 td= sattan1.name
+        //-                 td= sattan1.jodi
+        //-                 td= sattan1.patti
+        //-                 td= sattan1.time
+        //-                 td= sattan1.time1
+        //-                 td= sattan1.date
+        //-                 td
+        //-                     a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/livesatta/edit/'+sattan1._id)
+        //-                         i.fa.fa-pencil 
+        //-                 td
+        //-                     form(action='/livesatta/delete/'+sattan1._id+'?_method=DELETE',method='POST')
+        //-                         button.btn.btn-dark(type='submit' title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right")
+        //-                             i.fa.fa-trash
             
             
           

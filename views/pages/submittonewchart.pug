@@ -43,6 +43,35 @@ block content
                 .input-field.col.s12
                     
                     button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Submit
+        .col.s12
+            .row
+                table.table.table-hover.table-dark(id="example")
+                    thead
+                        td Name
+                        
+                        td Patti    
+                        td Time 1
+                        td Time 2
+                        td Date
+                        td Edit
+                        td Delete
+                
+    
+                    each chart, i in charts
+                        tbody
+                            td= chart.name
+                            
+                            td= chart.l1+' '+chart.l2+' '+chart.l3+' '+chart.m1+' '+chart.m2+' '+chart.r1+' '+chart.r2+' '+' '+chart.r3+' '
+                            td= chart.time
+                            td= chart.time1
+                            td= chart.date
+                            td
+                                a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/livesatta/edit/'+chart ._id)
+                                    i.fa.fa-pencil 
+                            td
+                                form(action='/livesatta/delete/'+chart._id+'?_method=DELETE',method='POST')
+                                    button.btn.btn-dark(type='submit' title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right")
+                                        i.fa.fa-trash
             
             
           

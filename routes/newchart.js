@@ -31,10 +31,14 @@ router.get('/patti/:id', function(req, res) {
 // })
 router.get('/patti/chart/edit/:id', function(req, res) {
     Satta.findById(req.params.id, function(err, sattas) {
+        NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
         res.render('pages/submittonewchart', {
             title: 'SATMATRAT',
-            sattan: sattas
+            sattan: sattas,
+            charts:charts
         });
+
+    });
     });
 })
 
