@@ -1,0 +1,51 @@
+extends layout
+block content
+    
+    form(method='POST',action='/weekly/edit/'+weeklys._id)
+        .row
+            h3 Open To Close Edit 
+        .col.s12
+             .row
+                .input-field.col.s12
+                    label Head:
+                    input.form-control(name='head',type='text',value=weeklys.head)
+             .row
+                .input-field.col.s12
+                    label Head Color:
+                    input.form-control(name='headcolor',type='text',value=weeklys.headcolor)
+             .row
+                .input-field.col.s12
+                    label Head Background:
+                    input.form-control(name='headbg',type='text',value=weeklys.headbg)
+            .row
+                .input-field.col.s12
+                    label Text:
+                    input.form-control(name='text',type='text',value=weeklys.text)
+
+            .row
+                .input-field.col.s12
+                    label Text Color:
+                    input.form-control(name='textcolor',type='text',value=weeklys.textcolor)
+            
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Edit
+               
+                    
+                  
+            
+            
+          
+          
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   

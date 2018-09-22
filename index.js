@@ -85,6 +85,9 @@ let footer = require('./routes/footer');
 let Open = require('./models/opentoclose');
 let open = require('./routes/opentoclose');
 
+let Weekly = require('./models/weekly');
+let weekly = require('./routes/weekly');
+
 let Time = require('./models/time');
 let time = require('./routes/time');
 
@@ -204,6 +207,7 @@ express()
     .use('/', live)
     .use('/', open)
     .use('/', footer)
+    .use('/', weekly)
     .use('/', time)
     .use('/', chart)
     .use('/', newchart)
@@ -555,7 +559,24 @@ res.render('pages/open_to_close',{opens:opens,footers:footers})
 })
 
 .get('/weekly_chart', (req, res)=>{
-    res.render('pages/weekly_chart')
+    Weekly.find({}, function(err, weeklys) {
+        if (err) {
+            console.log(err);
+        } else {
+
+
+
+
+            Footer.find({}, function(err, footers) {
+                if (err) {
+                    console.log(err);
+                } else {
+    res.render('pages/weekly_chart',{weeklys:weeklys,footers:footers})
+}       
+});
+
+}       
+});
     })
 .get('/cool', (req, res) => res.send(cool()))
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))
