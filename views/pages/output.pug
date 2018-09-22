@@ -589,15 +589,17 @@ html(lang='en-US')
               i * LIVE UPDATE *
       each liven, j in live
         div(style='height:10px;')  
-        div(style='color: white;')
+        div(style='background: '+liven.bgcolor+';')
           big
             b
               i
                 font(color='red', size='5')= liven.name 
                 br
                 font(color='BLACK', style='font-size:24px;')=  liven.number
-            br
-          input#Login.btn.btn-sm.btn-danger(style='height:auto; padding:0 12px; font-style:italic;', name='Refresh', value='Refresh', type='submit', onclick='window.location.reload()')
+                br
+                input#Login.btn.btn-sm.btn-danger(style='height:auto; padding:0 12px; font-style:italic;', name='Refresh', value='Refresh', type='submit', onclick='window.location.reload()')
+            
+          
           div(style='height:10px;')  
         hr
       
@@ -1037,18 +1039,21 @@ html(lang='en-US')
         | Satmatrat.in is also known as satmatrat 143 also a world of Experts Guessing Forum website and one of the most Visited Satta Site amongst people engaged in Satmatrat, satta bazar, matka bazar, Time Bazar, Milan Day/Night, Kalyan Matka, Rajdhani Day/Night Satta, Mumbai main And We Provide Super Fast and Fastest matka results Apart From Other Players in Industry Our Content Helps You To Big wins. We Provide Live Updates, Guessing Forum Where Our Experts Helps You To Quickest Earnings. Free Open and close for Public Welfare Weekly Jodi & Panna with Lifetime Golden win Chart in 143 SPECIAL ZONE You will Get to know Evergreen Tricks Zone and old charts of Kalyan Matka & Mumbai Matka Of 1972 to 2012 With King Maker Khatri's Favorite Panna also know as leaf and behalf of CHARTS ZONE We Provide You Kalyan Chart Mumbai Chart Supreme Chart Milan day Milan Night Chart & Rajdhani Day & Night Jodi Chart With Penal patti leafs. satta to name a few. Our website has come out as an undisputed leader in this arena since we started working over years ago. And we attribute this success to our consistent efforts in publishing the results of all Satka Matka game at the earliest and quicker than all other players in this market.
       a(href='satta-matka-history-wiki.php')
         button.refresh Read More
-    .satta-matka-block_strtF
-      .btn_red
-        | SATMATRAT.IN
-        br
-        | ALL RIGHTS RESERVED
-        br
-        | (2012-2018)
-        br
-        | CONTACT ADMIN 
-        br
-        | 9112310269
-        br
+    each footer, i in footers
+      div(style='background-color: '+footer.bgcolor+';border-radius: 5px;font-size: 19px;padding: 10px;text-align: center;border: #fff solid 2px;font-style: italic;font-family: Montserrat, sans-serif;margin-top: 10px;margin-bottom: 10px;')
+      
+        h2.btn_red(style='font-size: 19px;color:'+footer.color+'')!= footer.text
+      //- .btn_red
+      //-   | SATMATRAT.IN
+      //-   br
+      //-   | ALL RIGHTS RESERVED
+      //-   br
+      //-   | (2012-2018)
+      //-   br
+      //-   | CONTACT ADMIN 
+      //-   br
+      //-   | 9112310269
+      //-   br
     div(style='text-align: center;')
       a(href='http://satmatrat.in')
         img(src='images/back-btn.png', alt='satta')

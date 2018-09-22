@@ -1,0 +1,42 @@
+extends layout
+block content
+    
+    form(method='POST',action='/footer/edit/'+footer._id)
+        .row
+            h3 Footer Updater 
+        .col.s12
+            .row
+                .input-field.col.s12
+                    label Text:
+                    input.form-control(name='text',type='text',value=footer.text)
+
+            .row
+                .input-field.col.s12
+                    label Color:
+                    input.form-control(name='color',type='text',value=footer.color)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Background Color
+                    input.form-control(name='bgcolor',type='text',value=footer.bgcolor)
+            
+                .input-field.col.s12
+                    
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Edit
+               
+                    
+                  
+            
+            
+          
+          
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   
