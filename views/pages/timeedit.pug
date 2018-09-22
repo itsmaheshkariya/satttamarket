@@ -1,0 +1,43 @@
+extends layout
+block content
+    
+    form(method='POST',action='/time/edit/'+time._id)
+        .row
+            h3 Satta Updater 
+        .col.s12
+            .row
+                .input-field.col.s12
+                    label Name:
+                    input.form-control(name='name',type='text',value=time.market)
+
+            .row
+                .input-field.col.s12
+                    label Open:
+                    input.form-control(name='number',type='text',value=time.open)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Close
+                    input.form-control(name='bgcolor',type='text',value=time.close)
+            
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Edit
+               
+                    
+                  
+            
+            
+          
+          
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   

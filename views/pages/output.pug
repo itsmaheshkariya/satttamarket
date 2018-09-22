@@ -721,114 +721,12 @@ html(lang='en-US')
             td(style='font-weight: bold;color: #000;width: 40%;') MARKET
             td(style='font-weight: bold;color: #000;width: 30%;') OPEN
             td(style='font-weight: bold;color: #000;width: 30%;') CLOSE
-          tr
-            td(style='font-size:11px ') SRIDEVI
-            td(style='font-size:11px ') 11:30 AM
-            td(style='font-size:11px ') 12:30 PM
-          tr
-            td(style='font-size:11px;') TIME BAZAR
-            td(style='font-size:11px;') 01:05 PM
-            td(style='font-size:11px;') 02:05 PM
-          tr
-            td(style='font-size:11px;') MILAN DAY
-            td(style='font-size:11px;') 03:10 PM
-            td(style='font-size:11px;') 05:10 PM
-          tr
-            td(style='font-size:11px;') RAJDHANI DAY
-            td(style='font-size:11px;') 03:15 PM
-            td(style='font-size:11px;') 05:15 PM
-          tr
-            td(style='font-size:11px;') SUPREME DAY
-            td(style='font-size:11px;') 03:35 PM
-            td(style='font-size:11px;') 05:35 PM
-          tr
-            td(style='font-size:11px;') KALYAN
-            td(style='font-size:11px;') 04:30 PM
-            td(style='font-size:11px;') 06:30 PM
-          tr
-            td(style='font-size:11px;') SUPREME NIGHT
-            td(style='font-size:11px;') 08:35 PM
-            td(style='font-size:11px;') 11:35 PM
-          tr
-            td(style='font-size:11px;') MILAN NIGHT
-            td(style='font-size:11px;') 09:05 PM
-            td(style='font-size:11px;') 11:10 PM
-          tr
-            td(style='font-size:11px;') RAJDHANI NIGHT
-            td(style='font-size:11px;') 09:10 PM
-            td(style='font-size:11px;') 11:50 PM
-          tr
-            td(style='font-size:11px;') MAIN MUMBAI
-            td(style='font-size:11px;') 09:30 PM
-            td(style='font-size:11px;') 12:00 AM
-          tr
-            td(style='font-size:11px;') SUPER KALYAN
-            td(style='font-size:11px;') 12:15 PM
-            td(style='font-size:11px;') 02:15 PM
-          tr
-            td(style='font-size:11px;') CENTRAL BOMBAY
-            td(style='font-size:11px;') 12:30 PM
-            td(style='font-size:11px;') 01:30 PM
-          tr
-            td(style='font-size:11px;') MUMBAI MAIL
-            td(style='font-size:11px;') 12:30 PM
-            td(style='font-size:11px;') 02:30 PM
-          tr
-            td(style='font-size:11px;') BHAGYALAXMI
-            td(style='font-size:11px;') 12:40 PM
-            td(style='font-size:11px;') 02:40 PM
-          tr
-            td(style='font-size:11px;') KUBER MORNING
-            td(style='font-size:11px;') 01:15 PM
-            td(style='font-size:11px;') 02:40 PM
-          tr
-            td(style='font-size:11px;') DIAMOND
-            td(style='font-size:11px;') 01:15 PM
-            td(style='font-size:11px;') 02:45 PM
-          tr
-            td(style='font-size:11px;') SAGAR DAY
-            td(style='font-size:11px;') 01:30 PM
-            td(style='font-size:11px;') 03:30 PM
-          tr
-            td(style='font-size:11px;') NEW MILAN DAY
-            td(style='font-size:11px;') 02:10 PM
-            td(style='font-size:11px;') 05:10 PM
-          tr
-            td(style='font-size:11px;') KAMAL DAY
-            td(style='font-size:11px;') 02:30 PM
-            td(style='font-size:11px;') 03:30 PM
-          tr
-            td(style='font-size:11px;') WORLI DAY
-            td(style='font-size:11px;') 03:45 PM
-            td(style='font-size:11px;') 05:45 PM
-          tr
-            td(style='font-size:11px;') BOMBAY BAZAR
-            td(style='font-size:11px;') 03:45 PM
-            td(style='font-size:11px;') 05:45 PM
-          tr
-            td(style='font-size:11px;') MAIN MUMBAI DAY
-            td(style='font-size:11px;') 03:55 PM
-            td(style='font-size:11px;') 05:55 PM
-          tr
-            td(style='font-size:11px;') NIGHT TIME BAZAR
-            td(style='font-size:11px;') 08:10 PM
-            td(style='font-size:11px;') 10:10 PM
-          tr
-            td(style='font-size:11px;') PRABHAT NIGHT
-            td(style='font-size:11px;') 08:30 PM
-            td(style='font-size:11px;') 11:10 PM
-          tr
-            td(style='font-size:11px;') SAGAR NIGHT
-            td(style='font-size:11px;') 08:15 PM
-            td(style='font-size:11px;') 10:15 PM
-          tr
-            td(style='font-size:11px;') KALYAN NIGHT
-            td(style='font-size:11px;') 08:45 PM
-            td(style='font-size:11px;') 10:45 PM
-          tr
-            td(style='font-size:11px;') WORLI MUMBAI
-            td(style='font-size:11px;') 09:15 PM
-            td(style='font-size:11px;') 11:00 PM
+          each time, i in times
+            tr
+              td(style='font-size:11px ')= time.market
+              td(style='font-size:11px ')= time.open
+              td(style='font-size:11px ')= time.close
+          
     .satta-matka-block_strt_adsen1
       big
         b

@@ -82,6 +82,9 @@ let live = require('./routes/live');
 let Footer = require('./models/footer');
 let footer = require('./routes/footer');
 
+let Time = require('./models/time');
+let time = require('./routes/time');
+
 let Chart = require('./models/chart');
 let chart = require('./routes/chart');
 
@@ -197,6 +200,7 @@ express()
     .use('/', satta)
     .use('/', live)
     .use('/', footer)
+    .use('/', time)
     .use('/', chart)
     .use('/', newchart)
     .use('/', settings)
@@ -312,7 +316,10 @@ express()
                                         if (err) {
                                             console.log(err);
                                         } else {
-
+                                            Time.find({}, function(err, times) {
+                                                if (err) {
+                                                    console.log(err);
+                                                } else {
 
                                     Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
                                         res.render('pages/output', {
@@ -322,11 +329,14 @@ express()
                                             chartn: charts,
                                             settings: settings,
                                             files: files,
-                                            footers:footers
+                                            footers:footers,
+                                            times:times
                                         });
                                     });
 
 
+                                }
+                            });
                                 }
                             });
 
