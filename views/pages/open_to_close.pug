@@ -127,7 +127,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
         | !! Game Update Time !!
       .chart_mid
         each open, i in opens
-            .chart_content(style='margin:10px 10px;color:'+open.color+';')= open.text
+            .chart_content(style='margin:10px 10px;color:'+open.color+';')!= open.text
         
             
         //- .chart_content(style='color:#1749a6;')
