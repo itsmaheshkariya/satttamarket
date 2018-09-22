@@ -534,20 +534,25 @@ html(lang='en-US')
       h2.logo SATMATRAT - सटमटरट
     .satta-matka-block_strt_gold
       | ❋ Satmatrat ❋ Satta Matka Results ❋ SattaMatka ❋ Matka tips ❋ Free Matka Results ❋ Kalyan Matka Results ❋ Satta Game ❋ Matka Game ❋ Mumbai Main ❋ Kalyan Results ❋ Kalyan Chart ❋ Main Mumbai Chart ❋ Online Matka Results ❋ Satta Matka Tips ❋ Milan Chart ❋ Old Satta chart ❋ Top Matka Guess ❋ Matka Links ❋ Live Satta Matka Results ❋ Satta Matka Number ❋ Satta Matka Software ❋ Matka Chart ❋ Matka ❋ Free Matka Guessing ❋
-    .satta-matka-block_strt0
-      a.btn_red(href='#') SATMATRAT.IN
-      br
-      a.btn_red(href='#') SATMATRAT 143
-      br
-      a.btn_red(href='#') SATMATRAT GUESSING
-      br
-      a.btn_red(href='#') SATMATRAT RESULT SITE
-      br
-      a.btn_red(href='#') !! PROFESSOR !!
-      br
-      a.btn_red(href='#') !! ADMIN SIR !!
-      br
-      a.btn_red(href='#') 
+    
+    each footer, i in footers
+      div(style='background-color: '+footer.bgcolor+';border-radius: 5px;font-size: 19px;padding: 10px;text-align: center;border: #fff solid 2px;font-style: italic;font-family: Montserrat, sans-serif;margin-top: 10px;margin-bottom: 10px;')
+      
+        h2.btn_red(style='font-size: 19px;color:'+footer.color+'')!= footer.text
+      //- .satta-matka-block_strt0
+      //- a.btn_red(href='#') SATMATRAT.IN
+      //- br
+      //- a.btn_red(href='#') SATMATRAT 143
+      //- br
+      //- a.btn_red(href='#') SATMATRAT GUESSING
+      //- br
+      //- a.btn_red(href='#') SATMATRAT RESULT SITE
+      //- br
+      //- a.btn_red(href='#') !! PROFESSOR !!
+      //- br
+      //- a.btn_red(href='#') !! ADMIN SIR !!
+      //- br
+      //- a.btn_red(href='#') 
       br
     style.
       .live {
@@ -785,9 +790,16 @@ html(lang='en-US')
         //-     .satta-matka-block_zoneak(style='margin-top: -7px;')
         //-       | WEEKLY JODI AND PANNA
         div(style='padding-top: 1px;padding-bottom: 1px;')
-          a(style='text-decoration:none;color:#fff !important', href='life_time_free_open_to_close')
+          a(style='text-decoration:none;color:#fff !important', href='/open_to_close')
             .satta-matka-block_zoneak(style='margin-top: -7px;margin-bottom: -6px;')
-              | 100% FIX FREE GAME OPEN TO CLOSE AND LIFE TIME LOSS COVER GOLDEN CHART
+              | FREE OPEN TO CLOSE ON PUBLIC DEMAND
+        br
+        div(style='padding-top: 1px;padding-bottom: 1px;')
+          a(style='text-decoration:none;color:#fff !important', href='/weekly_chart')
+            .satta-matka-block_zoneak(style='margin-top: -7px;margin-bottom: -6px;')
+              | WEEKLY JODI AND PANNA
+        
+        
     .satta-matka-block_strt_adsen2
       each setting, i in settings
         span(style='color:'+setting.color+'').list-group-item.list-group-item-!= setting.title
@@ -836,16 +848,16 @@ html(lang='en-US')
       | Game By:- (ADMIN SIR)
       br
       | 
-    .satta-matka-block_strt_143
-      p(style='border-top-left-radius:1px;border-top-right-radius: 1px;padding-top: 10px;padding-bottom: 10px;margin-top: 0px;background-color:#7a0025 !important;color:#fef101;font-size: 18px;font-weight: bold;') ❋ DAILY GAMES ZONE ❋ 
-      div(style='padding-right: 3px;padding-left: 3px;')
+    //- .satta-matka-block_strt_143
+    //-   p(style='border-top-left-radius:1px;border-top-right-radius: 1px;padding-top: 10px;padding-bottom: 10px;margin-top: 0px;background-color:#7a0025 !important;color:#fef101;font-size: 18px;font-weight: bold;') ❋ DAILY GAMES ZONE ❋ 
+    //-   div(style='padding-right: 3px;padding-left: 3px;')
           
-          a(style='text-decoration:none;color:#780127 !important', href='/open_to_close')
-            .satta-matka-block_zone7(style='margin-top: -7px;')
-              | FREE OPEN TO CLOSE ON PUBLIC DEMAND
-          a(style='text-decoration:none;color:#780127 !important', href='/open_to_close')
-            .satta-matka-block_zone7(style='margin-top: -7px;margin-bottom: -6px;')
-              | WEEKLY JODI AND PANNA
+    //-       a(style='text-decoration:none;color:#780127 !important', href='/open_to_close')
+    //-         .satta-matka-block_zone7(style='margin-top: -7px;')
+    //-           | FREE OPEN TO CLOSE ON PUBLIC DEMAND
+    //-       a(style='text-decoration:none;color:#780127 !important', href='/open_to_close')
+    //-         .satta-matka-block_zone7(style='margin-top: -7px;margin-bottom: -6px;')
+    //-           | WEEKLY JODI AND PANNA
     .satta-matka-block_strt_143
       p(style='border-top-left-radius:1px;border-top-right-radius: 1px;padding-top: 10px;padding-bottom: 10px;margin-top: 0px;background-color:#7a0025 !important;color:#fef101;font-size: 18px;font-weight: bold;') ❋ 143 SPECIAL ZONE ❋ 
       div(style='padding-right: 3px;padding-left: 3px;')
