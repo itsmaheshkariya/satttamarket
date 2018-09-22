@@ -588,20 +588,21 @@ html(lang='en-US')
             b
               i * LIVE UPDATE *
       each liven, j in live
-        div(style='height:10px;')  
+        //- div(style='height:10px;background: '+liven.bgcolor+';')  
         div(style='background: '+liven.bgcolor+';')
+          div(style='padding:5px;')  
           big
             b
               i
-                font(color='red', size='5')= liven.name 
+                font(color=''+liven.color+'', size='5')= liven.name 
                 br
-                font(color='BLACK', style='font-size:24px;')=  liven.number
+                font(color=''+liven.color+'', style='font-size:24px;')=  liven.number
                 br
                 input#Login.btn.btn-sm.btn-danger(style='height:auto; padding:0 12px; font-style:italic;', name='Refresh', value='Refresh', type='submit', onclick='window.location.reload()')
             
           
-          div(style='height:10px;')  
-        hr
+          div(style='padding:5px;')  
+        //- hr
       
     .satta-matka-block_strt3
       | ❋ MATKA RESULTS LIVE ❋
