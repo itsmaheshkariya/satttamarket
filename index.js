@@ -82,6 +82,9 @@ let live = require('./routes/live');
 let Footer = require('./models/footer');
 let footer = require('./routes/footer');
 
+let Open = require('./models/opentoclose');
+let open = require('./routes/opentoclose');
+
 let Time = require('./models/time');
 let time = require('./routes/time');
 
@@ -199,6 +202,7 @@ express()
     .use(bodyParser.json())
     .use('/', satta)
     .use('/', live)
+    .use('/', open)
     .use('/', footer)
     .use('/', time)
     .use('/', chart)
@@ -480,10 +484,7 @@ express()
 
 
 
-            // res.render('pages/index', {
-            //     title: 'SAT MAT RAT',
-            //     satta: sattas
-            // });
+           
         }
     });
 
@@ -526,13 +527,31 @@ express()
 
 
 .get('/satta_matka_tricks_zone.php',(req,res)=>{
-
-    res.render('pages/satta_matka_tricks_zone.pug');
   
+    res.render('pages/satta_matka_tricks_zone');
+   
       })
 
 .get('/open_to_close', (req, res)=>{
-res.render('pages/open_to_close')
+
+    Open.find({}, function(err, opens) {
+        if (err) {
+            console.log(err);
+        } else {
+
+
+
+
+            Footer.find({}, function(err, footers) {
+                if (err) {
+                    console.log(err);
+                } else {
+res.render('pages/open_to_close',{opens:opens,footers:footers})
+}       
+});
+
+}       
+});
 })
 
 .get('/weekly_chart', (req, res)=>{

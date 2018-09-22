@@ -1,0 +1,39 @@
+extends layout
+block content
+    
+    form(method='POST',action='/open/edit/'+opens._id)
+        .row
+            h3 Open To Close Edit 
+        .col.s12
+            .row
+                .input-field.col.s12
+                    label Text:
+                    input.form-control(name='text',type='text',value=opens.text)
+
+            .row
+                .input-field.col.s12
+                    label Color:
+                    input.form-control(name='color',type='text',value=opens.color)
+            
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Edit
+               
+                    
+                  
+            
+            
+          
+          
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   

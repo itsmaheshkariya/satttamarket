@@ -1,0 +1,67 @@
+extends layout
+block content
+    
+    form(method='POST',action='/open')
+        .row
+            h4 Open To Close
+            
+        .col.s6
+            .row
+                .input-field.col.s12
+                    label Text:
+                    input.form-control(name='text',type='text')
+
+            .row
+                .input-field.col.s12
+                    label Color:
+                    input.form-control(name='color',type='text')
+            
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit") Submit
+            
+        .col.s6
+        
+            table.table.table-hover.table-dark(id="example")
+                thead
+                    td Text
+                    td Color
+                  
+                    td Edit
+                    td Delete
+                   
+     
+                each open, i in opens
+                    tbody
+                        td= open.text
+                        td= open.color
+                       
+                        td
+                            a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/open/edit/'+open._id)
+                                i.fa.fa-pencil 
+                        td
+                            form(action='/open/delete/'+open._id+'?_method=DELETE',method='POST')
+                                button.btn.btn-dark(type='submit' title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right")
+                                   i.fa.fa-trash
+                            
+                                    
+                                
+                          
+                
+          
+        br
+        br
+        br
+        br
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   

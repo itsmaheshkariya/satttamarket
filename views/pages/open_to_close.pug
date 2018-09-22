@@ -113,155 +113,149 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       }
       }
     style.
+        
       .logo{
-      background-image:url('images/lg3.png');
-      background-position:center;
-      background-repeat:no-repeat;
-      height:100px;
-      float:left;
-      width:100%;
+        color: #FFF;
+        font-family: 'Pacifico', cursive;
+        font-size: 2em;
       }
-    a(href='index.php')
-      .logo
+    div(style='text-align:center;')
+      //- img(src='images/lg33.png', alt='satta')
+      h2.logo SATMATRAT - सटमटरट
     .o_box
       .chart_title
         | !! Game Update Time !!
       .chart_mid
-        .chart_content(style='margin:10px 10px;color:#a90303;') !! Date 22-09-2018 !!
-        .chart_content(style='color:#1749a6;')
-          | !! Day 02.00 pm !!
-          br
-          | !! Night 08.00 pm !!
-        .chart_content(style='color:#8214cd;')
-          | !! Milan Day !!
-          br
-          | !! 9 8 0 1 !!
-        .chart_content(style='color:#ff2222;')
-          | !! Rajdhani Day !!
-          br
-          | !! 9 8 0 1 !!
-        .chart_content(style='color:#09950e;')
-          | !! Kalyan !!
-          br
-          | !! 9 8 0 1 !!
-        br
-        center
-          a(href='http://sattamatka.mobi/weekly_chart.php', target='_blank')
-            font(color='black')
-              b 100% FIX PANNA CHART CLICK HERE..
-        div(align='center')
-          script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
-          ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-5644214016514570', data-ad-slot='9319732348', data-ad-format='auto')
-          script.
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        .chart_content(style='color:#a90303;')
-          | !! Milan Night !!
-          br
-          | !! 9 8 0 1 !!
-        .chart_content(style='color:#ff2222;')
-          | !! Rajdhani Night !!
-          br
-          | !! - - - - !!
-        .chart_content(style='color:#1749a6;')
-          | !! Main Mumbai !!
-          br
-          | !! - - - - !!
+        each open, i in opens
+            .chart_content(style='margin:10px 10px;color:'+open.color+';')= open.text
+        
+            
+        //- .chart_content(style='color:#1749a6;')
+        //-   | !! Day 02.00 pm !!
+        //-   br
+        //-   | !! Night 08.00 pm !!
+        //- .chart_content(style='color:#8214cd;')
+        //-   | !! Milan Day !!
+        //-   br
+        //-   | !! 9 8 0 1 !!
+        //- .chart_content(style='color:#ff2222;')
+        //-   | !! Rajdhani Day !!
+        //-   br
+        //-   | !! 9 8 0 1 !!
+        //- .chart_content(style='color:#09950e;')
+        //-   | !! Kalyan !!
+        //-   br
+        //-   | !! 9 8 0 1 !!
+        //- br
+        //- center
+        //-   a(href='http://sattamatka.mobi/weekly_chart.php', target='_blank')
+        //-     font(color='black')
+        //-       b 100% FIX PANNA CHART CLICK HERE..
+        //- div(align='center')
+        //-   script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+        //-   ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-5644214016514570', data-ad-slot='9319732348', data-ad-format='auto')
+        //-   script.
+        //-     (adsbygoogle = window.adsbygoogle || []).push({});
+        //- .chart_content(style='color:#a90303;')
+        //-   | !! Milan Night !!
+        //-   br
+        //-   | !! 9 8 0 1 !!
+        //- .chart_content(style='color:#ff2222;')
+        //-   | !! Rajdhani Night !!
+        //-   br
+        //-   | !! - - - - !!
+        //- .chart_content(style='color:#1749a6;')
+        //-   | !! Main Mumbai !!
+        //-   br
+        //-   | !! - - - - !!
+    
+    //- div(align='center')
+    //-   script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+    //-   ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-5644214016514570', data-ad-slot='9319732348', data-ad-format='auto')
+    //-   script.
+    //-     (adsbygoogle = window.adsbygoogle || []).push({});
+    //- div(style='float:left; width:100%;')
+    //-   .chart_mid1.content_box
+    //-     center
+    //-       b
+    //-         big
+    //-           | \*/ PASSING RECORD:- \*/
+    //-           br
+    //-           | \*/ OPEN TO CLOSE \*/
+    //-           br
+    //-         | 17-09-2018
+    //-         hr
+    //-         small
+    //-           | MILAN DAY OPEN **8** PASS...
+    //-           br
+    //-           | MILAN DAY CLOSE **0** PASS...
+    //-           br
+    //-           | MILAN DAY JODI **80** PASS...
+    //-           br
+    //-           | KALYAN OPEN **0** PASS...
+    //-           br
+    //-           | MILAN NIGHT OPEN **1** PASS...
+    //-           br
+    //-           | MILAN NIGHT CLOSE **8** PASS...
+    //-           br
+    //-           | MILAN NIGHT JODI **18** PASS...
+    //-           br
+    //-           | MAIN MUMBAI OPEN **9** PASS...
+    //-           br
+    //-           | MAIN MUMBAI CLOSE **8** PASS...
+    //-           br
+    //-           | MAIN MUMBAI JODI **98** PASS...
+    //-           hr
+    //-           | Date:-18-09-2018:-
+    //-           br
+    //-           | TIME BAZAR OPEN **5** PASS...
+    //-           br
+    //-           | MILAN DAY OPEN **5** PASS...
+    //-           br
+    //-           | RAJDHANI DAY OPEN **5** PASS...
+    //-           br
+    //-           | RAJDHANI DAY CLOSE **2** PASS...
+    //-           br
+    //-           | RAJDHANI DAY JODI **52** PASS...
+    //-           br
+    //-           | KALYAN OPEN **5** PASS...
+    //-           hr
+    //-           | Date:-19-09-2018:-
+    //-           br
+    //-           | MILAN DAY CLOSE **8** PASS...
+    //-           br
+    //-           | RAJDHANI DAY CLOSE **8** PASS...
+    //-           br
+    //-           | KALYAN OPEN **7** PASS...
+    //-           br
+    //-           | RAJDHANI NIGHT OPEN **8** PASS...
+    //-           br
+    //-           | MAIN MUMBAI CLOSE **6** PASS...
+    //-           hr
+    //-           | Date:-20-09-2018:-
+    //-           br
+    //-           | RAJDHANI DAY CLOSE **3** PASS...
+    //-           hr
+    //-           | Date:-21-09-2018:-
+    //-           br
+    //-           | RAJDHANI DAY CLOSE **5** PASS...
+    //-           br
+    //-           | MILAN DAY OPEN **6** PASS...
+    //-           br
+    //-           | KALYAN CLOSE **4** PASS...
+    //-           br
+    //-           | MAIN MUMBAI **6** PASS...
+    //-           br
+    //- br
     br
-    center
-      a(href='http://sattamatka.mobi/weekly_chart.php', target='_blank')
-        font(color='white')
-          b 100% FIX PANNA CHART CLICK HERE..
-    div(align='center')
-      script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
-      ins.adsbygoogle(style='display:block', data-ad-client='ca-pub-5644214016514570', data-ad-slot='9319732348', data-ad-format='auto')
-      script.
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    div(style='float:left; width:100%;')
-      .chart_mid1.content_box
-        center
-          b
-            big
-              | \*/ PASSING RECORD:- \*/
-              br
-              | \*/ OPEN TO CLOSE \*/
-              br
-            | 17-09-2018
-            hr
-            small
-              | MILAN DAY OPEN **8** PASS...
-              br
-              | MILAN DAY CLOSE **0** PASS...
-              br
-              | MILAN DAY JODI **80** PASS...
-              br
-              | KALYAN OPEN **0** PASS...
-              br
-              | MILAN NIGHT OPEN **1** PASS...
-              br
-              | MILAN NIGHT CLOSE **8** PASS...
-              br
-              | MILAN NIGHT JODI **18** PASS...
-              br
-              | MAIN MUMBAI OPEN **9** PASS...
-              br
-              | MAIN MUMBAI CLOSE **8** PASS...
-              br
-              | MAIN MUMBAI JODI **98** PASS...
-              hr
-              | Date:-18-09-2018:-
-              br
-              | TIME BAZAR OPEN **5** PASS...
-              br
-              | MILAN DAY OPEN **5** PASS...
-              br
-              | RAJDHANI DAY OPEN **5** PASS...
-              br
-              | RAJDHANI DAY CLOSE **2** PASS...
-              br
-              | RAJDHANI DAY JODI **52** PASS...
-              br
-              | KALYAN OPEN **5** PASS...
-              hr
-              | Date:-19-09-2018:-
-              br
-              | MILAN DAY CLOSE **8** PASS...
-              br
-              | RAJDHANI DAY CLOSE **8** PASS...
-              br
-              | KALYAN OPEN **7** PASS...
-              br
-              | RAJDHANI NIGHT OPEN **8** PASS...
-              br
-              | MAIN MUMBAI CLOSE **6** PASS...
-              hr
-              | Date:-20-09-2018:-
-              br
-              | RAJDHANI DAY CLOSE **3** PASS...
-              hr
-              | Date:-21-09-2018:-
-              br
-              | RAJDHANI DAY CLOSE **5** PASS...
-              br
-              | MILAN DAY OPEN **6** PASS...
-              br
-              | KALYAN CLOSE **4** PASS...
-              br
-              | MAIN MUMBAI **6** PASS...
-              br
-    br
-    br
-    .satta-matka-block_strtF
-      .btn_red
-        | SATTAMATKA.MOBI
-        br
-        | ALL RIGHTS RESERVED (2012-2018)
-        br
-        | CONTACT ADMIN 
-        br
-        | 01141169999
-        br
+    //- .satta-matka-block_strtF
+    each footer, i in footers
+        div(style='background-color: '+footer.bgcolor+';border-radius: 5px;font-size: 19px;padding: 10px;text-align: center;border: #fff solid 2px;font-style: italic;font-family: Montserrat, sans-serif;margin-top: 10px;margin-bottom: 10px;')
+    
+            h2.btn_red(style='font-size: 19px;color:'+footer.color+'')!= footer.text
+            
     div(style='text-align: center;')
-      a(href='http://sattamatka.mobi/')
+      a(href='http://satmatrat.in/')
         img(src='images/back-btn.png', alt='satta')
-      a(href='http://sattamatka.mobi/')
+      a(href='http://satmatrat.in/')
         img(src='images/home-btn.png', alt='satta')
