@@ -531,7 +531,13 @@ express()
   
       })
 
+.get('/open_to_close', (req, res)=>{
+res.render('pages/open_to_close')
+})
 
+.get('/weekly_chart', (req, res)=>{
+    res.render('pages/weekly_chart  ')
+    })
 .get('/cool', (req, res) => res.send(cool()))
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
