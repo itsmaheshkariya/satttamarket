@@ -1,14 +1,14 @@
 extends layout
 block content
     
-    form(method='POST',action='/patti/chart/edit/'+sattan._id)
+    form(method='POST',action='/patti/chart/editonce/'+chart._id)
         .row
             h3 Add To Chart 
         .col.s12
             .row
                 .input-field.col.s12
                     label(style="margin-left:120px") Name:
-                    input.form-control(name='name',type='text',value=sattan.name)
+                    input.form-control(name='name',type='text',value=chart.name)
 
             
             .row
@@ -30,49 +30,20 @@ block content
             .row
                 .input-field.col.s12
                     label(style="margin-left:120px") Time 1
-                    input.form-control(name='time',type='time',value=sattan.time)
+                    input.form-control(name='time',type='time',value=chart.time)
             .row
                 .input-field.col.s12
                     label(style="margin-left:120px") Time 2
-                    input.form-control(name='time1',type='time',value=sattan.time1)
+                    input.form-control(name='time1',type='time',value=chart.time1)
             .row
                 .input-field.col.s12
                     label(style="margin-left:120px") Date
-                    input.form-control(name='date',type='date',value=sattan.date)
+                    input.form-control(name='date',type='date',value=chart.date)
             .row
                 .input-field.col.s12
                     
                     button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Submit
-        .col.s12
-            .row
-                table.table.table-hover.table-dark(id="example")
-                    thead
-                        td Name
-                        
-                        td Patti    
-                        td Color
-                        
-                        td Date
-                        td Edit
-                        td Delete
-                
-    
-                    each chart, i in charts
-                        tbody
-                            td= chart.name
-                            
-                            td= chart.l1+' '+chart.l2+' '+chart.l3+' '+chart.m1+' '+chart.m2+' '+chart.r1+' '+chart.r2+' '+' '+chart.r3+' '
-                            td= chart.color 
-                            
-                            td= chart.date
-                            td
-                                a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/patti/chart/editonce/'+chart ._id)
-                                    i.fa.fa-pencil 
-                            td
-                                form(action='/patti/chart/deleteonce/'+chart._id+'?_method=DELETE',method='POST')
-                                    button.btn.btn-dark(type='submit' title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right")
-                                        i.fa.fa-trash
-            
+        
             
           
           

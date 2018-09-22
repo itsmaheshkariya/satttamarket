@@ -42,10 +42,58 @@ router.get('/patti/chart/edit/:id', function(req, res) {
     });
 })
 
+router.get('/patti/chart/editonce/:id', function(req, res) {
+   
+        NewChart.findById(req.params.id , function(err, chart) {
+        res.render('pages/submittonewcharttoedit', {
+            title: 'SATMATRAT',
+            
+            chart:chart
+        });
+
+  
+    });
+})
 
 
+.post('/patti/chart/editonce/:id', function(req, res) {
+    let newchart = {};
+    newchart.name = req.body.name;
+    newchart.l1 = req.body.l1;
+    newchart.l2 = req.body.l2;
+    newchart.l3 = req.body.l3;
+    newchart.m1 = req.body.m1;
+    newchart.m2 = req.body.m2;
+    newchart.r1 = req.body.r1;
+    newchart.r2 = req.body.r2;
+    newchart.r3 = req.body.r3;
+    newchart.time = req.body.time;
+    newchart.time1 = req.body.time1;
+    newchart.date = req.body.date;
+    newchart.color = req.body.color;
+    let query = { _id: req.params.id }
+    NewChart.update(query, newchart, function(err) {
+        if (err) {
+            console.log(err);
+        } else {
+            {
 
+                res.redirect('/Results');
+            }
+        }
+    })
 
+})
+router.delete('/patti/chart/deleteonce/:id', function(req, res) {
+    let query = { _id: req.params.id }
+
+    NewChart.remove(query, function(err) {
+        if (err) {
+            console.log(err);
+        }
+        res.redirect('/Results');
+    })
+})
 router.post('/patti/chart/edit/:id', function(req, res) {
     let newchart = new NewChart();
     newchart.unikey = req.params.id;
