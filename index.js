@@ -82,6 +82,9 @@ let live = require('./routes/live');
 let Footer = require('./models/footer');
 let footer = require('./routes/footer');
 
+let Header = require('./models/header');
+let header = require('./routes/header');
+
 let Open = require('./models/opentoclose');
 let open = require('./routes/opentoclose');
 
@@ -207,6 +210,7 @@ express()
     .use('/', live)
     .use('/', open)
     .use('/', footer)
+    .use('/', header)
     .use('/', weekly)
     .use('/', time)
     .use('/', chart)
@@ -324,6 +328,12 @@ express()
                                         if (err) {
                                             console.log(err);
                                         } else {
+
+
+                                            Header.find({}, function(err, headers) {
+                                                if (err) {
+                                                    console.log(err);
+                                                } else {
                                             Time.find({}, function(err, times) {
                                                 if (err) {
                                                     console.log(err);
@@ -338,11 +348,13 @@ express()
                                             settings: settings,
                                             files: files,
                                             footers:footers,
+                                            headers:headers,
                                             times:times
                                         });
                                     });
 
-
+                                }
+                            });
                                 }
                             });
                                 }

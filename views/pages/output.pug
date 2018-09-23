@@ -13,7 +13,7 @@ html(lang='en-US')
     //-   window.dataLayer = window.dataLayer || [];
     //-   function gtag(){dataLayer.push(arguments);}
     //-   gtag('js', new Date());
-    //-   gtag('config', 'UA-46528741-8');
+    //-   gtag  ('config', 'UA-46528741-8');
     link(rel='shortcut icon', href='/favicon.ico')
     style.
       @font-face{
@@ -70,7 +70,7 @@ html(lang='en-US')
       padding-bottom:15px;text-align:center;border:#FFB90C solid 2px;font-style:italic;font-family:Helvetica Neue;margin-top:10px;margin-bottom:10px;
       }
       .satta-matka-block_strt3{
-      background-color:#02577c;color: #fff;font-size: 30px;font-weight: bold;border-radius: 5px;padding-bottom: 15px;
+      background-color:red;color: #000;font-size: 30px;font-weight: bold;border-radius: 5px;padding-bottom: 15px;
       text-align:center;border:#FFB90C solid 2px;font-style:italic;font-family:Helvetica Neue;margin-top:10px;margin-bottom:10px;
       }
       .satta-matka-block_strt4{
@@ -588,7 +588,7 @@ html(lang='en-US')
       white-space: nowrap;
       }
     .live(align='center')
-      div(style=' background-color: #FFC107;')
+      div(style=' background-color: #48FF00;')
         font(size='5')
           big
             b
@@ -614,10 +614,11 @@ html(lang='en-US')
     .satta-matka-block_strt3
       | ❋ MATKA RESULTS LIVE ❋
     .satta-matka-block_strt_all
-      .rblock2
-        each sattan, i in satta
-          h2.tit= sattan.name
-          h2.live_res= sattan.number
+      each sattan, i in satta
+        .rblock2(style='background:'+sattan.bgcolor+'')
+        
+          h2(style='color:'+sattan.color+'').tit= sattan.name
+          h2(style='color:'+sattan.color+'').live_res= sattan.number
       
     div(style='text-align: center;')
       a.refresh_big(onclick='window.location.reload()') Refresh
@@ -962,7 +963,7 @@ html(lang='en-US')
         | Satmatrat.in is also known as satmatrat 143 also a world of Experts Guessing Forum website and one of the most Visited Satta Site amongst people engaged in Satmatrat, satta bazar, matka bazar, Time Bazar, Milan Day/Night, Kalyan Matka, Rajdhani Day/Night Satta, Mumbai main And We Provide Super Fast and Fastest matka results Apart From Other Players in Industry Our Content Helps You To Big wins. We Provide Live Updates, Guessing Forum Where Our Experts Helps You To Quickest Earnings. Free Open and close for Public Welfare Weekly Jodi & Panna with Lifetime Golden win Chart in 143 SPECIAL ZONE You will Get to know Evergreen Tricks Zone and old charts of Kalyan Matka & Mumbai Matka Of 1972 to 2012 With King Maker Khatri's Favorite Panna also know as leaf and behalf of CHARTS ZONE We Provide You Kalyan Chart Mumbai Chart Supreme Chart Milan day Milan Night Chart & Rajdhani Day & Night Jodi Chart With Penal patti leafs. satta to name a few. Our website has come out as an undisputed leader in this arena since we started working over years ago. And we attribute this success to our consistent efforts in publishing the results of all Satka Matka game at the earliest and quicker than all other players in this market.
       a(href='satta-matka-history-wiki')
         button.refresh Read More
-    each footer, i in footers
+    each footer, i in headers
       div(style='background-color: '+footer.bgcolor+';border-radius: 5px;font-size: 19px;padding: 10px;text-align: center;border: #fff solid 2px;font-style: italic;font-family: Montserrat, sans-serif;margin-top: 10px;margin-bottom: 10px;')
       
         h2.btn_red(style='font-size: 19px;color:'+footer.color+'')!= footer.text

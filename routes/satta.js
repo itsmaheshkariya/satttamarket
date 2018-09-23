@@ -55,7 +55,7 @@ router.post('/satta', ensureAuthenticated, function(req, res) {
     satta.time1 = req.body.time1;
     satta.date = req.body.date;
     satta.bgcolor = req.body.bgcolor;
-
+    satta.color = req.body.color;
     satta.save(function(err) {
         if (err) {
             console.log(err);
@@ -97,7 +97,7 @@ router.delete('/satta/delete/:id', ensureAuthenticated, function(req, res) {
         satta.time = req.body.time;
         satta.time1 = req.body.time1;
         satta.bgcolor = req.body.bgcolor;
-
+        satta.color = req.body.color;
         let query = { _id: req.params.id }
         Satta.update(query, satta, function(err) {
             if (err) {

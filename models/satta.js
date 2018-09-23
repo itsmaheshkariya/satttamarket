@@ -29,6 +29,10 @@ let sattaSchema = mongoose.Schema({
     bgcolor: {
         type: String,
         required: false
+    },
+    color: {
+        type: String,
+        required: false
     }
 
 
