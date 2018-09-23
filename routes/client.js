@@ -76,7 +76,7 @@ router.delete('/client/delete/:id', function(req, res) {
 
        
         let query = { _id: req.params.id }
-        Client.update(query, footer, function(err) {
+        Client.update(query, client, function(err) {
             if (err) {
                 console.log(err);
             } else {
