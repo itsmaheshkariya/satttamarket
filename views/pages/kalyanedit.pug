@@ -1,0 +1,47 @@
+extends layout
+block content
+    
+    form(method='POST',action='/kalyan/edit/'+kalyan._id)
+        .row
+            h3 Kalyan Updater 
+        .col.s12
+            .row
+                .input-field.col.s12
+                    label Time 1:
+                    input.form-control(name='time1',type='text',value=kalyan.time1)
+
+            .row
+                .input-field.col.s12
+                    label Result 1:
+                    input.form-control(name='result1',type='text',value=kalyan.result1)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Time 2
+                    input.form-control(name='time2',type='text',value=kalyan.time2)
+            .row
+                .input-field.col.s12
+                    label(style="margin-left:120px") Result 2
+                    input.form-control(name='result2',type='text',value=kalyan.result2)
+            
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Edit
+               
+                    
+                  
+            
+            
+          
+          
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   

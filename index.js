@@ -94,6 +94,9 @@ let weekly = require('./routes/weekly');
 let Time = require('./models/time');
 let time = require('./routes/time');
 
+let Kalyan = require('./models/kalyan');
+let kalyan = require('./routes/kalyan');
+
 let Chart = require('./models/chart');
 let chart = require('./routes/chart');
 
@@ -213,6 +216,7 @@ express()
     .use('/', header)
     .use('/', weekly)
     .use('/', time)
+    .use('/', kalyan)
     .use('/', chart)
     .use('/', newchart)
     .use('/', settings)
@@ -338,7 +342,10 @@ express()
                                                 if (err) {
                                                     console.log(err);
                                                 } else {
-
+                                                    Kalyan.find({}, function(err, kalyans) {
+                                                        if (err) {
+                                                            console.log(err);
+                                                        } else {
                                     Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
                                         res.render('pages/output', {
                                             title: 'SAT MAT RAT',
@@ -349,10 +356,12 @@ express()
                                             files: files,
                                             footers:footers,
                                             headers:headers,
-                                            times:times
+                                            times:times,
+                                            kalyans:kalyans
                                         });
                                     });
-
+                                }
+                            });
                                 }
                             });
                                 }

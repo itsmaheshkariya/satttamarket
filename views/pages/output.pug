@@ -689,36 +689,37 @@ html(lang='en-US')
           th(width='20%', style='background-color:#aa6360;text-align:center;color: #fff;') Result
           th(width='20%', style='background-color:#aa6360;text-align:center;color: #fff;') Time
           th(width='20%', style='background-color:#aa6360;text-align:center;color: #fff;') Result
+        each kalyan , i in kalyans
         tr.kalyan_td(style='border-bottom: 2px solid #8c8583; font-style:italic;')
-          td(width='20%', style='color:#ae2500;') 10:00 AM
-          td(width='20%', style='color:#ae2500;') 458-7 
-          td(width='20%', style='color:#ae2500;') 04:00 PM
-          td(width='20%', style='color:#ae2500;') 266-4 
-        tr.kalyan_td(style='border-bottom: 2px solid #8c8583; font-style:italic;')
-          td(width='20%') 11:00 AM
-          td(width='20%') 300-3 
-          td(width='20%') 05:00 PM
-          td(width='20%') 690-5 
-        tr.kalyan_td(style='border-bottom: 2px solid #8c8583; font-style:italic;')
-          td(width='20%', style='color:#ae2500;') 12:00 PM
-          td(width='20%', style='color:#ae2500;') 136-0 
-          td(width='20%', style='color:#ae2500;') 06:00 PM
-          td(width='20%', style='color:#ae2500;') 679-2 
-        tr.kalyan_td(style='border-bottom: 2px solid #8c8583; font-style:italic;')
-          td(width='20%') 01:00 PM
-          td(width='20%') 220-4 
-          td(width='20%') 07:00 PM
-          td(width='20%') 378-8 
-        tr.kalyan_td(style='border-bottom: 2px solid #8c8583; font-style:italic;')
-          td(width='20%', style='color:#ae2500;') 02:00 PM
-          td(width='20%', style='color:#ae2500;') 135-9 
-          td(width='20%', style='color:#ae2500;') 08:00 PM
-          td(width='20%', style='color:#ae2500;') 255-2 
-        tr.kalyan_td(style='border-bottom: 2px solid #8c8583; font-style:italic;')
-          td(width='20%') 03:00 PM
-          td(width='20%') 200-2 
-          td(width='20%') 09:00 PM
-          td(width='20%') 260-8 
+          td(width='20%', style='color:#ae2500;')= kalyan.time1
+          td(width='20%', style='color:#ae2500;')= kalyan.result1
+          td(width='20%', style='color:#ae2500;')= kalyan.time2
+          td(width='20%', style='color:#ae2500;')= kalyan.result2
+        //- tr.kalyan_td(style='border-bottom: 2px solid #8c8583; font-style:italic;')
+        //-   td(width='20%') 11:00 AM
+        //-   td(width='20%') 300-3 
+        //-   td(width='20%') 05:00 PM
+        //-   td(width='20%') 690-5 
+        //- tr.kalyan_td(style='border-bottom: 2px solid #8c8583; font-style:italic;')
+        //-   td(width='20%', style='color:#ae2500;') 12:00 PM
+        //-   td(width='20%', style='color:#ae2500;') 136-0 
+        //-   td(width='20%', style='color:#ae2500;') 06:00 PM
+        //-   td(width='20%', style='color:#ae2500;') 679-2 
+        //- tr.kalyan_td(style='border-bottom: 2px solid #8c8583; font-style:italic;')
+        //-   td(width='20%') 01:00 PM
+        //-   td(width='20%') 220-4 
+        //-   td(width='20%') 07:00 PM
+        //-   td(width='20%') 378-8 
+        //- tr.kalyan_td(style='border-bottom: 2px solid #8c8583; font-style:italic;')
+        //-   td(width='20%', style='color:#ae2500;') 02:00 PM
+        //-   td(width='20%', style='color:#ae2500;') 135-9 
+        //-   td(width='20%', style='color:#ae2500;') 08:00 PM
+        //-   td(width='20%', style='color:#ae2500;') 255-2 
+        //- tr.kalyan_td(style='border-bottom: 2px solid #8c8583; font-style:italic;')
+        //-   td(width='20%') 03:00 PM
+        //-   td(width='20%') 200-2 
+        //-   td(width='20%') 09:00 PM
+        //-   td(width='20%') 260-8 
     br
     .satta-matka-block_strt4(style='text-align: center;')
       div(style='margin-top:-2px;')
