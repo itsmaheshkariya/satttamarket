@@ -97,6 +97,9 @@ let time = require('./routes/time');
 let Kalyan = require('./models/kalyan');
 let kalyan = require('./routes/kalyan');
 
+let Client = require('./models/client');
+let client = require('./routes/client');
+
 let Chart = require('./models/chart');
 let chart = require('./routes/chart');
 
@@ -213,6 +216,7 @@ express()
     .use('/', live)
     .use('/', open)
     .use('/', footer)
+    .use('/', client)
     .use('/', header)
     .use('/', weekly)
     .use('/', time)

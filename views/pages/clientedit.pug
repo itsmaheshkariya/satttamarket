@@ -1,0 +1,39 @@
+extends layout
+block content
+    
+    form(method='POST',action='/client/edit/'+client._id)
+        .row
+            h3 Client Updater 
+        .col.s12
+            .row
+                .input-field.col.s12
+                    label Name:
+                    input.form-control(name='name',type='text',value=client.name)
+
+            .row
+                .input-field.col.s12
+                    label Password:
+                    input.form-control(name='password',type='text',value=client.password)
+            
+            
+                .input-field.col.s12
+                    
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Edit
+               
+                    
+                  
+            
+            
+          
+          
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   
