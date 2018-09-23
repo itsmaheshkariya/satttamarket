@@ -3,6 +3,7 @@ html(lang='en-US')
   head
     meta(charset='UTF-8')
     title SAT MAT RAT(सटमटरट)
+    link(rel='stylesheet', href='css/maino.css')
     meta(http-equiv='refresh', content='900')
     meta(name='description', content='SAT MAT RAT(सटमटरट) Satmatrat, satta matka, satta matka 143, matka results, matka Charts, Matka Tips, matka kalyan,  matka result, satta matka result, satta matka Tips, satta matka chart, satta satta matka, matka satta, Satta, Satta Results, matka satta result, matka satta chart, Kalyan matka tips, mumbai matka tips, matka chart, satta bazar, fix satta matka, kalyan matka, satta king')
     meta(name='keywords', content='SAT MAT RAT(सटमटरट) Satta Matka, satta matka, sattamatka, satta matka 143, Matka results, Matka Tips, Matka Charts, Satta Matka Tips, Dpboss, Satta Matka Chart, kalyan matka results, matka results, KALYAN BAZAR, MAIN MUMBAI BAZAR, SATTA BAZAR, satta matka results, satta matka chart, satta satta matka,matka satta, matka satta result, Satta, Satta Results, matka satta chart, kalyan matka, satta king')
@@ -594,19 +595,20 @@ html(lang='en-US')
               i * LIVE UPDATE *
       each liven, j in live
         //- div(style='height:10px;background: '+liven.bgcolor+';')  
-        div(style='background: '+liven.bgcolor+';')
-          div(style='padding:5px;')  
-          big
-            b
-              i
-                font(color=''+liven.color+'', size='5')= liven.name 
-                br
-                font(color=''+liven.color+'', style='font-size:24px;')=  liven.number
-                br
-                input#Login.btn.btn-sm.btn-danger(style='height:auto; padding:0 12px; font-style:italic;', name='Refresh', value='Refresh', type='submit', onclick='window.location.reload()')
+        if(liven.name!='')
+          div(style='background: '+liven.bgcolor+';')
+            div(style='padding:5px;')  
+            big
+              b
+                i
+                  font(color=''+liven.color+'', size='5').spano= liven.name 
+                  br
+                  font(color=''+liven.color+'', style='font-size:24px;').spano=  liven.number
+                  br
+                  input#Login.btn.btn-sm.btn-danger(style='height:auto; padding:0 12px; font-style:italic;', name='Refresh', value='Refresh', type='submit', onclick='window.location.reload()')
+              
             
-          
-          div(style='padding:5px;')  
+            div(style='padding:5px;')  
         //- hr
       
     .satta-matka-block_strt3
