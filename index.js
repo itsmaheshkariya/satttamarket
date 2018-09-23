@@ -72,6 +72,7 @@ const storage = new GridFsStorage({
 });
 const upload = multer({ storage });
 
+let cuslive = require('./routes/cuslive');
 
 let Satta = require('./models/satta');
 let satta = require('./routes/satta');
@@ -216,6 +217,7 @@ express()
     .use('/', live)
     .use('/', open)
     .use('/', footer)
+    .use('/', cuslive)
     .use('/', client)
     .use('/', header)
     .use('/', weekly)
@@ -603,6 +605,13 @@ res.render('pages/open_to_close',{opens:opens,footers:footers})
 }       
 });
     })
+
+
+
+.get('/user/login',(req,res)=>{
+    res.render('pages/clientlogin')
+})
+
 .get('/cool', (req, res) => res.send(cool()))
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 

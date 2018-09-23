@@ -9,6 +9,10 @@ let liveSchema = mongoose.Schema({
         type: String,
         required: false
     },
+    cuskey: {
+        type: String,
+        required: false
+    },
     name: {
         type: String,
         required: false
