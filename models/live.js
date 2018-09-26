@@ -25,6 +25,10 @@ let liveSchema = mongoose.Schema({
         type: String,
         required: false
     },
+    color1: {
+        type: String,
+        required: false
+    },
     bgcolor: {
         type: String,
         required: false
