@@ -53,7 +53,7 @@ router.post('/weekly', function(req, res) {
 
 router.get('/weekly/edit/:id', function(req, res) {
     Weekly.findById(req.params.id, function(err, weeklys) {
-        res.render('pages/openedit', {
+        res.render('pages/weeklyedit', {
             title: 'SATMATRAT',
             weeklys: weeklys
         });
@@ -63,13 +63,24 @@ router.get('/weekly/edit/:id', function(req, res) {
 
 
 router.delete('/weekly/delete/:id', function(req, res) {
+    let query = { _id: req.params.id }
+
+    Weekly.remove(query, function(err) {
+        if (err) {
+            console.log(err);
+        }
+        res.redirect('/weekly');
+    })
+})
+
+router.delete('/settings/delete/:id', function(req, res) {
         let query = { _id: req.params.id }
 
-        Weeklys.remove(query, function(err) {
+        Settings.remove(query, function(err) {
             if (err) {
                 console.log(err);
             }
-            res.redirect('/weekly');
+            res.redirect('/Settings');
         })
     })
     .post('/weekly/edit/:id', function(req, res) {
@@ -80,9 +91,9 @@ router.delete('/weekly/delete/:id', function(req, res) {
         weekly.text = req.body.text;
         weekly.textcolor = req.body.textcolor;
 
-       
+
         let query = { _id: req.params.id }
-        Weekly.update(query, open, function(err) {
+        Weekly.update(query, weekly, function(err) {
             if (err) {
                 console.log(err);
             } else {

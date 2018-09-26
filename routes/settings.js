@@ -16,6 +16,7 @@ router.get('/Settings/edit/:id', function(req, res) {
         });
     });
 })
+
 router.get('/Settings', function(req, res) {
 
     Settings.find({}, function(err, settings) {

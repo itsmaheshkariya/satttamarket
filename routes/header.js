@@ -32,7 +32,7 @@ router.get('/header', function(req, res) {
 
 })
 router.post('/header', function(req, res) {
-    let header = new Footer();
+    let header = new Header();
     header.text = req.body.text;
     header.color = req.body.color;
     header.bgcolor = req.body.bgcolor;
@@ -77,7 +77,7 @@ router.delete('/header/delete/:id', function(req, res) {
         header.bgcolor = req.body.bgcolor;
        
         let query = { _id: req.params.id }
-        Header.update(query, footer, function(err) {
+        Header.update(query, header, function(err) {
             if (err) {
                 console.log(err);
             } else {
