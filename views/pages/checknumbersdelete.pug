@@ -1,0 +1,72 @@
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    title= findtitlen.name
+    meta(name='description', content='Time bazar chart in Time matka chart record with jodi record book.It is Usefull For Satta Matka , Matka Game time matka satta')
+    meta(name='keywords', content='Time matka chart, time bazar chart, time chart, time record, time bazar record')
+    meta(name='robots', content='INDEX, FOLLOW, ARCHIVE')
+    meta(name='viewport', content='initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='STYLESHEET', type='text/css', href='styles.css')
+    script(type='text/javascript', async='', src='https://www.google-analytics.com/analytics.js')
+    script(src='https://pagead2.googlesyndication.com/pagead/js/r20180709/r20180604/osd.js')
+    script(src='https://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-5811859434860094.js')
+    script(async='', src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+    
+    meta(forua='true', http-equiv='Cache-Control', content='max-age=0')
+    style(type='text/css').
+      body { background-color: #FFCC99;
+      color: #330000;
+      font-size : large;
+      font-family:Comic Sans MS;
+      font-weight: bold;
+      }
+      a { color: Red;
+      }
+      .ab 
+      {
+ 
+        
+      font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+      font-size: 2em;
+      font-weight:bold;
+
+  
+      }
+    style(type='text/ css').
+      body {border:0px solid blue; background-color:#FFCC99;}
+    link(rel='preload', href='https://adservice.google.co.in/adsid/integrator.js?domain=dpboss.net', as='script')
+    script(type='text/javascript', src='https://adservice.google.co.in/adsid/integrator.js?domain=dpboss.net')
+    link(rel='preload', href='https://adservice.google.com/adsid/integrator.js?domain=dpboss.net', as='script')
+    
+  body
+    div(style='background-color:#FFCC99;color:black;font-weight:bold;font-style:italic;text-decoration:none;border-width:3px;border-color:indigo;border-style:solid;margin-top:0;margin-bottom:0;margin-left:5px;margin-right:5px;padding-top:5px;padding-bottom:5px;padding-left:5px;padding-right:5px;border-radius:0;text-shadow:1px 1px #FFCC99;', align='center')
+      h1= findtitlen.name
+    br
+    div(style='border-style: solid; border-color: red; background-color: #FFCC99; color:black; ', align='center')
+      big= findtitlen.name
+        
+         
+        br
+        table(border='1')
+          tbody
+            -var l =7
+            - var countrows = chartnn.length/7+1
+            -for (var k = 1; k <= countrows; k++)
+              tr
+                
+                each val, i in chartnn
+                  
+                  -var x =l*k
+                  -if (i<x)
+                    - var m= k-1
+                    - var y= l*m
+                    -if (i>=y)
+                      td.ab(style='color: '+ val.color +'')=  val.m1+val.m2
+                  
+              
+    // Global site tag (gtag.js) - Google Analytics
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-111327609-1');
