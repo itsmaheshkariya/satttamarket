@@ -1,0 +1,39 @@
+extends layout
+block content
+    
+    form(method='POST',action='/khatri/edit/'+khatri._id)
+        .row
+            h3 Khatri Updater 
+        .col.s12
+            .row
+                .input-field.col.s12
+                    label Head:
+                    input.form-control(name='head',type='text',value=khatri.head)
+
+            .row
+                .input-field.col.s12
+                    label Numbers:
+                    input.form-control(name='tail',type='text',value=khatri.tail)
+            
+            
+                .input-field.col.s12
+                    
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Edit
+               
+                    
+                  
+            
+            
+          
+          
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   

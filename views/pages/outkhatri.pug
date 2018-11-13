@@ -1,0 +1,120 @@
+doctype html
+html(xmlns='http://www.w3.org/1999/xhtml')
+	head
+		title KHATRI FAVOURITE PANNA CHART
+		script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-46528741-9')
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-46528741-9');
+	body
+		style.
+			@font-face {
+			font-family: myfont1;
+			src: url(LatoLatin-BlackItalic.woff2);
+			}
+			body{
+			background-color:#000;
+			}
+			.k_chart{
+			border-radius:5px;
+			background-color:#fff;
+			margin:0 0 20px 0;
+			}
+			.k_head{
+			font-family:myfont1;
+			color:#fff;
+			font-weight:700;
+			border-radius:5px 5px 0 0;
+			font-size:18px;
+			padding:7px 0;
+			margin:0;
+			background-color:red;
+			text-align:center;
+			}
+			.chart{
+			text-align:center;
+			box-sizing:border-box;
+			border-bottom:2px solid #b3b3b3;
+			margin:0;
+			font-family:myfont1;
+			}
+			.chart_head{
+			font-weight:700;
+			color:red;
+			padding:10px 0 0 0px;
+			}
+			.chart_msg{
+			font-size:16px;
+			font-weight:700;
+			font-family:myfont1;
+			}
+			.satta-matka-block_strtF{
+			background-color: #a10131;
+			border-radius: 5px;
+			font-size: 20px;
+			padding: 9px;
+			text-align: center;
+			border: #fff solid 2px;
+			font-style: italic;
+			margin-top: 0px;
+			margin-bottom: 10px;
+			font-weight: bold;
+			float: left;
+			width: 100%;
+			box-sizing: border-box;
+			}
+			.btn_red{color:#fff;text-decoration: none;font-weight: bold;}
+			@media only screen and (max-width: 480px) {
+			.k_head{
+			font-size:14px;
+			font-weight:700;
+			}
+			}
+		style.
+			a{
+				text-decoration:none;
+			}
+			.logo {
+			color: #FFF;
+			font-family: 'Pacifico', cursive;
+			font-size: 2em;
+			}
+			
+		a(href='#')
+			div(style='text-align:center;')
+				h2.logo SATMATRAT - सटमटरट
+		div(style='float:left; width:100%;')
+			.k_chart
+				.k_head KHATRI'S FAVOURITE PANNA CHART
+				each khatri, i in khatris
+					.chart
+						p.chart_head= khatri.head
+						p.chart_msg!= khatri.tail
+							//- | 128 - 137 - 236 - 678
+							//- br
+							//- | 245 - 290 - 470 - 579.
+				
+				//- .chart(style='border:none;padding:0 0 5px 0;')
+				//- 	p.chart_head 0
+				//- 	p.chart_msg
+				//- 		| 145 - 190 - 460 - 569
+				//- 		br
+				//- 		| 235 - 280 - 370 - 578.
+		#btm
+		.satta-matka-block_strtF
+			.btn_red
+				| SATMATRAT.IN
+				br
+				| ALL RIGHTS RESERVED (2012-2018)
+				br
+				| CONTACT ADMIN 
+				br
+				| 09112310269
+				br
+		div(style='text-align: center;')
+			a(href='http://datmatrat.in/')
+				img(src='images/back-btn.png', alt='satta')
+			a(href='http://datmatrat.in/')
+				img(src='images/home-btn.png', alt='satta')

@@ -15,7 +15,6 @@ const Grid = require('gridfs-stream');
 const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage')
 const config = require('./config/database')
-
 require('./config/passport')(passport);
 
 
@@ -76,6 +75,11 @@ let cuslive = require('./routes/cuslive');
 
 let Satta = require('./models/satta');
 let satta = require('./routes/satta');
+
+let Khatri = require('./models/khatri');
+let khatri = require('./routes/khatri');
+
+
 
 let Live = require('./models/live');
 let live = require('./routes/live');
@@ -227,6 +231,7 @@ express()
     .use('/', newchart)
     .use('/', settings)
     .use('/', users)
+    .use('/', khatri)
     .get('/Upimg', function(req, res) {
         gfs.files.find().toArray((err, files) => {
 
