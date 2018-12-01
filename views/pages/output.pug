@@ -568,7 +568,7 @@ html(lang='en-US')
       | ❋ Satmatrat ❋ Satta Matka Results ❋ SattaMatka ❋ Matka tips ❋ Free Matka Results ❋ Kalyan Matka Results ❋ Satta Game ❋ Matka Game ❋ Mumbai Main ❋ Kalyan Results ❋ Kalyan Chart ❋ Main Mumbai Chart ❋ Online Matka Results ❋ Satta Matka Tips ❋ Milan Chart ❋ Old Satta chart ❋ Top Matka Guess ❋ Matka Links ❋ Live Satta Matka Results ❋ Satta Matka Number ❋ Satta Matka Software ❋ Matka Chart ❋ Matka ❋ Free Matka Guessing ❋
     
     each footer, i in headers
-      div(style='background-color: '+footer.bgcolor+';border-radius: 5px;font-size: 19px;padding: 10px;text-align: center;border: #fff solid 2px;font-style: italic;font-family: Montserrat, sans-serif;margin-top: 10px;margin-bottom: 10px;')
+      div(style='background-color: '+footer.bgcolor+';border-radius: 5px;font-size: 19px;padding: 10px;text-align: center;border: #fff solid 2px;font-style: italic;font-family: Montserrat, sans-serif;margin-top: 2px;margin-bottom: 2px;')
       
         h2.btn_red(style='font-size: 19px;color:'+footer.color+'')!= footer.text
       //- .satta-matka-block_strt0
@@ -585,7 +585,7 @@ html(lang='en-US')
       //- a.btn_red(href='#') !! ADMIN SIR !!
       //- br
       //- a.btn_red(href='#') 
-      br
+      //- br
     style.
       .live {
       background-color: mintcream;
@@ -619,7 +619,7 @@ html(lang='en-US')
       white-space: nowrap;
       }
     .live(align='center')
-      div(style=' background-color: #48FF00;')
+      div(style=' background-color: #48FF00;margin-top:-10px')
         font(size='5')
           h1
             b
@@ -638,7 +638,7 @@ html(lang='en-US')
                   
                   
                   br
-                  input#Login.btn.btn-sm.btn-danger(style='height:auto; padding:0 12px; font-style:italic;', name='Refresh', value='Refresh', type='submit', onclick='window.location.reload()')
+                  //- input#Login.btn.btn-sm.btn-danger(style='height:auto; padding:0 12px; font-style:italic;', name='Refresh', value='Refresh', type='submit', onclick='window.location.reload()')
             
             br
             hr
@@ -649,13 +649,13 @@ html(lang='en-US')
       
     .satta-matka-block_strt3
       | ❋ MATKA RESULTS LIVE ❋
-    hr
-    .satta-matka-block_strt_all
+    //- hr
+    .satta-matka-block_strt_all(style="padding-top:20px")
       each sattan, i in satta
         .rblock2(style='background:'+sattan.bgcolor+'')
           
           h1( style='color:'+sattan.color+'').tit= sattan.name
-          h1( style='color:'+sattan.color+';font-size:44px').tit= sattan.number
+          h1( style='color:'+sattan.color1+';font-size:44px').tit= sattan.number
         hr
       
     div(style='text-align: center;')

@@ -19,6 +19,7 @@ router.get('/weekly', function(req, res) {
                 if (err) {
                     console.log(err);
                 } else {
+                    console.log(weeklys);
                     res.render('pages/weekly', {
                         title: 'SAT MAT RAT',
                         weeklys: weeklys,

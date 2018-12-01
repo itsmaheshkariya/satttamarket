@@ -34,7 +34,11 @@ let sattaSchema = mongoose.Schema({
         type: String,
         required: false
     }
-
+    ,
+    color1: {
+        type: String,
+        required: false
+    }
 
 
 });
