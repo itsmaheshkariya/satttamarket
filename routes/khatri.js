@@ -88,10 +88,10 @@ router.post('/khatri', function(req, res) {
 })
 
 router.get('/khatri/edit/:id', function(req, res) {
-    Khatri.findById(req.params.id, function(err, khatris) {
+    Khatri.findById(req.params.id, function(err, khatri) {
         res.render('pages/khatriedit', {
             title: 'SATMATRAT',
-            khatris: khatris
+            khatri: khatri
         });
     });
 })

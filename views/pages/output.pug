@@ -105,9 +105,10 @@ html(lang='en-US')
       padding-bottom: 10px;text-align:center;border:#FF0015 solid 2px;font-style:italic;font-family:Montserrat, sans-serif;margin-bottom:10px; line-height: 20.4px;
       }
       .satta-matka-block_strt_all{
-      background-color:#fff;color: #000;font-size: 12px;border-radius: 0px;
-      padding-bottom: 10px;text-align:center;border: #b31f1f solid 5px;font-style:italic;font-family:Helvetica Neue;margin-top:10px;margin-bottom:10px;
+      color: #000;font-size: 12px;border-radius: 0px;
+      text-align:center;border-top:red solid 2px;border-right:red solid 2px;border-left:red solid 2px
       }
+      /*padding-bottom: 10px;text-align:center;border: #b31f1f solid 5px;font-style:italic;font-family:Helvetica Neue;margin-top:10px;margin-bottom:10px;*/
       .satta-matka-block_strt_login{
       background-color:#fff;color: #000;font-size: 12px;border-radius: 5px;
       padding-bottom: 10px;text-align:center;border:#560202 solid 2px;font-style:italic;font-family:Montserrat, sans-serif;margin-top:10px;margin-bottom:10px;
@@ -625,26 +626,28 @@ html(lang='en-US')
             b
               i * LIVE UPDATE *
       each liven, j in live
+        hr(style="margin-top:-12px")
         //- div(style='height:10px;background: '+liven.bgcolor+';')  
         if(liven.name!='')
-          div.rblock3(style='background: '+liven.bgcolor+';')
-            div  
+          div.rblock3(style='background: '+liven.bgcolor+';margin-bottom:7px')
+            div(style="margin-top:-6px")
             big
               b
                 i
                   font(color=''+liven.color+'', size='5').tit.spano= liven.name 
                   br
                   font(color=''+liven.color1+'', style='font-size:44px;').tit.spano=  liven.number
+
                   
                   
-                  br
+                  
                   //- input#Login.btn.btn-sm.btn-danger(style='height:auto; padding:0 12px; font-style:italic;', name='Refresh', value='Refresh', type='submit', onclick='window.location.reload()')
             
-            br
-            hr
+            //- br
+            //- hr
               
             
-            div(style='padding:5px;')  
+            //- div(style='padding:5px;')  
         //- hr
       
     .satta-matka-block_strt3
@@ -655,10 +658,11 @@ html(lang='en-US')
         .rblock2(style='background:'+sattan.bgcolor+'')
           
           h1( style='color:'+sattan.color+'').tit= sattan.name
-          h1( style='color:'+sattan.color1+';font-size:44px').tit= sattan.number
+          h1( style='margin-top:-10px;color:'+sattan.color1+';font-size:44px').tit= sattan.number
+          h1(style="margin-top:-8px") (#{sattan.time}  #{sattan.time1} )
         hr
       
-    div(style='text-align: center;')
+    div(style='text-align: center;margin-top:-16px')
       a.refresh_big(onclick='window.location.reload()') Refresh
     style.
       .spano{

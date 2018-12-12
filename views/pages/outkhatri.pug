@@ -1,6 +1,7 @@
 doctype html
 html(xmlns='http://www.w3.org/1999/xhtml')
 	head
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		title KHATRI FAVOURITE PANNA CHART
 		script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-46528741-9')
 		script.
@@ -89,9 +90,10 @@ html(xmlns='http://www.w3.org/1999/xhtml')
 			.k_chart
 				.k_head KHATRI'S FAVOURITE PANNA CHART
 				each khatri, i in khatris
-					.chart
-						p.chart_head= khatri.head
-						p.chart_msg!= khatri.tail
+					div!= khatri.tail
+					//- .chart
+					//- 	p.chart_head= khatri.head
+					//- 	p.chart_msg!= khatri.tail
 							//- | 128 - 137 - 236 - 678
 							//- br
 							//- | 245 - 290 - 470 - 579.

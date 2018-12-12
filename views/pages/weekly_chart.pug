@@ -147,10 +147,11 @@ html(xmlns='http://www.w3.org/1999/xhtml')
     div(style='text-align:center;')
       //- img(src='images/lg33.png', alt='satta')
       h2.logo SATMATRAT - सटमटरट
-    div(style='float:left; width:100%;')
+    div(style='text-align:center; width:100%;font-size:30px;font-family: "Times New Roman", Times, serif;')
       each weekly, i in weeklys
-        div(style='background:'+weekly.headbg+';color:'+weekly.headcolor+'')!= head
-        div(style='color:'+weekly.headcolor+'')!= text
+        div!= weekly.text
+        //- div(style='background:'+weekly.headbg+';color:'+weekly.headcolor+'')!= weekly.head
+        //- div(style='background:'+weekly.headbg+';color:'+weekly.headcolor+'')!= weekly.text
 
       //- .chart_title
       //-   | WEEKLY PANEL CHART
