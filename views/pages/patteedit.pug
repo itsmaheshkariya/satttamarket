@@ -1,0 +1,59 @@
+extends layout
+block content
+    
+    form(method='POST',action='/patte/edit/'+patte._id)
+        .row
+            h3 Patte Updater 
+        .col.s12
+            .row
+                .input-field.col.s12
+                    label Text:
+                    input.form-control(name='text',type='text')
+
+            .row
+                .input-field.col.s12
+                    label Color:
+                    input.form-control(name='color',type='text')
+            .row
+                .input-field.col.s12
+                    label background color:
+                    input.form-control(name='bgcolor',type='text')
+            .row
+                .input-field.col.s12
+                    label Select 1st:
+                    input.form-control(name='select1',type='number', min='0' ,value=patte.select1)
+
+            .row
+                .input-field.col.s12
+                    label Select 2nd:
+                    input.form-control(name='select2',type='number', min='0',value=patte.select2)
+            .row
+                .input-field.col.s12
+                    label Select 3rd
+                    input.form-control(name='select3',type='number', min='0',value=patte.select3)
+            .row
+                .input-field.col.s12
+                    label Total
+                    input.form-control(name='total',type='number', min='0',value=patte.total)
+            
+                .input-field.col.s12
+                    
+                    button.btn(type="submit",onclick="M.toast({html: 'Data Updated'})") Edit
+               
+                    
+                  
+            
+            
+          
+          
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   

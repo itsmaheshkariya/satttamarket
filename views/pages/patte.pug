@@ -1,0 +1,216 @@
+extends layout
+block content
+    
+    form(method='POST',action='/patte')
+        .row
+            h4 Patte Update  
+            
+        .col.s6
+            .row
+                .input-field.col.s12
+                    label Text:
+                    input.form-control(name='text',type='text')
+
+            .row
+                .input-field.col.s12
+                    label Color:
+                    input.form-control(name='color',type='text')
+            .row
+                .input-field.col.s12
+                    label background color:
+                    input.form-control(name='bgcolor',type='text')            
+        
+            .row
+                .input-field.col.s12
+                    label Select 1st:
+                    input.form-control(name='select1',type='text', onchange='createPatte(this.value)')
+                        //- option
+                        //- option(value='/patteimages/1.png') 1
+                        //- option(value='/patteimages/2.png') 2
+                        //- option(value='/patteimages/3.png') 3
+                        //- option(value='/patteimages/4.png') 4
+                        //- option(value='/patteimages/5.png') 5
+                        //- option(value='/patteimages/6.png') 6
+                        //- option(value='/patteimages/7.png') 7
+                        //- option(value='/patteimages/8.png') 8
+                        //- option(value='/patteimages/9.png') 9
+                        //- option(value='/patteimages/10.png') 
+                    #display_here
+
+            .row
+                .input-field.col.s12
+                    label Select 2nd:
+                    input.form-control(name='select2',type='text')
+                        //- option
+                        //- option(value='/patteimages/1.png') 1
+                        //- option(value='/patteimages/2.png') 2
+                        //- option(value='/patteimages/3.png') 3
+                        //- option(value='/patteimages/4.png') 4
+                        //- option(value='/patteimages/5.png') 5
+                        //- option(value='/patteimages/6.png') 6
+                        //- option(value='/patteimages/7.png') 7
+                        //- option(value='/patteimages/8.png') 8
+                        //- option(value='/patteimages/9.png') 9
+                        //- option(value='/patteimages/10.png') 0
+                    #display_here
+            .row
+                .input-field.col.s12
+                    label Select 3rd:
+                    input.form-control(name='select3',type='text')
+                        //- option
+                        //- option(value='/patteimages/1.png') 1
+                        //- option(value='/patteimages/2.png') 2
+                        //- option(value='/patteimages/3.png') 3
+                        //- option(value='/patteimages/4.png') 4
+                        //- option(value='/patteimages/5.png') 5
+                        //- option(value='/patteimages/6.png') 6
+                        //- option(value='/patteimages/7.png') 7
+                        //- option(value='/patteimages/8.png') 8
+                        //- option(value='/patteimages/9.png') 9
+                        //- option(value='/patteimages/10.png') 0
+                    #display_here
+            .row
+                .input-field.col.s12
+                    label Total:
+                    input.form-control(name='total',type='text')
+                        //- option
+                        //- option(value='/patteimages/1.png') 1
+                        //- option(value='/patteimages/2.png') 2
+                        //- option(value='/patteimages/3.png') 3
+                        //- option(value='/patteimages/4.png') 4
+                        //- option(value='/patteimages/5.png') 5
+                        //- option(value='/patteimages/6.png') 6
+                        //- option(value='/patteimages/7.png') 7
+                        //- option(value='/patteimages/8.png') 8
+                        //- option(value='/patteimages/9.png') 9
+                        //- option(value='/patteimages/10.png') 0
+                    #display_here
+           
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit") Submit
+            
+        .col.s6
+        
+            table.table.table-hover.table-dark(id="example")
+                thead
+                    td Text
+                    td Color
+                    td Bgcolor
+                    td 1st
+                    td 2nd
+                    td 3rd
+                    td Total
+                    td Edit
+                    td Delete
+                   
+                   
+     
+                each foot, i in patte
+                    tbody
+                        td= foot.text
+                        td= foot.color
+                        td= foot.bgcolor
+                        td= foot.select1
+                        td= foot.select2
+                        td= foot.select3
+                        td= foot.total
+                        
+                        
+                        td
+                            a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/patte/edit/'+foot._id)
+                                i.fa.fa-pencil 
+                        td
+                            form(action='/patte/delete/'+foot._id+'?_method=DELETE',method='POST')
+                                button.btn.btn-dark(type='submit' title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right")
+                                   i.fa.fa-trash
+                            
+                                    
+                                
+                          
+                
+          
+        br
+        br
+        br
+        br
+
+
+
+        //- script
+        //- function createPatte(userChoice) {
+        //- var patte = document.getElementById("select1");
+        //- patte.innerHTML = "";
+
+        //- var links = [
+        //- "/patteimages/1.png",
+        //- "/patteimages/2.png",
+        //- "/patteimages/3.png",
+        //- "/patteimages/4.png"
+        //- ];
+
+        //- var select1 = ["1", "2", "3", "4"];
+        //- var img = '<img src="' + links[userChoice] + '">';
+
+        //- patte.innerHTML = img;
+        //- }
+
+
+
+
+
+
+
+
+
+
+
+
+        //- script
+
+        //- function img() {
+
+        //- var s = document.getElementById('select1');
+        //- var select1 = s.options[s.selectedIndex].value;
+
+        //- if (select1 = 1) {
+        //-     img ("")
+        //- }
+        //- else if (select1 = 2) {
+        //-     alert("it equals microphone")
+        //- }
+        //- else if (select1 = 3) {
+        //-     alert("it equals tripod")
+        //- }
+        //- else if (select1 = 4) {
+        //-     alert("it equals microphone")
+        //- }
+        //- else if (select1 = 5) {
+        //-     alert("it equals tripod")
+        //- }
+        //- else if (select1 = 6) {
+        //-     alert("it equals microphone")
+        //- }
+        //- else if (select1 = 7) {
+        //-     alert("it equals tripod")
+        //- }
+        //- else if (select1 = 8) {
+        //-     alert("it equals microphone")
+        //- }
+        //- else if (select1 = 9) {
+        //-     alert("it equals tripod")
+        //- }
+        //- else if (select1 = 10) {
+        //-     alert("it equals tripod")
+        //- }
+        //- }
+
+                    
+        
+				
+		
+			
+				
+			
+   

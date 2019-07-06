@@ -3,6 +3,9 @@ html(xmlns='http://www.w3.org/1999/xhtml')
   head
     title WEEKLY JODI AND PANNA
     script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-46528741-8')
+    //- script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(type='text/javascript', src='jquery.keyscroll.js')
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -10,6 +13,78 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       gtag('config', 'UA-46528741-8');
   body
     style.
+      // Return to Top
+      a#return-to-top(href='javascript:')
+        i.icon-chevron-up
+      // ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON
+      link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', rel='stylesheet')
+      // Test the scroll
+      div(style='height:2000px;')
+        h3 Scroll down
+        h3
+          i.icon-arrow-down
+
+      #return-to-top {
+        position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgb(0, 0, 0);
+          background: rgba(0, 0, 0, 0.7);
+          width: 50px;
+          height: 50px;
+          display: block;
+          text-decoration: none;
+          -webkit-border-radius: 35px;
+          -moz-border-radius: 35px;
+          border-radius: 35px;
+          display: none;
+          -webkit-transition: all 0.3s linear;
+          -moz-transition: all 0.3s ease;
+          -ms-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+        }
+        #return-to-top i {
+          color: #fff;
+          margin: 0;
+          position: relative;
+          left: 16px;
+          top: 13px;
+          font-size: 19px;
+          -webkit-transition: all 0.3s ease;
+          -moz-transition: all 0.3s ease;
+          -ms-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+        }
+        #return-to-top:hover {
+          background: rgba(0, 0, 0, 0.9);
+        }
+        #return-to-top:hover i {
+          color: #fff;
+          top: 5px;
+        }
+
+
+        /* Extra Things */
+        body{background: #eee ;font-family: 'Open Sans', sans-serif;}h3{font-size: 30px; font-weight: 400;text-align: center;margin-top: 50px;}h3 i{color: #444;}
+
+
+      #myBtn {
+      bottom: 20px;
+      right: 20px;
+      font-size: 13px;
+      //- border: none;
+      //- outline: none;
+      //- background-color: white;
+      //- color: black;
+      cursor: pointer;
+      padding: 10px;
+      //- border-radius: 4px;
+      }
+      //- #myBtn:hover {
+      //- background-color: #555;
+      //- }
       @font-face {
       font-family: myfont1;
       src: url(LatoLatin-BlackItalic.woff2);
@@ -144,9 +219,13 @@ html(xmlns='http://www.w3.org/1999/xhtml')
         font-family: 'Pacifico', cursive;
         font-size: 2em;
         }
+
+
     div(style='text-align:center;')
       //- img(src='images/lg33.png', alt='satta')
       h2.logo SATMATRAT - सटमटरट
+    div(align='center')
+      a#scrollToBottom(href='javascript:;') ▼ Go To Bottom
     div(style='text-align:center; width:100%;font-size:30px;font-family: "Times New Roman", Times, serif;')
       each weekly, i in weeklys
         div!= weekly.text
@@ -338,7 +417,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       //-       (adsbygoogle = window.adsbygoogle || []).push({});
       //- .satta-matka-block_strtF
       //-   .btn_red
-      //-     | SATTAMATKA.MOBI
+      //-     | satmatrat.in
       //-     br
       //-     | ALL RIGHTS RESERVED (2012-2018)
       //-     br
@@ -346,12 +425,46 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       //-     br
       //-     | 01141169999
       each footer, i in footers
-          div(style='background-color: '+footer.bgcolor+';border-radius: 5px;font-size: 19px;padding: 10px;text-align: center;border: #fff solid 2px;font-style: italic;font-family: Montserrat, sans-serif;margin-top: 10px;margin-bottom: 10px;')
-      
-              h2.btn_red(style='font-size: 19px;color:'+footer.color+'')!= footer.text
-    br
+        div(style='background-color: '+footer.bgcolor+';border-radius: 5px;font-size: 19px;padding: 10px;text-align: center;border: #fff solid 2px;font-style: italic;font-family: Montserrat, sans-serif;margin-top: 10px;margin-bottom: 10px;')
+
+          h2.btn_red(style='font-size: 19px;color:'+footer.color+'')!= footer.text
+    //- div(style='text-align: -8px;')
+    //- button#myBtn(onclick='topFunction()', title='Go to top') Go To Top
+    //- script.
+    //-   // When the user scrolls down 20px from the top of the document, show the button
+    //-   window.onscroll = function() {
+    //-   scrollFunction()
+    //-   };
+    //-   function scrollFunction() {
+    //-   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    //-   document.getElementById("myBtn").style.display = "block";
+    //-   } else {
+    //-   document.getElementById("myBtn").style.display = "none";
+    //-   }
+    //-   }
+    //-   // When the user clicks on the button, scroll to the top of the document
+    //-   function topFunction() {
+    //-   document.body.scrollTop = 0;
+    //-   document.documentElement.scrollTop = 0;
+    //-   }
+
+    div(align='center')
+      a#scrollToTop(href='javascript:;') ▲ Go To Top
+
+    script(type='text/javascript').
+      $(function () {
+      $('#scrollToBottom').bind("click", function () {
+      $('html, body').animate({ scrollTop: $(document).height() }, 1200);
+      return false;
+      });
+      $('#scrollToTop').bind("click", function () {
+      $('html, body').animate({ scrollTop: 0 }, 1200);
+      return false;
+      });
+      });
+
     div(style='text-align: center;')
-      a(href='http://sattamatka.mobi/')
+      a(href='http://satmatrat.in/')
         img(src='images/back-btn.png', alt='satta')
-      a(href='http://sattamatka.mobi/')
+      a(href='http://satmatrat.in/')
         img(src='images/home-btn.png', alt='satta')

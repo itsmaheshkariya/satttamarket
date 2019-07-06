@@ -9,7 +9,7 @@ const expressMessages = require('express-messages');
 const flash = require('connect-flash');
 const passport = require('passport');
 const session = require('express-session');
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 80;
 const mongoose = require('mongoose');
 const Grid = require('gridfs-stream');
 const multer = require('multer');
@@ -38,7 +38,7 @@ require('./config/passport')(passport);
 
 
 
-// const URI = 'mongodb://maheshkareeya:mahesh619619Key@ds237610.mlab.com:37610/qcom';
+const URI = 'mongodb://maheshkareeya:mahesh619619Key@ds237610.mlab.com:37610/qcom';
 // const URI = 'mongodb://localhost/qcom';
 mongoose.connect(config.database)
     .then(db => console.log('Db is connected'));
@@ -84,8 +84,28 @@ let khatri = require('./routes/khatri');
 let Live = require('./models/live');
 let live = require('./routes/live');
 
+
+
+
+let Chartmessage = require('./models/chartmessage');
+let chartmessage = require('./routes/chartmessage');
+
+
+
+
 let Footer = require('./models/footer');
 let footer = require('./routes/footer');
+let Notice = require('./models/notice');
+let notice = require('./routes/notice');
+
+let Patte = require('./models/patte');
+let patte = require('./routes/patte');
+
+
+let Articlepost = require('./models/articlepost');
+let articlepost = require('./routes/articlepost');
+
+
 
 let Header = require('./models/header');
 let header = require('./routes/header');
@@ -178,14 +198,18 @@ express()
 .get('/patti/:id', function(req, res) {
 
         Satta.findById(req.params.id, function(err, findtitle) {
+            Chartmessage.find({open:req.params.id,close:"patti"},(err,chartmessages)=>{
 
+            
             NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
                 res.render('pages/patti', {
                     chartnn: charts,
                     idid: req.params.id,
-                    findtitlen: findtitle
+                    findtitlen: findtitle,
+                    chartmessages:chartmessages
                 });
             });
+        });
 
         });
 
@@ -193,15 +217,19 @@ express()
     .get('/number/:id', function(req, res) {
 
         Satta.findById(req.params.id, function(err, findtitle) {
+            Chartmessage.find({open:req.params.id,close:"number"},(err,chartmessages)=>{
 
             NewChart.find({ unikey: '' + req.params.id }, function(err, charts) {
                 res.render('pages/number', {
                     chartnn: charts,
-                    findtitlen: findtitle
+                    findtitlen: findtitle,
+                    chartmessages:chartmessages
+                    
                 });
             });
 
         });
+    });
 
     })
 
@@ -219,9 +247,16 @@ express()
     .use(bodyParser.json())
     .use('/', satta)
     .use('/', live)
+    .use('/', chartmessage)
+
+
+    
     .use('/', open)
     .use('/', footer)
+    .use('/', notice)
+    .use('/', articlepost)
     .use('/', cuslive)
+    .use('/', patte)
     .use('/', client)
     .use('/', header)
     .use('/', weekly)
@@ -236,20 +271,20 @@ express()
         gfs.files.find().toArray((err, files) => {
 
 
-            if (!files || files.length === 0) {
-                res.render('pages/upimg', { files: false });
+            // if (!files || files.length === 0) {
+            //     res.render('pages/upimg', { files: false });
 
-            } else {
-                files.map(file => {
-                    if (file) {
-                        if (file.contentType === 'image/jpeg' || file.contentType === 'image/jpg' || file.contentType === 'image/png') {
-                            file.isImage = true;
-                        } else {
-                            file.isImage = false;
-                        }
-                    }
-                })
-            }
+            // } else {
+            //     files.map(file => {
+            //         if (file) {
+            //             if (file.contentType === 'image/jpeg' || file.contentType === 'image/jpg' || file.contentType === 'image/png') {
+            //                 file.isImage = true;
+            //             } else {
+            //                 file.isImage = false;
+            //             }
+            //         }
+            //     })
+            // }
 
             res.render('pages/upimg', { files: files });
 
@@ -306,66 +341,75 @@ express()
         gfs.files.find().toArray((err, files) => {
 
 
-            if (!files || files.length === 0) {
-                // res.render('pages/upimg', { files: true });
+            // if (!files || files.length === 0) {
+            //     res.render('pages/upimg', { files: true });
 
-            } else {
-                files.map(file => {
-                    if (file) {
-                        if (file.contentType === 'image/jpeg' || file.contentType === 'image/jpg' || file.contentType === 'image/png') {
-                            file.isImage = true;
-                        } else {
-                            file.isImage = false;
-                        }
-                    }
-                })
-            }
+            // } else {
+            //     files.map(file => {
+            //         if (file) {
+            //             if (file.contentType === 'image/jpeg' || file.contentType === 'image/jpg' || file.contentType === 'image/png') {
+            //                 file.isImage = true;
+            //             } else {
+            //                 file.isImage = false;
+            //             }
+            //         }
+            //     })
+            // }
 
 
-
-            Live.find({}, function(err, lives) {
+            Patte.find({}, function(err, pattes) {
                 if (err) {
                     console.log(err);
                 } else {
 
-                    Satta.find({}, function(err, sattas) {
+                    Live.find({}, function(err, lives) {
                         if (err) {
                             console.log(err);
                         } else {
 
-
-                            Settings.find({}, function(err, settings) {
+                            Satta.find({}, function(err, sattas) {
                                 if (err) {
                                     console.log(err);
                                 } else {
 
-                                    Footer.find({}, function(err, footers) {
+
+                                    Settings.find({}, function(err, settings) {
                                         if (err) {
                                             console.log(err);
                                         } else {
 
-
-                                            Header.find({}, function(err, headers) {
+                                            Footer.find({}, function(err, footers) {
                                                 if (err) {
                                                     console.log(err);
                                                 } else {
-                                            Time.find({}, function(err, times) {
-                                                if (err) {
-                                                    console.log(err);
-                                                } else {
-                                                    Kalyan.find({}, function(err, kalyans) {
+                                                    Notice.find({}, function(err, notices) {
                                                         if (err) {
                                                             console.log(err);
                                                         } else {
+
+                                                    Header.find({}, function(err, headers) {
+                                                        if (err) {
+                                                            console.log(err);
+                                                        } else {
+                                                    Time.find({}, function(err, times) {
+                                                        if (err) {
+                                                            console.log(err);
+                                                        } else {
+                                                            Kalyan.find({}, function(err, kalyans) {
+                                                                if (err) {
+                                                                    console.log(err);
+                                                                } else {
                                     Chart.find({ unikey: '' + req.params.id }, function(err, charts) {
                                         res.render('pages/output', {
                                             title: 'SAT MAT RAT',
                                             satta: sattas,
+                                            pattes:pattes,
                                             live: lives,
                                             chartn: charts,
                                             settings: settings,
                                             files: files,
                                             footers:footers,
+                                            notices:notices,
                                             headers:headers,
                                             times:times,
                                             kalyans:kalyans
@@ -373,6 +417,7 @@ express()
                                     });
                                 }
                             });
+                        }                            });
                                 }
                             });
                                 }
@@ -387,13 +432,16 @@ express()
                             });
                         }
 
+                    });
+                        }
 
-                    })
+                    });
 
                 }
             });
             // res.render('pages/upimg', { files: files });
 
+       
 
 
 

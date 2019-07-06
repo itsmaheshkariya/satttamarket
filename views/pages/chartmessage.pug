@@ -1,0 +1,73 @@
+extends layout
+block content
+    
+    form(method='POST',action='/chartmessage')
+        .row
+            h4 Market Update  
+            
+        .col.s6
+            .row
+                .input-field.col.s12
+                    label Message:
+                    input.form-control(name='market',type='text')
+
+            .row
+                .input-field.col.s12
+                    label ID:
+                    input.form-control(name='open',type='text')
+            .row
+                .input-field.col.s12
+                    label patti/number:
+                    input.form-control(name='close',type='text')
+           
+            .row
+                .input-field.col.s12
+                    
+                    button.btn(type="submit") Submit
+            
+        .col.s6
+        
+            table.table.table-hover.table-dark(id="example")
+                thead
+                    td Message
+                    td color
+                    td background
+                   
+                    td Edit
+                    td Delete
+                   
+     
+                each tym, i in time
+                    tbody
+                        td= tym.market
+                        td= tym.open
+                        td= tym.close
+                       
+                        td
+                            a.btn.btn-dark(title="Edit",onclick="M.toast({html: 'Edit Data'})",data-toggle="tooltip", data-placement="bottom",href='/chartmessage/edit/'+tym._id)
+                                i.fa.fa-pencil 
+                        td
+                            form(action='/chartmessage/delete/'+tym._id+'?_method=DELETE',method='POST')
+                                button.btn.btn-dark(type='submit' title="Remove",onclick="M.toast({html: 'Data Removing'})",data-toggle="tooltip", data-placement="right")
+                                   i.fa.fa-trash
+                            
+                                    
+                                
+                          
+                
+          
+        br
+        br
+        br
+        br
+      
+                    
+      
+                    
+        
+				
+		
+			
+				
+			
+   
